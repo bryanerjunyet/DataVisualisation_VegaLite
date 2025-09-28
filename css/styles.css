@@ -1,28 +1,23 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f6fb;
-  color: #222933;
+  background-color: #ffffff;
+  color: #1f1f1f;
 }
 
 main {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 0 20px 60px;
+  max-width: 840px;
+  margin: 32px auto 64px;
+  padding: 0 20px;
 }
 
 h1 {
   font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-p.description {
-  margin-top: 0;
-  color: #4a5460;
+  font-size: 28px;
+  margin: 0 0 24px;
 }
 
 #choropleth_map {
-  margin-top: 30px;
   min-height: 520px;
 }
 

@@ -1,60 +1,32 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Choropleth map of Malaysia showing crimes per 10,000 residents by state for 2016.",
   "width": 780,
   "height": 600,
-  "background": "#bcdff6",
+  "background": "white",
   "projection": {
     "type": "mercator",
-    "center": [
-      109.5,
-      4.0
-    ],
+    "center": [109.5, 4.0],
     "scale": 2200
   },
-  "view": {
-    "stroke": "transparent"
-  },
+  "view": { "stroke": "transparent" },
   "title": {
-    "text": "Crimes per 10,000 Residents by Malaysian State (2016)",
-    "subtitle": "Colour saturation indicates relative crime rates; hover to inspect values",
-    "fontSize": 20,
-    "subtitleFontSize": 12,
+    "text": "Malaysia Crime Map 2016",
+    "fontSize": 18,
     "anchor": "start"
   },
   "layer": [
     {
-      "data": {
-        "sphere": true
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#8fc2f2"
-      }
+      "data": { "sphere": true },
+      "mark": { "type": "geoshape", "fill": "#8fc2f2" }
     },
     {
-      "data": {
-        "graticule": {
-          "step": [
-            5,
-            5
-          ]
-        }
-      },
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#ffffff",
-        "strokeOpacity": 0.6,
-        "strokeWidth": 0.4
-      }
+      "data": { "graticule": { "step": [5, 5] } },
+      "mark": { "type": "geoshape", "stroke": "#d7e3ee", "strokeWidth": 0.4 }
     },
     {
       "data": {
         "url": "data/gadm41_MYS_1.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "gadm41_MYS_1"
-        }
+        "format": { "type": "topojson", "feature": "gadm41_MYS_1" }
       },
       "transform": [
         {
@@ -64,92 +36,56 @@
         {
           "lookup": "state",
           "from": {
-            "data": {
-              "url": "data/crime_district_cleaned.csv"
-            },
+            "data": { "url": "data/crime_district_cleaned.csv" },
             "key": "state",
-            "fields": [
-              "crimes_per_10k_population",
-              "total_crimes"
-            ]
-          }
-        }
-      ],
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#264a63",
-        "strokeWidth": 0.6
-      },
-      "encoding": {
-        "color": {
-          "field": "crimes_per_10k_population",
-          "type": "quantitative",
-          "title": "Crimes per 10k residents",
-          "scale": {
-            "scheme": {
-              "name": "reds",
-              "extent": [
-                0.1,
-                1
-              ]
-            }
+            "fields": [ "crimes_per_10k_population", "total_crimes" ]
           }
         },
+        {
+          "calculate": "datum.crimes_per_10k_population < 25 ? 'Low (<25)' : datum.crimes_per_10k_population < 40 ? 'Moderate (25-40)' : datum.crimes_per_10k_population < 80 ? 'High (>40)' : 'Very High (>80)'",
+          "as": "crime_band"
+        }
+      ],
+      "mark": { "type": "geoshape", "stroke": "#264a63", "strokeWidth": 0.6 },
+      "encoding": {
+        "color": {
+          "field": "crime_band",
+          "type": "nominal",
+          "title": "Crime level",
+          "scale": {
+            "domain": [
+              "Low (<25)",
+              "Moderate (25-40)",
+              "High (>40)",
+              "Very High (>80)"
+            ],
+            "range": [
+              "#2ca25f",
+              "#fdae6b",
+              "#de2d26",
+              "#7f0000"
+            ]
+          },
+          "legend": { "orient": "right" }
+        },
         "tooltip": [
-          {
-            "field": "state",
-            "title": "State"
-          },
-          {
-            "field": "crimes_per_10k_population",
-            "title": "Crimes per 10k",
-            "format": ".2f"
-          },
-          {
-            "field": "total_crimes",
-            "title": "Total crimes",
-            "format": ","
-          }
+          { "field": "state", "title": "State" },
+          { "field": "crimes_per_10k_population", "title": "Crimes per 10k", "format": ".2f" },
+          { "field": "total_crimes", "title": "Total crimes", "format": "," },
+          { "field": "crime_band", "title": "Crime level" }
         ]
       }
     },
     {
-      "data": {
-        "url": "data/malaysia_state_centroids.csv"
-      },
-      "transform": [
-        {
-          "lookup": "state",
-          "from": {
-            "data": {
-              "url": "data/crime_district_cleaned.csv"
-            },
-            "key": "state",
-            "fields": [
-              "crimes_per_10k_population"
-            ]
-          }
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 10,
-        "fontWeight": "bold",
-        "fill": "#10212b",
-        "stroke": "white",
-        "strokeWidth": 1,
-        "strokeOpacity": 0.8
-      },
+      "data": { "url": "data/malaysia_state_centroids.csv" },
+      "mark": { "type": "text", "fontSize": 10, "fontWeight": "normal", "fill": "#1a1a1a" },
       "encoding": {
-        "longitude": {
-          "field": "longitude"
-        },
-        "latitude": {
-          "field": "latitude"
-        },
-        "text": {
-          "field": "state"
-        }
+        "longitude": { "field": "longitude" },
+        "latitude": { "field": "latitude" },
+        "text": { "field": "state" },
+        "xOffset": { "field": "x_offset" },
+        "yOffset": { "field": "y_offset" },
+        "align": { "field": "align" }
       }
     }
   ],
@@ -157,7 +93,7 @@
     "legend": {
       "titleFontSize": 12,
       "labelFontSize": 11,
-      "offset": 8
+      "symbolType": "square"
     }
   }
 }
