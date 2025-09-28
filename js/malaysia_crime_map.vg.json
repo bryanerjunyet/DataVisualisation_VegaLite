@@ -84,8 +84,7 @@
         "latitude": { "field": "latitude" },
         "text": { "field": "state" },
         "xOffset": { "field": "x_offset" },
-        "yOffset": { "field": "y_offset" },
-        "align": { "field": "align" }
+        "yOffset": { "field": "y_offset" }
       }
     }
   ],
