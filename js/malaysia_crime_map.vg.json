@@ -10,7 +10,7 @@
   },
   "view": { "stroke": "transparent" },
   "title": {
-    "text": "Malaysia Crime Map 2016",
+    "text": "Malaysia Crime Level in Year 2016",
     "fontSize": 18,
     "anchor": "start"
   },
@@ -70,21 +70,18 @@
         },
         "tooltip": [
           { "field": "state", "title": "State" },
-          { "field": "crimes_per_10k_population", "title": "Crimes per 10k", "format": ".2f" },
-          { "field": "total_crimes", "title": "Total crimes", "format": "," },
-          { "field": "crime_band", "title": "Crime level" }
+          { "field": "crimes_per_10k_population", "title": "Crimes per 10K", "format": ".2f" },
+          { "field": "total_crimes", "title": "Total Crimes", "format": "," }
         ]
       }
     },
     {
-      "data": { "url": "data/malaysia_state_centroids.csv" },
-      "mark": { "type": "text", "fontSize": 10, "fontWeight": "normal", "fill": "#1a1a1a" },
+      "data": { "url": "data/malaysia_state_labelled.csv" },
+      "mark": { "type": "text", "fontSize": 10, "fontWeight": "bold", "fill": "#1a1a1a" },
       "encoding": {
         "longitude": { "field": "longitude" },
         "latitude": { "field": "latitude" },
-        "text": { "field": "state" },
-        "xOffset": { "field": "x_offset" },
-        "yOffset": { "field": "y_offset" }
+        "text": { "field": "state" }
       }
     }
   ],
