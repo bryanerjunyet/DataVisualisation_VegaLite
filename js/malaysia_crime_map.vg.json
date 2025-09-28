@@ -1,0 +1,163 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth map of Malaysia showing crimes per 10,000 residents by state for 2016.",
+  "width": 780,
+  "height": 600,
+  "background": "#bcdff6",
+  "projection": {
+    "type": "mercator",
+    "center": [
+      109.5,
+      4.0
+    ],
+    "scale": 2200
+  },
+  "view": {
+    "stroke": "transparent"
+  },
+  "title": {
+    "text": "Crimes per 10,000 Residents by Malaysian State (2016)",
+    "subtitle": "Colour saturation indicates relative crime rates; hover to inspect values",
+    "fontSize": 20,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#8fc2f2"
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            5,
+            5
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeOpacity": 0.6,
+        "strokeWidth": 0.4
+      }
+    },
+    {
+      "data": {
+        "url": "data/gadm41_MYS_1.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "gadm41_MYS_1"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.properties.NAME_1 == 'KualaLumpur' ? 'W.P. Kuala Lumpur' : datum.properties.NAME_1 == 'NegeriSembilan' ? 'Negeri Sembilan' : datum.properties.NAME_1 == 'PulauPinang' ? 'Pulau Pinang' : datum.properties.NAME_1 == 'Trengganu' ? 'Terengganu' : datum.properties.NAME_1",
+          "as": "state"
+        },
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "data/crime_district_cleaned.csv"
+            },
+            "key": "state",
+            "fields": [
+              "crimes_per_10k_population",
+              "total_crimes"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#264a63",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "color": {
+          "field": "crimes_per_10k_population",
+          "type": "quantitative",
+          "title": "Crimes per 10k residents",
+          "scale": {
+            "scheme": {
+              "name": "reds",
+              "extent": [
+                0.1,
+                1
+              ]
+            }
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "crimes_per_10k_population",
+            "title": "Crimes per 10k",
+            "format": ".2f"
+          },
+          {
+            "field": "total_crimes",
+            "title": "Total crimes",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/malaysia_state_centroids.csv"
+      },
+      "transform": [
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "data/crime_district_cleaned.csv"
+            },
+            "key": "state",
+            "fields": [
+              "crimes_per_10k_population"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "fill": "#10212b",
+        "stroke": "white",
+        "strokeWidth": 1,
+        "strokeOpacity": 0.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude"
+        },
+        "latitude": {
+          "field": "latitude"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    }
+  ],
+  "config": {
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 11,
+      "offset": 8
+    }
+  }
+}
