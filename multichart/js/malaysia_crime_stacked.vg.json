@@ -1,0 +1,173 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 360,
+  "background": "white",
+  "data": {
+    "url": "data/bar_data/crime_district_cleaned.csv"
+  },
+  "title": {
+    "text": "Assault vs Property Crime Reports (2016\u20132023)",
+    "subtitle": "Stacked totals by year highlight changes in the mix of reported cases.",
+    "fontSize": 18,
+    "anchor": "start",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#4a4a4a",
+    "subtitlePadding": 6
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Cases",
+          "title": "Reported cases"
+        },
+        "color": {
+          "field": "Crime_Type",
+          "type": "nominal",
+          "title": "Crime category",
+          "scale": {
+            "domain": [
+              "Property",
+              "Assault"
+            ],
+            "range": [
+              "#ff8c00",
+              "#8b4513"
+            ]
+          }
+        },
+        "order": {
+          "field": "Crime_Type",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "title": "Year"
+          },
+          {
+            "field": "Crime_Type",
+            "title": "Category"
+          },
+          {
+            "field": "Cases",
+            "title": "Cases",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2016"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 9000",
+          "as": "label_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#333333"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "2016 peak before major crime reforms"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2020"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 7000",
+          "as": "label_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#333333"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "2020 drop during COVID-19 controls"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 11
+    }
+  }
+}

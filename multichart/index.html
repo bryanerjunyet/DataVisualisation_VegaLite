@@ -12,11 +12,17 @@
 <body>
   <main>
     <h1>Malaysia Crime Patterns across All States</h1>
-    <div id="choropleth_map"></div>
+    <section class="viz">
+      <h2>State Crime Levels</h2>
+      <p class="caption">Explore how reported crime intensity shifts by state; adjust the slider to focus on a specific year.</p>
+      <div id="choropleth_map"></div>
+    </section>
+    <section class="viz">
+      <h2>Reported Assault vs Property Crimes</h2>
+      <p class="caption">Annual totals show how property crimes dominate reports while pandemic restrictions depressed overall cases.</p>
+      <div id="crime_stack"></div>
+    </section>
   </main>
-  <script type="text/javascript">
-    const spec = "js/malaysia_crime_map.vg.json";
-    vegaEmbed('#choropleth_map', spec, { actions: false }).catch(console.error);
-  </script>
+  <script src="js/vega_lite_vis.js"></script>
 </body>
 </html>
