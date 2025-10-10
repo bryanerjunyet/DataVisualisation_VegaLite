@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 780,
-  "height": 600,
+  "width": 760,
+  "height": 340,
   "background": "white",
   "projection": {
     "type": "mercator",
@@ -9,16 +9,35 @@
       109.5,
       4.0
     ],
-    "scale": 2200
+    "scale": 2150
   },
   "view": {
     "stroke": "transparent"
   },
   "title": {
-    "text": "Malaysia Crime Level in Year 2016",
+    "text": "State Crime Levels Across Malaysia",
+    "subtitle": {
+      "expr": "'Selected year: ' + selectedYear"
+    },
     "fontSize": 18,
-    "anchor": "start"
+    "anchor": "start",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#4a4a4a",
+    "subtitlePadding": 6
   },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2016,
+      "bind": {
+        "input": "range",
+        "min": 2016,
+        "max": 2023,
+        "step": 1,
+        "name": "Year "
+      }
+    }
+  ],
   "layer": [
     {
       "data": {
@@ -46,7 +65,7 @@
     },
     {
       "data": {
-        "url": "data/gadm41_MYS_1.topojson",
+        "url": "data/map_data/gadm41_MYS_1.topojson",
         "format": {
           "type": "topojson",
           "feature": "gadm41_MYS_1"
@@ -61,17 +80,28 @@
           "lookup": "state",
           "from": {
             "data": {
-              "url": "data/crime_district_cleaned.csv"
+              "url": "data/map_data/crime_district_cleaned.csv"
             },
+            "transform": [
+              {
+                "filter": "toNumber(datum.year) == toNumber(selectedYear)"
+              }
+            ],
             "key": "state",
             "fields": [
               "crimes_per_10k_population",
-              "total_crimes"
+              "total_crimes",
+              "year"
             ]
+          },
+          "default": {
+            "crimes_per_10k_population": null,
+            "total_crimes": null,
+            "year": null
           }
         },
         {
-          "calculate": "datum.crimes_per_10k_population < 25 ? 'Low (<25)' : datum.crimes_per_10k_population < 40 ? 'Moderate (25-40)' : datum.crimes_per_10k_population < 80 ? 'High (>40)' : 'Very High (>80)'",
+          "calculate": "datum.crimes_per_10k_population == null ? 'No data' : datum.crimes_per_10k_population < 25 ? 'Low (<25)' : datum.crimes_per_10k_population < 40 ? 'Moderate (25-40)' : datum.crimes_per_10k_population < 80 ? 'High (>40)' : 'Very High (>80)'",
           "as": "crime_band"
         }
       ],
@@ -87,12 +117,14 @@
           "title": "Crime level",
           "scale": {
             "domain": [
+              "No data",
               "Low (<25)",
               "Moderate (25-40)",
               "High (>40)",
               "Very High (>80)"
             ],
             "range": [
+              "#d9d9d9",
               "#fdfd96",
               "#f8b4b4",
               "#e53935",
@@ -109,6 +141,10 @@
             "title": "State"
           },
           {
+            "field": "year",
+            "title": "Year"
+          },
+          {
             "field": "crimes_per_10k_population",
             "title": "Crimes per 10K",
             "format": ".2f"
@@ -123,7 +159,7 @@
     },
     {
       "data": {
-        "url": "data/malaysia_state_labelled.csv"
+        "url": "data/map_data/malaysia_state_labelled.csv"
       },
       "mark": {
         "type": "text",
@@ -135,7 +171,7 @@
         "longitude": {
           "field": "longitude"
         },
-        "latitude": {
+        "latitude": { 
           "field": "latitude"
         },
         "text": {
