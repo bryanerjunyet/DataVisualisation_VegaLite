@@ -77,17 +77,16 @@
           "as": "state"
         },
         {
-          "lookup": "state",
+          "calculate": "datum.state + '-' + selectedYear",
+          "as": "state_year"
+        },
+        {
+          "lookup": "state_year",
           "from": {
             "data": {
               "url": "data/map_data/crime_district_cleaned.csv"
             },
-            "transform": [
-              {
-                "filter": "toNumber(datum.year) == toNumber(selectedYear)"
-              }
-            ],
-            "key": "state",
+            "key": "state_year",
             "fields": [
               "crimes_per_10k_population",
               "total_crimes",

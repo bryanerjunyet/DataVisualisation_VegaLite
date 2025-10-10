@@ -9,17 +9,17 @@ def clean_crime_data():
     3. Remove rows with type != all
     4. Process data for all years (2016-2023)
     5. Combine the total number of crimes of assault and property into one single row with the same state name for each year
-    6. Normalize crime data per 10,000 population using latest available population data
+    6. Normalize crime data per 10,000 population using corresponding year's population data
     """
     
     # Load population data from population_state.csv
     def get_population_data():
         """
-        Get the latest population data for each state where:
+        Get population data for each state and year where:
         - sex = both
         - age = overall  
         - ethnicity = overall
-        Use the most recent year available for each state
+        Returns a dictionary with (state, year) as key and population as value
         """
         pop_df = pd.read_csv('multichart/data/map_data/population_state.csv')
         
@@ -34,25 +34,24 @@ def clean_crime_data():
             (pop_df['ethnicity'] == 'overall')
         ]
         
-        # Get the latest year data for each state
-        latest_pop = filtered_pop.groupby('state')['year'].max().reset_index()
-        
-        # Merge back to get the population for the latest year
-        result_pop = pd.merge(latest_pop, filtered_pop, on=['state', 'year'])
-        
-        print(f"Population data found for {len(result_pop)} states")
-        print("States found:", result_pop['state'].unique())
-        print("Years used:", result_pop[['state', 'year']].set_index('state')['year'].to_dict())
+        print(f"Population data found for {len(filtered_pop)} records")
+        print("Years available:", sorted(filtered_pop['year'].unique()))
+        print("States found:", sorted(filtered_pop['state'].unique()))
         
         # Convert population to actual numbers (assuming it's in thousands)
-        result_pop = result_pop.copy()
-        result_pop['population_actual'] = result_pop['population'] * 1000
+        filtered_pop = filtered_pop.copy()
+        filtered_pop['population_actual'] = filtered_pop['population'] * 1000
         
-        # Create a dictionary mapping state to population
-        return dict(zip(result_pop['state'], result_pop['population_actual']))
+        # Create a dictionary mapping (state, year) to population
+        population_dict = {}
+        for _, row in filtered_pop.iterrows():
+            key = (row['state'], row['year'])
+            population_dict[key] = row['population_actual']
+        
+        return population_dict
     
-    # Get actual population data from CSV
-    state_population = get_population_data()
+    # Get population data dictionary
+    state_year_population = get_population_data()
     
     # Load the CSV file
     df = pd.read_csv('multichart/data/map_data/crime_district.csv')
@@ -89,8 +88,21 @@ def clean_crime_data():
     # Group by state and year, sum the crimes
     result = df_filtered.groupby(['state', 'year'])['crimes'].sum().reset_index()
     
-    # Add population data for each state (using latest available population)
-    result['population'] = result['state'].map(state_population)
+    # Add population data for each state and year combination
+    result['population'] = result.apply(
+        lambda row: state_year_population.get((row['state'], row['year']), None), 
+        axis=1
+    )
+    
+    # Remove rows where population data is not available
+    missing_pop = result[result['population'].isnull()]
+    if len(missing_pop) > 0:
+        print(f"\nWarning: Missing population data for {len(missing_pop)} state-year combinations:")
+        for _, row in missing_pop.iterrows():
+            print(f"  - {row['state']}, {row['year']}")
+        
+        result = result.dropna(subset=['population'])
+        print(f"Removed {len(missing_pop)} rows with missing population data")
     
     # Calculate crimes per 10,000 population
     result['crimes_per_10k_population'] = (result['crimes'] / result['population']) * 10000
