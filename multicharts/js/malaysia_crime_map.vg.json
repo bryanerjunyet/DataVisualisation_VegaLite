@@ -1,0 +1,154 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 780,
+  "height": 600,
+  "background": "white",
+  "projection": {
+    "type": "mercator",
+    "center": [
+      109.5,
+      4.0
+    ],
+    "scale": 2200
+  },
+  "view": {
+    "stroke": "transparent"
+  },
+  "title": {
+    "text": "Malaysia Crime Level in Year 2016",
+    "fontSize": 18,
+    "anchor": "start"
+  },
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#8fc2f2"
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            5,
+            5
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#d7e3ee",
+        "strokeWidth": 0.4
+      }
+    },
+    {
+      "data": {
+        "url": "data/gadm41_MYS_1.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "gadm41_MYS_1"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.properties.NAME_1 == 'KualaLumpur' ? 'W.P. Kuala Lumpur' : datum.properties.NAME_1 == 'NegeriSembilan' ? 'Negeri Sembilan' : datum.properties.NAME_1 == 'PulauPinang' ? 'Pulau Pinang' : datum.properties.NAME_1 == 'Trengganu' ? 'Terengganu' : datum.properties.NAME_1",
+          "as": "state"
+        },
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "data/crime_district_cleaned.csv"
+            },
+            "key": "state",
+            "fields": [
+              "crimes_per_10k_population",
+              "total_crimes"
+            ]
+          }
+        },
+        {
+          "calculate": "datum.crimes_per_10k_population < 25 ? 'Low (<25)' : datum.crimes_per_10k_population < 40 ? 'Moderate (25-40)' : datum.crimes_per_10k_population < 80 ? 'High (>40)' : 'Very High (>80)'",
+          "as": "crime_band"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#264a63",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "color": {
+          "field": "crime_band",
+          "type": "nominal",
+          "title": "Crime level",
+          "scale": {
+            "domain": [
+              "Low (<25)",
+              "Moderate (25-40)",
+              "High (>40)",
+              "Very High (>80)"
+            ],
+            "range": [
+              "#fdfd96",
+              "#f8b4b4",
+              "#e53935",
+              "#7f0000"
+            ]
+          },
+          "legend": {
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "crimes_per_10k_population",
+            "title": "Crimes per 10K",
+            "format": ".2f"
+          },
+          {
+            "field": "total_crimes",
+            "title": "Total Crimes",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/malaysia_state_labelled.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "fill": "#1a1a1a"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude"
+        },
+        "latitude": {
+          "field": "latitude"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    }
+  ],
+  "config": {
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 11,
+      "symbolType": "square"
+    }
+  }
+}

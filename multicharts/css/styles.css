@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #1f1f1f;
+}
+
+main {
+  max-width: 840px;
+  margin: 32px auto 64px;
+  padding: 0 20px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 28px;
+  margin: 0 0 24px;
+}
+
+#choropleth_map {
+  min-height: 520px;
+}
+
+.vega-embed .vega-actions {
+  display: none;
+}
