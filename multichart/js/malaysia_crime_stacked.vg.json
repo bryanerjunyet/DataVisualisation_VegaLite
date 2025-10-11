@@ -7,13 +7,10 @@
     "url": "data/bar_data/crime_district_cleaned.csv"
   },
   "title": {
-    "text": "Assault vs Property Crime Reports (2016\u20132023)",
-    "subtitle": "Stacked totals by year highlight changes in the mix of reported cases.",
+    "text": "Reported Crimes Across Years",
     "fontSize": 18,
     "anchor": "start",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#4a4a4a",
-    "subtitlePadding": 6
+    "offset": 20
   },
   "layer": [
     {
@@ -88,16 +85,18 @@
           ]
         },
         {
-          "calculate": "datum.total_cases + 9000",
+          "calculate": "datum.total_cases + 40000",
           "as": "label_y"
+        },
+        {
+          "calculate": "datum.total_cases + 100",
+          "as": "arrow_tip"
         }
       ],
       "mark": {
-        "type": "text",
-        "align": "center",
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "fill": "#333333"
+        "type": "rule",
+        "color": "#333333",
+        "strokeWidth": 1.5
       },
       "encoding": {
         "x": {
@@ -108,8 +107,54 @@
           "field": "label_y",
           "type": "quantitative"
         },
+        "y2": {
+          "field": "arrow_tip",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2016"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 43000",
+          "as": "label_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#333333"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "offset": 20
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
         "text": {
-          "value": "2016 peak before major crime reforms"
+          "value": "Total reported crime peaked at 200K+ cases in 2016."
         }
       }
     },
@@ -131,13 +176,60 @@
           ]
         },
         {
-          "calculate": "datum.total_cases + 7000",
+          "calculate": "datum.total_cases + 47000",
+          "as": "label_y"
+        },
+        {
+          "calculate": "datum.total_cases + 100",
+          "as": "arrow_tip"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#333333",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "arrow_tip",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2020"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 60000",
           "as": "label_y"
         }
       ],
       "mark": {
         "type": "text",
         "align": "center",
+        "baseline": "bottom",
         "fontSize": 11,
         "fontWeight": "bold",
         "fill": "#333333"
@@ -152,7 +244,51 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "2020 drop during COVID-19 controls"
+          "value": "In 2020, COVID-19 movement restrictions led to a 19% drop in assault cases "
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2020"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 50000",
+          "as": "label_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#333333"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "and 22% drop in property crimes compared to 2019."
         }
       }
     }
@@ -160,6 +296,12 @@
   "config": {
     "view": {
       "stroke": "transparent"
+    },
+    "padding": {
+      "top": 10,
+      "bottom": 0,
+      "left": 0,
+      "right": 0
     },
     "axis": {
       "labelFontSize": 12,

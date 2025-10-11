@@ -114,6 +114,9 @@ def clean_crime_data():
     final_result = result[['state', 'year', 'crimes', 'crimes_per_10k_population']].copy()
     final_result.columns = ['state', 'year', 'total_crimes', 'crimes_per_10k_population']
     
+    # Add helper key combining state and year to aid downstream joins
+    final_result['state_year'] = final_result['state'] + '-' + final_result['year'].astype(str)
+    
     # Sort by year and then by crimes per 10k population
     final_result = final_result.sort_values(['year', 'crimes_per_10k_population'], ascending=[True, False])
     
@@ -130,6 +133,9 @@ def clean_crime_data():
     print(latest_data.nlargest(5, 'crimes_per_10k_population')[['state', 'year', 'crimes_per_10k_population']])
     
     # Save the cleaned data with both raw and normalized values
+    # Reorder columns for tidy output
+    final_result = final_result[['state', 'year', 'state_year', 'total_crimes', 'crimes_per_10k_population']]
+    
     final_result.to_csv('multichart/data/map_data/crime_district_cleaned.csv', index=False)
     print(f"\nCleaned data saved to 'multichart/data/map_data/crime_district_cleaned.csv'")
     print(f"Total records: {len(final_result)}")

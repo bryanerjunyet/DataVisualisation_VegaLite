@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 760,
-  "height": 340,
+  "height": 300,
   "background": "white",
   "projection": {
     "type": "mercator",
@@ -73,7 +73,7 @@
       },
       "transform": [
         {
-          "calculate": "datum.properties.NAME_1 == 'KualaLumpur' ? 'W.P. Kuala Lumpur' : datum.properties.NAME_1 == 'NegeriSembilan' ? 'Negeri Sembilan' : datum.properties.NAME_1 == 'PulauPinang' ? 'Pulau Pinang' : datum.properties.NAME_1 == 'Trengganu' ? 'Terengganu' : datum.properties.NAME_1",
+          "calculate": "datum.properties.NAME_1 == 'KualaLumpur' ? 'W.P. Kuala Lumpur' : datum.properties.NAME_1 == 'NegeriSembilan' ? 'Negeri Sembilan' : datum.properties.NAME_1 == 'PulauPinang' ? 'Pulau Pinang' : datum.properties.NAME_1 == 'Trengganu' ? 'Terengganu' : datum.properties.NAME_1 == 'Labuan' ? 'W.P. Labuan' : datum.properties.NAME_1 == 'Putrajaya' ? 'W.P. Putrajaya' : datum.properties.NAME_1",
           "as": "state"
         },
         {
@@ -100,7 +100,7 @@
           }
         },
         {
-          "calculate": "datum.crimes_per_10k_population == null ? 'No data' : datum.crimes_per_10k_population < 25 ? 'Low (<25)' : datum.crimes_per_10k_population < 40 ? 'Moderate (25-40)' : datum.crimes_per_10k_population < 80 ? 'High (>40)' : 'Very High (>80)'",
+          "calculate": "datum.crimes_per_10k_population < 20 ? 'Very Low' : datum.crimes_per_10k_population < 30 ? 'Low' : datum.crimes_per_10k_population < 40 ? 'Moderate' : datum.crimes_per_10k_population < 80 ? 'High' : 'Very High'",
           "as": "crime_band"
         }
       ],
@@ -116,17 +116,17 @@
           "title": "Crime level",
           "scale": {
             "domain": [
-              "No data",
-              "Low (<25)",
-              "Moderate (25-40)",
-              "High (>40)",
-              "Very High (>80)"
+              "Very Low",
+              "Low",
+              "Moderate",
+              "High",
+              "Very High"
             ],
             "range": [
-              "#d9d9d9",
               "#fdfd96",
-              "#f8b4b4",
-              "#e53935",
+              "#fed7aa",
+              "#f97316",
+              "#ef4444",
               "#7f0000"
             ]
           },
@@ -180,6 +180,10 @@
     }
   ],
   "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "padding": {"top": 0, "bottom": 5, "left": 0, "right": 0},
     "legend": {
       "titleFontSize": 12,
       "labelFontSize": 11,
