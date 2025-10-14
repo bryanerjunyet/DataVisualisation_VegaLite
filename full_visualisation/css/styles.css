@@ -6,7 +6,7 @@ body {
 }
 
 main {
-  max-width: 840px;
+  max-width: 1000px;
   margin: 32px auto 64px;
   padding: 0 20px;
 }
@@ -17,6 +17,43 @@ h1 {
   margin: 0 0 24px;
 }
 
+h2 {
+  font-weight: 600;
+  font-size: 22px;
+  margin: 32px 0 16px;
+}
+
+.chart-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.chart-left {
+  flex: 0 0 450px;
+  max-width: 550px;
+}
+
+.chart-right {
+  flex: 0 0 420px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.caption {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
 .vega-embed .vega-actions {
   display: none;
+}
+
+#choropleth_map {
+  margin-bottom: 20px;
 }

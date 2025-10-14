@@ -1,19 +1,25 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 760,
-  "height": 360,
+  "width": 400,
+  "height": 300,
   "background": "white",
   "data": {
     "url": "data/bar_data/crime_district_cleaned.csv"
   },
   "title": {
     "text": "Reported Crimes Across Years",
-    "fontSize": 18,
+    "fontSize": 16,
     "anchor": "start",
-    "offset": 20
+    "offset": 15
   },
   "layer": [
     {
+      "transform": [
+        {
+          "calculate": "datum.Cases / 1000",
+          "as": "Cases_K"
+        }
+      ],
       "mark": {
         "type": "bar"
       },
@@ -27,9 +33,17 @@
           }
         },
         "y": {
+          "field": "Cases_K",
+          "type": "quantitative",
           "aggregate": "sum",
-          "field": "Cases",
-          "title": "Reported cases"
+          "title": "Reported Cases per K",
+          "scale": {
+            "type": "linear"
+          },
+          "axis": {
+            "format": ".0f",
+            "tickCount": 6
+          }
         },
         "color": {
           "field": "Crime_Type",
@@ -85,18 +99,19 @@
           ]
         },
         {
-          "calculate": "datum.total_cases + 40000",
+          "calculate": "(datum.total_cases / 1000) - 20",
           "as": "label_y"
         },
         {
-          "calculate": "datum.total_cases + 100",
-          "as": "arrow_tip"
+          "calculate": "(datum.total_cases / 1000) + 15",
+          "as": "line_end"
         }
       ],
       "mark": {
         "type": "rule",
         "color": "#333333",
-        "strokeWidth": 1.5
+        "strokeWidth": 1.5,
+        "x2Offset": 80
       },
       "encoding": {
         "x": {
@@ -107,8 +122,12 @@
           "field": "label_y",
           "type": "quantitative"
         },
+        "x2": {
+          "field": "Year",
+          "type": "ordinal"
+        },
         "y2": {
-          "field": "arrow_tip",
+          "field": "line_end",
           "type": "quantitative"
         }
       }
@@ -131,30 +150,30 @@
           ]
         },
         {
-          "calculate": "datum.total_cases + 43000",
+          "calculate": "(datum.total_cases / 1000) + 15",
           "as": "label_y"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
-        "baseline": "bottom",
-        "fontSize": 11,
+        "baseline": "middle",
+        "fontSize": 10,
         "fontWeight": "bold",
-        "fill": "#333333"
+        "fill": "#333333",
+        "dx": 85
       },
       "encoding": {
         "x": {
           "field": "Year",
-          "type": "ordinal",
-          "offset": 20
+          "type": "ordinal"
         },
         "y": {
           "field": "label_y",
           "type": "quantitative"
         },
         "text": {
-          "value": "Total reported crime peaked at 200K+ cases in 2016."
+          "value": "Total reported crime peaked at 200K+ cases in 2016"
         }
       }
     },
@@ -176,12 +195,12 @@
           ]
         },
         {
-          "calculate": "datum.total_cases + 47000",
+          "calculate": "(datum.total_cases / 1000) + 50",
           "as": "label_y"
         },
         {
-          "calculate": "datum.total_cases + 100",
-          "as": "arrow_tip"
+          "calculate": "(datum.total_cases / 1000) ",
+          "as": "line_end"
         }
       ],
       "mark": {
@@ -199,7 +218,7 @@
           "type": "quantitative"
         },
         "y2": {
-          "field": "arrow_tip",
+          "field": "line_end",
           "type": "quantitative"
         }
       }
@@ -222,7 +241,7 @@
           ]
         },
         {
-          "calculate": "datum.total_cases + 60000",
+          "calculate": "(datum.total_cases / 1000) + 55",
           "as": "label_y"
         }
       ],
@@ -230,7 +249,7 @@
         "type": "text",
         "align": "center",
         "baseline": "bottom",
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": "bold",
         "fill": "#333333"
       },
@@ -244,7 +263,7 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "In 2020, COVID-19 movement restrictions led to a 19% drop in assault cases "
+          "value": "a 19% drop in assault & 22% drop in property crimes"
         }
       }
     },
@@ -266,7 +285,7 @@
           ]
         },
         {
-          "calculate": "datum.total_cases + 50000",
+          "calculate": "(datum.total_cases / 1000) + 65",
           "as": "label_y"
         }
       ],
@@ -274,7 +293,7 @@
         "type": "text",
         "align": "center",
         "baseline": "bottom",
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": "bold",
         "fill": "#333333"
       },
@@ -288,7 +307,7 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "and 22% drop in property crimes compared to 2019."
+          "value": "In 2020, COVID-19 movement restriction led to"
         }
       }
     }
@@ -304,12 +323,12 @@
       "right": 0
     },
     "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "labelFontSize": 11,
+      "titleFontSize": 12
     },
     "legend": {
-      "titleFontSize": 12,
-      "labelFontSize": 11
+      "titleFontSize": 11,
+      "labelFontSize": 10
     }
   }
 }

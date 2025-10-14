@@ -1,91 +1,122 @@
 import pandas as pd
 import os
 
-def clean_crime_district_data():
-    # Read the crime district data - use relative path from project root
-    try:
-        input_path = 'full_visualisation/data/sunburst_data/crime_district.csv'
-        df = pd.read_csv(input_path)
-        print(f"Successfully read {input_path}")
-        print(f"Data shape: {df.shape}")
-        print(f"Columns: {df.columns.tolist()}")
-    except FileNotFoundError:
-        print(f"Error: Could not find {input_path}")
-        print("Please ensure the crime_district.csv file is in the multichart/data/bar_data/ folder.")
-        return
-    
-    # Filter for Malaysia national data (state='Malaysia', district='All') and required categories
-    df_filtered = df[(df['state'] == 'Malaysia') & 
-                     (df['district'] == 'All') & 
-                     (df['category'].isin(['assault', 'property']))]
-    
-    print(f"Filtered data shape: {df_filtered.shape}")
-    
-    # Extract year from date column
-    df_filtered = df_filtered.copy()
-    df_filtered['Year'] = pd.to_datetime(df_filtered['date']).dt.year
-    
-    # Group by Year and category, sum the crimes
-    df_grouped = df_filtered.groupby(['Year', 'category'])['crimes'].sum().reset_index()
-    
-    # Rename columns to match expected output format
-    df_grouped = df_grouped.rename(columns={'category': 'Crime_Type', 'crimes': 'Cases'})
-    
-    # Capitalize Crime_Type values for consistency
-    df_grouped['Crime_Type'] = df_grouped['Crime_Type'].str.capitalize()
-    
-    # Ensure we have data for both crime types for each year
-    years = sorted(df_grouped['Year'].unique())
-    complete_data = []
-    
-    for year in years:
-        year_data = df_grouped[df_grouped['Year'] == year]
-        
-        # Initialize counts
-        assault_count = 0
-        property_count = 0
-        
-        # Extract counts for each crime type
-        for _, row in year_data.iterrows():
-            if row['Crime_Type'] == 'Assault':
-                assault_count = row['Cases']
-            elif row['Crime_Type'] == 'Property':
-                property_count = row['Cases']
-        
-        # Add rows for both crime types (even if count is 0)
-        complete_data.append({'Year': year, 'Crime_Type': 'Assault', 'Cases': assault_count})
-        complete_data.append({'Year': year, 'Crime_Type': 'Property', 'Cases': property_count})
-    
-    # Create final dataframe
-    df_clean = pd.DataFrame(complete_data)
-    
-    # Sort by year and crime type for consistency
-    df_clean = df_clean.sort_values(['Year', 'Crime_Type']).reset_index(drop=True)
-    
-    # Save cleaned data to the same directory as the script
-    output_path = 'full_visualisation/data/sunburst_data/crime_district_cleaned.csv'
-    df_clean.to_csv(output_path, index=False)
-    
-    print(f"Cleaned data saved to {output_path}")
-    print(f"Final data shape: {df_clean.shape}")
-    print("\nData preview:")
-    print(df_clean.head(10))
-    print("\nData summary by crime type:")
-    print(df_clean.groupby('Crime_Type')['Cases'].agg(['count', 'sum', 'mean']))
-    print("\nYear range:", df_clean['Year'].min(), "to", df_clean['Year'].max())
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
-if __name__ == "__main__":
-    # Print current working directory for debugging
-    print(f"Current working directory: {os.getcwd()}")
-    print("Looking for files in multichart/data/bar_data/:")
-    
-    bar_data_path = 'multichart/data/bar_data/'
-    if os.path.exists(bar_data_path):
-        files = [f for f in os.listdir(bar_data_path) if f.endswith('.csv')]
-        for file in files:
+# Read the raw crime data from the correct path
+input_file = os.path.join(script_dir, 'crime_district.csv')
+output_file = os.path.join(script_dir, 'crime_district_cleaned.csv')
+
+print(f"Reading from: {input_file}")
+print(f"Writing to: {output_file}")
+
+# Check if input file exists
+if not os.path.exists(input_file):
+    print(f"Error: Input file {input_file} not found!")
+    print("Available files in directory:")
+    for file in os.listdir(script_dir):
+        if file.endswith('.csv'):
             print(f"  - {file}")
+    exit(1)
+
+df = pd.read_csv(input_file)
+print(f"Loaded {len(df)} rows from input file")
+
+# Filter for state-level data only (exclude Malaysia, include only states with district='All')
+state_data = df[(df['state'] != 'Malaysia') & (df['district'] == 'All')].copy()
+print(f"Filtered to {len(state_data)} state-level rows")
+
+# Extract year from date
+state_data['year'] = pd.to_datetime(state_data['date']).dt.year
+
+# Function to recategorize crime types
+def recategorize_crime_type(crime_type):
+    if crime_type == 'all':
+        return None  # We'll exclude 'all' entries
+    elif crime_type in ['robbery_gang_armed', 'robbery_gang_unarmed']:
+        return 'Robbery Gang'
+    elif crime_type in ['robbery_solo_armed', 'robbery_solo_unarmed']:
+        return 'Robbery Solo'
+    elif crime_type in ['theft_vehicle_lorry', 'theft_vehicle_motorcar', 'theft_vehicle_motorcycle']:
+        return 'Theft Vehicle'
+    elif crime_type == 'causing_injury':
+        return 'Causing Injury'
+    elif crime_type == 'murder':
+        return 'Murder'
+    elif crime_type == 'rape':
+        return 'Rape'
+    elif crime_type == 'break_in':
+        return 'Break In'
+    elif crime_type == 'theft_other':
+        return 'Theft Other'
     else:
-        print("  Directory not found!")
-    print()
+        return crime_type.replace('_', ' ').title()
+
+# Apply recategorization
+state_data['new_crime_type'] = state_data['type'].apply(recategorize_crime_type)
+
+# Filter out 'all' entries
+state_data = state_data[state_data['new_crime_type'].notna()].copy()
+print(f"After removing 'all' entries: {len(state_data)} rows")
+
+# Group by year, state, category, and new crime type
+grouped = state_data.groupby(['year', 'state', 'category', 'new_crime_type'])['crimes'].sum().reset_index()
+print(f"Grouped data has {len(grouped)} rows")
+
+# Create hierarchical structure for sunburst
+cleaned_data = []
+
+# Add subcategory entries
+for _, row in grouped.iterrows():
+    year = row['year']
+    state = row['state']
+    main_category = row['category'].title()  # assault -> Assault, property -> Property
+    sub_category = row['new_crime_type']
+    crimes = row['crimes']
     
-    clean_crime_district_data()
+    cleaned_data.append({
+        'Year': year,
+        'State': state,
+        'Crime_Category': main_category,
+        'Crime_Type': sub_category,
+        'Cases': crimes,
+        'Level': 'Subcategory'
+    })
+
+# Create aggregated main category totals by state
+main_category_totals = grouped.groupby(['year', 'state', 'category'])['crimes'].sum().reset_index()
+
+for _, row in main_category_totals.iterrows():
+    year = row['year']
+    state = row['state']
+    main_category = row['category'].title()
+    crimes = row['crimes']
+    
+    cleaned_data.append({
+        'Year': year,
+        'State': state,
+        'Crime_Category': main_category,
+        'Crime_Type': main_category,  # Same as category for main level
+        'Cases': crimes,
+        'Level': 'Main'
+    })
+
+# Convert to DataFrame
+result_df = pd.DataFrame(cleaned_data)
+
+# Sort by Year, State, Level (Main first, then Subcategory), and Crime_Category
+result_df = result_df.sort_values(['Year', 'State', 'Level', 'Crime_Category', 'Crime_Type']).reset_index(drop=True)
+
+# Save the cleaned data
+result_df.to_csv(output_file, index=False)
+
+print("Data cleaning completed!")
+print(f"Total records: {len(result_df)}")
+print(f"Output saved to: {output_file}")
+print("\nStates included:")
+print(sorted(result_df['State'].unique()))
+print("\nSample of cleaned data:")
+print(result_df.head(15))
+print("\nData structure by level:")
+print(result_df.groupby(['Level', 'Crime_Category']).size())

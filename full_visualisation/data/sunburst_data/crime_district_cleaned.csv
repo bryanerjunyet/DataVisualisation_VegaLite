@@ -1,17 +1,1281 @@
-Year,Crime_Type,Cases
-2016,Assault,44654
-2016,Property,180056
-2017,Assault,42732
-2017,Property,155608
-2018,Assault,33804
-2018,Property,143520
-2019,Assault,32978
-2019,Property,133934
-2020,Assault,26558
-2020,Property,104688
-2021,Assault,22990
-2021,Property,82958
-2022,Assault,20696
-2022,Property,80930
-2023,Assault,20906
-2023,Property,83982
+Year,State,Crime_Category,Crime_Type,Cases,Level
+2016,Johor,Assault,Assault,2820,Main
+2016,Johor,Property,Property,10121,Main
+2016,Johor,Assault,Causing Injury,708,Subcategory
+2016,Johor,Assault,Murder,70,Subcategory
+2016,Johor,Assault,Rape,274,Subcategory
+2016,Johor,Assault,Robbery Gang,1318,Subcategory
+2016,Johor,Assault,Robbery Solo,450,Subcategory
+2016,Johor,Property,Break In,1475,Subcategory
+2016,Johor,Property,Theft Other,2117,Subcategory
+2016,Johor,Property,Theft Vehicle,6529,Subcategory
+2016,Kedah,Assault,Assault,1239,Main
+2016,Kedah,Property,Property,6201,Main
+2016,Kedah,Assault,Causing Injury,398,Subcategory
+2016,Kedah,Assault,Murder,17,Subcategory
+2016,Kedah,Assault,Rape,165,Subcategory
+2016,Kedah,Assault,Robbery Gang,463,Subcategory
+2016,Kedah,Assault,Robbery Solo,196,Subcategory
+2016,Kedah,Property,Break In,1287,Subcategory
+2016,Kedah,Property,Theft Other,1181,Subcategory
+2016,Kedah,Property,Theft Vehicle,3733,Subcategory
+2016,Kelantan,Assault,Assault,543,Main
+2016,Kelantan,Property,Property,4005,Main
+2016,Kelantan,Assault,Causing Injury,291,Subcategory
+2016,Kelantan,Assault,Murder,10,Subcategory
+2016,Kelantan,Assault,Rape,144,Subcategory
+2016,Kelantan,Assault,Robbery Gang,72,Subcategory
+2016,Kelantan,Assault,Robbery Solo,26,Subcategory
+2016,Kelantan,Property,Break In,682,Subcategory
+2016,Kelantan,Property,Theft Other,674,Subcategory
+2016,Kelantan,Property,Theft Vehicle,2649,Subcategory
+2016,Melaka,Assault,Assault,1154,Main
+2016,Melaka,Property,Property,2510,Main
+2016,Melaka,Assault,Causing Injury,193,Subcategory
+2016,Melaka,Assault,Murder,13,Subcategory
+2016,Melaka,Assault,Rape,60,Subcategory
+2016,Melaka,Assault,Robbery Gang,612,Subcategory
+2016,Melaka,Assault,Robbery Solo,276,Subcategory
+2016,Melaka,Property,Break In,544,Subcategory
+2016,Melaka,Property,Theft Other,525,Subcategory
+2016,Melaka,Property,Theft Vehicle,1441,Subcategory
+2016,Negeri Sembilan,Assault,Assault,1084,Main
+2016,Negeri Sembilan,Property,Property,3390,Main
+2016,Negeri Sembilan,Assault,Causing Injury,259,Subcategory
+2016,Negeri Sembilan,Assault,Murder,17,Subcategory
+2016,Negeri Sembilan,Assault,Rape,107,Subcategory
+2016,Negeri Sembilan,Assault,Robbery Gang,476,Subcategory
+2016,Negeri Sembilan,Assault,Robbery Solo,225,Subcategory
+2016,Negeri Sembilan,Property,Break In,1023,Subcategory
+2016,Negeri Sembilan,Property,Theft Other,1021,Subcategory
+2016,Negeri Sembilan,Property,Theft Vehicle,1346,Subcategory
+2016,Pahang,Assault,Assault,651,Main
+2016,Pahang,Property,Property,3126,Main
+2016,Pahang,Assault,Causing Injury,209,Subcategory
+2016,Pahang,Assault,Murder,15,Subcategory
+2016,Pahang,Assault,Rape,134,Subcategory
+2016,Pahang,Assault,Robbery Gang,234,Subcategory
+2016,Pahang,Assault,Robbery Solo,59,Subcategory
+2016,Pahang,Property,Break In,719,Subcategory
+2016,Pahang,Property,Theft Other,651,Subcategory
+2016,Pahang,Property,Theft Vehicle,1756,Subcategory
+2016,Perak,Assault,Assault,1295,Main
+2016,Perak,Property,Property,4546,Main
+2016,Perak,Assault,Causing Injury,412,Subcategory
+2016,Perak,Assault,Murder,42,Subcategory
+2016,Perak,Assault,Rape,96,Subcategory
+2016,Perak,Assault,Robbery Gang,547,Subcategory
+2016,Perak,Assault,Robbery Solo,198,Subcategory
+2016,Perak,Property,Break In,915,Subcategory
+2016,Perak,Property,Theft Other,1015,Subcategory
+2016,Perak,Property,Theft Vehicle,2616,Subcategory
+2016,Perlis,Assault,Assault,109,Main
+2016,Perlis,Property,Property,546,Main
+2016,Perlis,Assault,Causing Injury,52,Subcategory
+2016,Perlis,Assault,Murder,0,Subcategory
+2016,Perlis,Assault,Rape,31,Subcategory
+2016,Perlis,Assault,Robbery Gang,17,Subcategory
+2016,Perlis,Assault,Robbery Solo,9,Subcategory
+2016,Perlis,Property,Break In,85,Subcategory
+2016,Perlis,Property,Theft Other,209,Subcategory
+2016,Perlis,Property,Theft Vehicle,252,Subcategory
+2016,Pulau Pinang,Assault,Assault,1038,Main
+2016,Pulau Pinang,Property,Property,5078,Main
+2016,Pulau Pinang,Assault,Causing Injury,312,Subcategory
+2016,Pulau Pinang,Assault,Murder,28,Subcategory
+2016,Pulau Pinang,Assault,Rape,65,Subcategory
+2016,Pulau Pinang,Assault,Robbery Gang,408,Subcategory
+2016,Pulau Pinang,Assault,Robbery Solo,225,Subcategory
+2016,Pulau Pinang,Property,Break In,917,Subcategory
+2016,Pulau Pinang,Property,Theft Other,1201,Subcategory
+2016,Pulau Pinang,Property,Theft Vehicle,2960,Subcategory
+2016,Sabah,Assault,Assault,647,Main
+2016,Sabah,Property,Property,4720,Main
+2016,Sabah,Assault,Causing Injury,213,Subcategory
+2016,Sabah,Assault,Murder,60,Subcategory
+2016,Sabah,Assault,Rape,193,Subcategory
+2016,Sabah,Assault,Robbery Gang,121,Subcategory
+2016,Sabah,Assault,Robbery Solo,60,Subcategory
+2016,Sabah,Property,Break In,1757,Subcategory
+2016,Sabah,Property,Theft Other,1744,Subcategory
+2016,Sabah,Property,Theft Vehicle,1219,Subcategory
+2016,Sarawak,Assault,Assault,953,Main
+2016,Sarawak,Property,Property,5873,Main
+2016,Sarawak,Assault,Causing Injury,414,Subcategory
+2016,Sarawak,Assault,Murder,27,Subcategory
+2016,Sarawak,Assault,Rape,138,Subcategory
+2016,Sarawak,Assault,Robbery Gang,296,Subcategory
+2016,Sarawak,Assault,Robbery Solo,78,Subcategory
+2016,Sarawak,Property,Break In,1540,Subcategory
+2016,Sarawak,Property,Theft Other,1405,Subcategory
+2016,Sarawak,Property,Theft Vehicle,2928,Subcategory
+2016,Selangor,Assault,Assault,6611,Main
+2016,Selangor,Property,Property,24612,Main
+2016,Selangor,Assault,Causing Injury,1260,Subcategory
+2016,Selangor,Assault,Murder,105,Subcategory
+2016,Selangor,Assault,Rape,305,Subcategory
+2016,Selangor,Assault,Robbery Gang,4035,Subcategory
+2016,Selangor,Assault,Robbery Solo,906,Subcategory
+2016,Selangor,Property,Break In,5497,Subcategory
+2016,Selangor,Property,Theft Other,5776,Subcategory
+2016,Selangor,Property,Theft Vehicle,13339,Subcategory
+2016,Terengganu,Assault,Assault,407,Main
+2016,Terengganu,Property,Property,2087,Main
+2016,Terengganu,Assault,Causing Injury,167,Subcategory
+2016,Terengganu,Assault,Murder,11,Subcategory
+2016,Terengganu,Assault,Rape,81,Subcategory
+2016,Terengganu,Assault,Robbery Gang,88,Subcategory
+2016,Terengganu,Assault,Robbery Solo,60,Subcategory
+2016,Terengganu,Property,Break In,452,Subcategory
+2016,Terengganu,Property,Theft Other,455,Subcategory
+2016,Terengganu,Property,Theft Vehicle,1180,Subcategory
+2016,W.P. Kuala Lumpur,Assault,Assault,3776,Main
+2016,W.P. Kuala Lumpur,Property,Property,13213,Main
+2016,W.P. Kuala Lumpur,Assault,Causing Injury,643,Subcategory
+2016,W.P. Kuala Lumpur,Assault,Murder,41,Subcategory
+2016,W.P. Kuala Lumpur,Assault,Rape,93,Subcategory
+2016,W.P. Kuala Lumpur,Assault,Robbery Gang,2285,Subcategory
+2016,W.P. Kuala Lumpur,Assault,Robbery Solo,714,Subcategory
+2016,W.P. Kuala Lumpur,Property,Break In,1867,Subcategory
+2016,W.P. Kuala Lumpur,Property,Theft Other,4883,Subcategory
+2016,W.P. Kuala Lumpur,Property,Theft Vehicle,6463,Subcategory
+2016,W.P. Labuan,Assault,Assault,24,Main
+2016,W.P. Labuan,Property,Property,192,Main
+2016,W.P. Labuan,Assault,Causing Injury,13,Subcategory
+2016,W.P. Labuan,Assault,Murder,2,Subcategory
+2016,W.P. Labuan,Assault,Rape,6,Subcategory
+2016,W.P. Labuan,Assault,Robbery Gang,1,Subcategory
+2016,W.P. Labuan,Assault,Robbery Solo,2,Subcategory
+2016,W.P. Labuan,Property,Break In,64,Subcategory
+2016,W.P. Labuan,Property,Theft Other,99,Subcategory
+2016,W.P. Labuan,Property,Theft Vehicle,29,Subcategory
+2016,W.P. Putrajaya,Assault,Assault,575,Main
+2016,W.P. Putrajaya,Property,Property,263,Main
+2016,W.P. Putrajaya,Assault,Causing Injury,4,Subcategory
+2016,W.P. Putrajaya,Assault,Murder,1,Subcategory
+2016,W.P. Putrajaya,Assault,Rape,5,Subcategory
+2016,W.P. Putrajaya,Assault,Robbery Gang,455,Subcategory
+2016,W.P. Putrajaya,Assault,Robbery Solo,110,Subcategory
+2016,W.P. Putrajaya,Property,Break In,47,Subcategory
+2016,W.P. Putrajaya,Property,Theft Other,105,Subcategory
+2016,W.P. Putrajaya,Property,Theft Vehicle,111,Subcategory
+2017,Johor,Assault,Assault,2578,Main
+2017,Johor,Property,Property,8729,Main
+2017,Johor,Assault,Causing Injury,614,Subcategory
+2017,Johor,Assault,Murder,66,Subcategory
+2017,Johor,Assault,Rape,196,Subcategory
+2017,Johor,Assault,Robbery Gang,1221,Subcategory
+2017,Johor,Assault,Robbery Solo,481,Subcategory
+2017,Johor,Property,Break In,1211,Subcategory
+2017,Johor,Property,Theft Other,2043,Subcategory
+2017,Johor,Property,Theft Vehicle,5475,Subcategory
+2017,Kedah,Assault,Assault,996,Main
+2017,Kedah,Property,Property,5763,Main
+2017,Kedah,Assault,Causing Injury,364,Subcategory
+2017,Kedah,Assault,Murder,21,Subcategory
+2017,Kedah,Assault,Rape,119,Subcategory
+2017,Kedah,Assault,Robbery Gang,335,Subcategory
+2017,Kedah,Assault,Robbery Solo,157,Subcategory
+2017,Kedah,Property,Break In,1350,Subcategory
+2017,Kedah,Property,Theft Other,1108,Subcategory
+2017,Kedah,Property,Theft Vehicle,3305,Subcategory
+2017,Kelantan,Assault,Assault,600,Main
+2017,Kelantan,Property,Property,3920,Main
+2017,Kelantan,Assault,Causing Injury,252,Subcategory
+2017,Kelantan,Assault,Murder,13,Subcategory
+2017,Kelantan,Assault,Rape,114,Subcategory
+2017,Kelantan,Assault,Robbery Gang,143,Subcategory
+2017,Kelantan,Assault,Robbery Solo,78,Subcategory
+2017,Kelantan,Property,Break In,570,Subcategory
+2017,Kelantan,Property,Theft Other,547,Subcategory
+2017,Kelantan,Property,Theft Vehicle,2803,Subcategory
+2017,Melaka,Assault,Assault,842,Main
+2017,Melaka,Property,Property,2255,Main
+2017,Melaka,Assault,Causing Injury,176,Subcategory
+2017,Melaka,Assault,Murder,7,Subcategory
+2017,Melaka,Assault,Rape,69,Subcategory
+2017,Melaka,Assault,Robbery Gang,350,Subcategory
+2017,Melaka,Assault,Robbery Solo,240,Subcategory
+2017,Melaka,Property,Break In,567,Subcategory
+2017,Melaka,Property,Theft Other,448,Subcategory
+2017,Melaka,Property,Theft Vehicle,1240,Subcategory
+2017,Negeri Sembilan,Assault,Assault,884,Main
+2017,Negeri Sembilan,Property,Property,3089,Main
+2017,Negeri Sembilan,Assault,Causing Injury,241,Subcategory
+2017,Negeri Sembilan,Assault,Murder,14,Subcategory
+2017,Negeri Sembilan,Assault,Rape,91,Subcategory
+2017,Negeri Sembilan,Assault,Robbery Gang,394,Subcategory
+2017,Negeri Sembilan,Assault,Robbery Solo,144,Subcategory
+2017,Negeri Sembilan,Property,Break In,895,Subcategory
+2017,Negeri Sembilan,Property,Theft Other,1121,Subcategory
+2017,Negeri Sembilan,Property,Theft Vehicle,1073,Subcategory
+2017,Pahang,Assault,Assault,656,Main
+2017,Pahang,Property,Property,2951,Main
+2017,Pahang,Assault,Causing Injury,188,Subcategory
+2017,Pahang,Assault,Murder,16,Subcategory
+2017,Pahang,Assault,Rape,163,Subcategory
+2017,Pahang,Assault,Robbery Gang,202,Subcategory
+2017,Pahang,Assault,Robbery Solo,87,Subcategory
+2017,Pahang,Property,Break In,794,Subcategory
+2017,Pahang,Property,Theft Other,712,Subcategory
+2017,Pahang,Property,Theft Vehicle,1445,Subcategory
+2017,Perak,Assault,Assault,1140,Main
+2017,Perak,Property,Property,4186,Main
+2017,Perak,Assault,Causing Injury,380,Subcategory
+2017,Perak,Assault,Murder,35,Subcategory
+2017,Perak,Assault,Rape,95,Subcategory
+2017,Perak,Assault,Robbery Gang,430,Subcategory
+2017,Perak,Assault,Robbery Solo,200,Subcategory
+2017,Perak,Property,Break In,859,Subcategory
+2017,Perak,Property,Theft Other,1013,Subcategory
+2017,Perak,Property,Theft Vehicle,2314,Subcategory
+2017,Perlis,Assault,Assault,132,Main
+2017,Perlis,Property,Property,472,Main
+2017,Perlis,Assault,Causing Injury,47,Subcategory
+2017,Perlis,Assault,Murder,2,Subcategory
+2017,Perlis,Assault,Rape,30,Subcategory
+2017,Perlis,Assault,Robbery Gang,25,Subcategory
+2017,Perlis,Assault,Robbery Solo,28,Subcategory
+2017,Perlis,Property,Break In,88,Subcategory
+2017,Perlis,Property,Theft Other,182,Subcategory
+2017,Perlis,Property,Theft Vehicle,202,Subcategory
+2017,Pulau Pinang,Assault,Assault,1078,Main
+2017,Pulau Pinang,Property,Property,4474,Main
+2017,Pulau Pinang,Assault,Causing Injury,275,Subcategory
+2017,Pulau Pinang,Assault,Murder,17,Subcategory
+2017,Pulau Pinang,Assault,Rape,80,Subcategory
+2017,Pulau Pinang,Assault,Robbery Gang,481,Subcategory
+2017,Pulau Pinang,Assault,Robbery Solo,225,Subcategory
+2017,Pulau Pinang,Property,Break In,868,Subcategory
+2017,Pulau Pinang,Property,Theft Other,861,Subcategory
+2017,Pulau Pinang,Property,Theft Vehicle,2745,Subcategory
+2017,Sabah,Assault,Assault,761,Main
+2017,Sabah,Property,Property,5475,Main
+2017,Sabah,Assault,Causing Injury,230,Subcategory
+2017,Sabah,Assault,Murder,36,Subcategory
+2017,Sabah,Assault,Rape,211,Subcategory
+2017,Sabah,Assault,Robbery Gang,163,Subcategory
+2017,Sabah,Assault,Robbery Solo,121,Subcategory
+2017,Sabah,Property,Break In,1908,Subcategory
+2017,Sabah,Property,Theft Other,2541,Subcategory
+2017,Sabah,Property,Theft Vehicle,1026,Subcategory
+2017,Sarawak,Assault,Assault,876,Main
+2017,Sarawak,Property,Property,5505,Main
+2017,Sarawak,Assault,Causing Injury,368,Subcategory
+2017,Sarawak,Assault,Murder,27,Subcategory
+2017,Sarawak,Assault,Rape,150,Subcategory
+2017,Sarawak,Assault,Robbery Gang,240,Subcategory
+2017,Sarawak,Assault,Robbery Solo,91,Subcategory
+2017,Sarawak,Property,Break In,1314,Subcategory
+2017,Sarawak,Property,Theft Other,1284,Subcategory
+2017,Sarawak,Property,Theft Vehicle,2907,Subcategory
+2017,Selangor,Assault,Assault,6470,Main
+2017,Selangor,Property,Property,19599,Main
+2017,Selangor,Assault,Causing Injury,1108,Subcategory
+2017,Selangor,Assault,Murder,83,Subcategory
+2017,Selangor,Assault,Rape,321,Subcategory
+2017,Selangor,Assault,Robbery Gang,3759,Subcategory
+2017,Selangor,Assault,Robbery Solo,1199,Subcategory
+2017,Selangor,Property,Break In,4133,Subcategory
+2017,Selangor,Property,Theft Other,4091,Subcategory
+2017,Selangor,Property,Theft Vehicle,11375,Subcategory
+2017,Terengganu,Assault,Assault,354,Main
+2017,Terengganu,Property,Property,1903,Main
+2017,Terengganu,Assault,Causing Injury,130,Subcategory
+2017,Terengganu,Assault,Murder,5,Subcategory
+2017,Terengganu,Assault,Rape,64,Subcategory
+2017,Terengganu,Assault,Robbery Gang,79,Subcategory
+2017,Terengganu,Assault,Robbery Solo,76,Subcategory
+2017,Terengganu,Property,Break In,456,Subcategory
+2017,Terengganu,Property,Theft Other,365,Subcategory
+2017,Terengganu,Property,Theft Vehicle,1082,Subcategory
+2017,W.P. Kuala Lumpur,Assault,Assault,3999,Main
+2017,W.P. Kuala Lumpur,Property,Property,9483,Main
+2017,W.P. Kuala Lumpur,Assault,Causing Injury,651,Subcategory
+2017,W.P. Kuala Lumpur,Assault,Murder,37,Subcategory
+2017,W.P. Kuala Lumpur,Assault,Rape,132,Subcategory
+2017,W.P. Kuala Lumpur,Assault,Robbery Gang,1988,Subcategory
+2017,W.P. Kuala Lumpur,Assault,Robbery Solo,1191,Subcategory
+2017,W.P. Kuala Lumpur,Property,Break In,1188,Subcategory
+2017,W.P. Kuala Lumpur,Property,Theft Other,3128,Subcategory
+2017,W.P. Kuala Lumpur,Property,Theft Vehicle,5167,Subcategory
+2017,W.P. Labuan,Assault,Assault,20,Main
+2017,W.P. Labuan,Property,Property,184,Main
+2017,W.P. Labuan,Assault,Causing Injury,6,Subcategory
+2017,W.P. Labuan,Assault,Murder,1,Subcategory
+2017,W.P. Labuan,Assault,Rape,5,Subcategory
+2017,W.P. Labuan,Assault,Robbery Gang,5,Subcategory
+2017,W.P. Labuan,Assault,Robbery Solo,3,Subcategory
+2017,W.P. Labuan,Property,Break In,52,Subcategory
+2017,W.P. Labuan,Property,Theft Other,115,Subcategory
+2017,W.P. Labuan,Property,Theft Vehicle,17,Subcategory
+2017,W.P. Putrajaya,Assault,Assault,19,Main
+2017,W.P. Putrajaya,Property,Property,236,Main
+2017,W.P. Putrajaya,Assault,Causing Injury,3,Subcategory
+2017,W.P. Putrajaya,Assault,Murder,0,Subcategory
+2017,W.P. Putrajaya,Assault,Rape,2,Subcategory
+2017,W.P. Putrajaya,Assault,Robbery Gang,10,Subcategory
+2017,W.P. Putrajaya,Assault,Robbery Solo,4,Subcategory
+2017,W.P. Putrajaya,Property,Break In,49,Subcategory
+2017,W.P. Putrajaya,Property,Theft Other,88,Subcategory
+2017,W.P. Putrajaya,Property,Theft Vehicle,99,Subcategory
+2018,Johor,Assault,Assault,1880,Main
+2018,Johor,Property,Property,8458,Main
+2018,Johor,Assault,Causing Injury,578,Subcategory
+2018,Johor,Assault,Murder,43,Subcategory
+2018,Johor,Assault,Rape,187,Subcategory
+2018,Johor,Assault,Robbery Gang,742,Subcategory
+2018,Johor,Assault,Robbery Solo,330,Subcategory
+2018,Johor,Property,Break In,1239,Subcategory
+2018,Johor,Property,Theft Other,2025,Subcategory
+2018,Johor,Property,Theft Vehicle,5194,Subcategory
+2018,Kedah,Assault,Assault,989,Main
+2018,Kedah,Property,Property,5232,Main
+2018,Kedah,Assault,Causing Injury,337,Subcategory
+2018,Kedah,Assault,Murder,9,Subcategory
+2018,Kedah,Assault,Rape,119,Subcategory
+2018,Kedah,Assault,Robbery Gang,355,Subcategory
+2018,Kedah,Assault,Robbery Solo,169,Subcategory
+2018,Kedah,Property,Break In,1130,Subcategory
+2018,Kedah,Property,Theft Other,1101,Subcategory
+2018,Kedah,Property,Theft Vehicle,3001,Subcategory
+2018,Kelantan,Assault,Assault,511,Main
+2018,Kelantan,Property,Property,3476,Main
+2018,Kelantan,Assault,Causing Injury,190,Subcategory
+2018,Kelantan,Assault,Murder,6,Subcategory
+2018,Kelantan,Assault,Rape,101,Subcategory
+2018,Kelantan,Assault,Robbery Gang,143,Subcategory
+2018,Kelantan,Assault,Robbery Solo,71,Subcategory
+2018,Kelantan,Property,Break In,699,Subcategory
+2018,Kelantan,Property,Theft Other,613,Subcategory
+2018,Kelantan,Property,Theft Vehicle,2164,Subcategory
+2018,Melaka,Assault,Assault,621,Main
+2018,Melaka,Property,Property,2179,Main
+2018,Melaka,Assault,Causing Injury,198,Subcategory
+2018,Melaka,Assault,Murder,13,Subcategory
+2018,Melaka,Assault,Rape,51,Subcategory
+2018,Melaka,Assault,Robbery Gang,176,Subcategory
+2018,Melaka,Assault,Robbery Solo,183,Subcategory
+2018,Melaka,Property,Break In,591,Subcategory
+2018,Melaka,Property,Theft Other,434,Subcategory
+2018,Melaka,Property,Theft Vehicle,1154,Subcategory
+2018,Negeri Sembilan,Assault,Assault,831,Main
+2018,Negeri Sembilan,Property,Property,2842,Main
+2018,Negeri Sembilan,Assault,Causing Injury,249,Subcategory
+2018,Negeri Sembilan,Assault,Murder,9,Subcategory
+2018,Negeri Sembilan,Assault,Rape,97,Subcategory
+2018,Negeri Sembilan,Assault,Robbery Gang,288,Subcategory
+2018,Negeri Sembilan,Assault,Robbery Solo,188,Subcategory
+2018,Negeri Sembilan,Property,Break In,873,Subcategory
+2018,Negeri Sembilan,Property,Theft Other,1047,Subcategory
+2018,Negeri Sembilan,Property,Theft Vehicle,922,Subcategory
+2018,Pahang,Assault,Assault,572,Main
+2018,Pahang,Property,Property,3012,Main
+2018,Pahang,Assault,Causing Injury,199,Subcategory
+2018,Pahang,Assault,Murder,8,Subcategory
+2018,Pahang,Assault,Rape,109,Subcategory
+2018,Pahang,Assault,Robbery Gang,166,Subcategory
+2018,Pahang,Assault,Robbery Solo,90,Subcategory
+2018,Pahang,Property,Break In,861,Subcategory
+2018,Pahang,Property,Theft Other,1143,Subcategory
+2018,Pahang,Property,Theft Vehicle,1008,Subcategory
+2018,Perak,Assault,Assault,1005,Main
+2018,Perak,Property,Property,4123,Main
+2018,Perak,Assault,Causing Injury,358,Subcategory
+2018,Perak,Assault,Murder,33,Subcategory
+2018,Perak,Assault,Rape,104,Subcategory
+2018,Perak,Assault,Robbery Gang,366,Subcategory
+2018,Perak,Assault,Robbery Solo,144,Subcategory
+2018,Perak,Property,Break In,1023,Subcategory
+2018,Perak,Property,Theft Other,1041,Subcategory
+2018,Perak,Property,Theft Vehicle,2059,Subcategory
+2018,Perlis,Assault,Assault,126,Main
+2018,Perlis,Property,Property,437,Main
+2018,Perlis,Assault,Causing Injury,45,Subcategory
+2018,Perlis,Assault,Murder,1,Subcategory
+2018,Perlis,Assault,Rape,30,Subcategory
+2018,Perlis,Assault,Robbery Gang,17,Subcategory
+2018,Perlis,Assault,Robbery Solo,33,Subcategory
+2018,Perlis,Property,Break In,54,Subcategory
+2018,Perlis,Property,Theft Other,192,Subcategory
+2018,Perlis,Property,Theft Vehicle,191,Subcategory
+2018,Pulau Pinang,Assault,Assault,890,Main
+2018,Pulau Pinang,Property,Property,4127,Main
+2018,Pulau Pinang,Assault,Causing Injury,295,Subcategory
+2018,Pulau Pinang,Assault,Murder,21,Subcategory
+2018,Pulau Pinang,Assault,Rape,72,Subcategory
+2018,Pulau Pinang,Assault,Robbery Gang,301,Subcategory
+2018,Pulau Pinang,Assault,Robbery Solo,201,Subcategory
+2018,Pulau Pinang,Property,Break In,855,Subcategory
+2018,Pulau Pinang,Property,Theft Other,860,Subcategory
+2018,Pulau Pinang,Property,Theft Vehicle,2412,Subcategory
+2018,Sabah,Assault,Assault,580,Main
+2018,Sabah,Property,Property,5571,Main
+2018,Sabah,Assault,Causing Injury,216,Subcategory
+2018,Sabah,Assault,Murder,37,Subcategory
+2018,Sabah,Assault,Rape,178,Subcategory
+2018,Sabah,Assault,Robbery Gang,72,Subcategory
+2018,Sabah,Assault,Robbery Solo,77,Subcategory
+2018,Sabah,Property,Break In,1881,Subcategory
+2018,Sabah,Property,Theft Other,2952,Subcategory
+2018,Sabah,Property,Theft Vehicle,738,Subcategory
+2018,Sarawak,Assault,Assault,811,Main
+2018,Sarawak,Property,Property,5019,Main
+2018,Sarawak,Assault,Causing Injury,358,Subcategory
+2018,Sarawak,Assault,Murder,17,Subcategory
+2018,Sarawak,Assault,Rape,131,Subcategory
+2018,Sarawak,Assault,Robbery Gang,217,Subcategory
+2018,Sarawak,Assault,Robbery Solo,88,Subcategory
+2018,Sarawak,Property,Break In,1497,Subcategory
+2018,Sarawak,Property,Theft Other,1391,Subcategory
+2018,Sarawak,Property,Theft Vehicle,2131,Subcategory
+2018,Selangor,Assault,Assault,4658,Main
+2018,Selangor,Property,Property,16762,Main
+2018,Selangor,Assault,Causing Injury,993,Subcategory
+2018,Selangor,Assault,Murder,91,Subcategory
+2018,Selangor,Assault,Rape,294,Subcategory
+2018,Selangor,Assault,Robbery Gang,2325,Subcategory
+2018,Selangor,Assault,Robbery Solo,955,Subcategory
+2018,Selangor,Property,Break In,3515,Subcategory
+2018,Selangor,Property,Theft Other,3725,Subcategory
+2018,Selangor,Property,Theft Vehicle,9522,Subcategory
+2018,Terengganu,Assault,Assault,291,Main
+2018,Terengganu,Property,Property,1532,Main
+2018,Terengganu,Assault,Causing Injury,124,Subcategory
+2018,Terengganu,Assault,Murder,2,Subcategory
+2018,Terengganu,Assault,Rape,63,Subcategory
+2018,Terengganu,Assault,Robbery Gang,59,Subcategory
+2018,Terengganu,Assault,Robbery Solo,43,Subcategory
+2018,Terengganu,Property,Break In,420,Subcategory
+2018,Terengganu,Property,Theft Other,420,Subcategory
+2018,Terengganu,Property,Theft Vehicle,692,Subcategory
+2018,W.P. Kuala Lumpur,Assault,Assault,3137,Main
+2018,W.P. Kuala Lumpur,Property,Property,8990,Main
+2018,W.P. Kuala Lumpur,Assault,Causing Injury,520,Subcategory
+2018,W.P. Kuala Lumpur,Assault,Murder,33,Subcategory
+2018,W.P. Kuala Lumpur,Assault,Rape,112,Subcategory
+2018,W.P. Kuala Lumpur,Assault,Robbery Gang,1347,Subcategory
+2018,W.P. Kuala Lumpur,Assault,Robbery Solo,1125,Subcategory
+2018,W.P. Kuala Lumpur,Property,Break In,1104,Subcategory
+2018,W.P. Kuala Lumpur,Property,Theft Other,3121,Subcategory
+2018,W.P. Kuala Lumpur,Property,Theft Vehicle,4765,Subcategory
+2018,W.P. Labuan,Assault,Assault,25,Main
+2018,W.P. Labuan,Property,Property,241,Main
+2018,W.P. Labuan,Assault,Causing Injury,12,Subcategory
+2018,W.P. Labuan,Assault,Murder,3,Subcategory
+2018,W.P. Labuan,Assault,Rape,4,Subcategory
+2018,W.P. Labuan,Assault,Robbery Gang,3,Subcategory
+2018,W.P. Labuan,Assault,Robbery Solo,3,Subcategory
+2018,W.P. Labuan,Property,Break In,77,Subcategory
+2018,W.P. Labuan,Property,Theft Other,151,Subcategory
+2018,W.P. Labuan,Property,Theft Vehicle,13,Subcategory
+2018,W.P. Putrajaya,Assault,Assault,16,Main
+2018,W.P. Putrajaya,Property,Property,195,Main
+2018,W.P. Putrajaya,Assault,Causing Injury,6,Subcategory
+2018,W.P. Putrajaya,Assault,Murder,0,Subcategory
+2018,W.P. Putrajaya,Assault,Rape,2,Subcategory
+2018,W.P. Putrajaya,Assault,Robbery Gang,4,Subcategory
+2018,W.P. Putrajaya,Assault,Robbery Solo,4,Subcategory
+2018,W.P. Putrajaya,Property,Break In,51,Subcategory
+2018,W.P. Putrajaya,Property,Theft Other,63,Subcategory
+2018,W.P. Putrajaya,Property,Theft Vehicle,81,Subcategory
+2019,Johor,Assault,Assault,1923,Main
+2019,Johor,Property,Property,7947,Main
+2019,Johor,Assault,Causing Injury,599,Subcategory
+2019,Johor,Assault,Murder,35,Subcategory
+2019,Johor,Assault,Rape,206,Subcategory
+2019,Johor,Assault,Robbery Gang,754,Subcategory
+2019,Johor,Assault,Robbery Solo,329,Subcategory
+2019,Johor,Property,Break In,1364,Subcategory
+2019,Johor,Property,Theft Other,1912,Subcategory
+2019,Johor,Property,Theft Vehicle,4671,Subcategory
+2019,Kedah,Assault,Assault,937,Main
+2019,Kedah,Property,Property,4678,Main
+2019,Kedah,Assault,Causing Injury,328,Subcategory
+2019,Kedah,Assault,Murder,20,Subcategory
+2019,Kedah,Assault,Rape,145,Subcategory
+2019,Kedah,Assault,Robbery Gang,280,Subcategory
+2019,Kedah,Assault,Robbery Solo,164,Subcategory
+2019,Kedah,Property,Break In,1138,Subcategory
+2019,Kedah,Property,Theft Other,956,Subcategory
+2019,Kedah,Property,Theft Vehicle,2584,Subcategory
+2019,Kelantan,Assault,Assault,470,Main
+2019,Kelantan,Property,Property,3075,Main
+2019,Kelantan,Assault,Causing Injury,178,Subcategory
+2019,Kelantan,Assault,Murder,9,Subcategory
+2019,Kelantan,Assault,Rape,73,Subcategory
+2019,Kelantan,Assault,Robbery Gang,123,Subcategory
+2019,Kelantan,Assault,Robbery Solo,87,Subcategory
+2019,Kelantan,Property,Break In,929,Subcategory
+2019,Kelantan,Property,Theft Other,756,Subcategory
+2019,Kelantan,Property,Theft Vehicle,1390,Subcategory
+2019,Melaka,Assault,Assault,460,Main
+2019,Melaka,Property,Property,2101,Main
+2019,Melaka,Assault,Causing Injury,164,Subcategory
+2019,Melaka,Assault,Murder,5,Subcategory
+2019,Melaka,Assault,Rape,22,Subcategory
+2019,Melaka,Assault,Robbery Gang,151,Subcategory
+2019,Melaka,Assault,Robbery Solo,118,Subcategory
+2019,Melaka,Property,Break In,681,Subcategory
+2019,Melaka,Property,Theft Other,593,Subcategory
+2019,Melaka,Property,Theft Vehicle,827,Subcategory
+2019,Negeri Sembilan,Assault,Assault,778,Main
+2019,Negeri Sembilan,Property,Property,2549,Main
+2019,Negeri Sembilan,Assault,Causing Injury,258,Subcategory
+2019,Negeri Sembilan,Assault,Murder,10,Subcategory
+2019,Negeri Sembilan,Assault,Rape,56,Subcategory
+2019,Negeri Sembilan,Assault,Robbery Gang,282,Subcategory
+2019,Negeri Sembilan,Assault,Robbery Solo,172,Subcategory
+2019,Negeri Sembilan,Property,Break In,765,Subcategory
+2019,Negeri Sembilan,Property,Theft Other,944,Subcategory
+2019,Negeri Sembilan,Property,Theft Vehicle,840,Subcategory
+2019,Pahang,Assault,Assault,595,Main
+2019,Pahang,Property,Property,2676,Main
+2019,Pahang,Assault,Causing Injury,226,Subcategory
+2019,Pahang,Assault,Murder,16,Subcategory
+2019,Pahang,Assault,Rape,114,Subcategory
+2019,Pahang,Assault,Robbery Gang,153,Subcategory
+2019,Pahang,Assault,Robbery Solo,86,Subcategory
+2019,Pahang,Property,Break In,718,Subcategory
+2019,Pahang,Property,Theft Other,1086,Subcategory
+2019,Pahang,Property,Theft Vehicle,872,Subcategory
+2019,Perak,Assault,Assault,1103,Main
+2019,Perak,Property,Property,3809,Main
+2019,Perak,Assault,Causing Injury,419,Subcategory
+2019,Perak,Assault,Murder,31,Subcategory
+2019,Perak,Assault,Rape,102,Subcategory
+2019,Perak,Assault,Robbery Gang,384,Subcategory
+2019,Perak,Assault,Robbery Solo,167,Subcategory
+2019,Perak,Property,Break In,1064,Subcategory
+2019,Perak,Property,Theft Other,1091,Subcategory
+2019,Perak,Property,Theft Vehicle,1654,Subcategory
+2019,Perlis,Assault,Assault,121,Main
+2019,Perlis,Property,Property,406,Main
+2019,Perlis,Assault,Causing Injury,60,Subcategory
+2019,Perlis,Assault,Murder,1,Subcategory
+2019,Perlis,Assault,Rape,24,Subcategory
+2019,Perlis,Assault,Robbery Gang,15,Subcategory
+2019,Perlis,Assault,Robbery Solo,21,Subcategory
+2019,Perlis,Property,Break In,111,Subcategory
+2019,Perlis,Property,Theft Other,187,Subcategory
+2019,Perlis,Property,Theft Vehicle,108,Subcategory
+2019,Pulau Pinang,Assault,Assault,1056,Main
+2019,Pulau Pinang,Property,Property,4162,Main
+2019,Pulau Pinang,Assault,Causing Injury,341,Subcategory
+2019,Pulau Pinang,Assault,Murder,15,Subcategory
+2019,Pulau Pinang,Assault,Rape,80,Subcategory
+2019,Pulau Pinang,Assault,Robbery Gang,402,Subcategory
+2019,Pulau Pinang,Assault,Robbery Solo,218,Subcategory
+2019,Pulau Pinang,Property,Break In,1036,Subcategory
+2019,Pulau Pinang,Property,Theft Other,1035,Subcategory
+2019,Pulau Pinang,Property,Theft Vehicle,2091,Subcategory
+2019,Sabah,Assault,Assault,639,Main
+2019,Sabah,Property,Property,5106,Main
+2019,Sabah,Assault,Causing Injury,221,Subcategory
+2019,Sabah,Assault,Murder,28,Subcategory
+2019,Sabah,Assault,Rape,219,Subcategory
+2019,Sabah,Assault,Robbery Gang,81,Subcategory
+2019,Sabah,Assault,Robbery Solo,90,Subcategory
+2019,Sabah,Property,Break In,1806,Subcategory
+2019,Sabah,Property,Theft Other,2627,Subcategory
+2019,Sabah,Property,Theft Vehicle,673,Subcategory
+2019,Sarawak,Assault,Assault,898,Main
+2019,Sarawak,Property,Property,5125,Main
+2019,Sarawak,Assault,Causing Injury,335,Subcategory
+2019,Sarawak,Assault,Murder,27,Subcategory
+2019,Sarawak,Assault,Rape,149,Subcategory
+2019,Sarawak,Assault,Robbery Gang,248,Subcategory
+2019,Sarawak,Assault,Robbery Solo,139,Subcategory
+2019,Sarawak,Property,Break In,1623,Subcategory
+2019,Sarawak,Property,Theft Other,1644,Subcategory
+2019,Sarawak,Property,Theft Vehicle,1858,Subcategory
+2019,Selangor,Assault,Assault,4302,Main
+2019,Selangor,Property,Property,15498,Main
+2019,Selangor,Assault,Causing Injury,960,Subcategory
+2019,Selangor,Assault,Murder,90,Subcategory
+2019,Selangor,Assault,Rape,346,Subcategory
+2019,Selangor,Assault,Robbery Gang,1983,Subcategory
+2019,Selangor,Assault,Robbery Solo,923,Subcategory
+2019,Selangor,Property,Break In,3679,Subcategory
+2019,Selangor,Property,Theft Other,3517,Subcategory
+2019,Selangor,Property,Theft Vehicle,8302,Subcategory
+2019,Terengganu,Assault,Assault,293,Main
+2019,Terengganu,Property,Property,1577,Main
+2019,Terengganu,Assault,Causing Injury,118,Subcategory
+2019,Terengganu,Assault,Murder,1,Subcategory
+2019,Terengganu,Assault,Rape,80,Subcategory
+2019,Terengganu,Assault,Robbery Gang,50,Subcategory
+2019,Terengganu,Assault,Robbery Solo,44,Subcategory
+2019,Terengganu,Property,Break In,496,Subcategory
+2019,Terengganu,Property,Theft Other,524,Subcategory
+2019,Terengganu,Property,Theft Vehicle,557,Subcategory
+2019,W.P. Kuala Lumpur,Assault,Assault,2914,Main
+2019,W.P. Kuala Lumpur,Property,Property,8258,Main
+2019,W.P. Kuala Lumpur,Assault,Causing Injury,505,Subcategory
+2019,W.P. Kuala Lumpur,Assault,Murder,22,Subcategory
+2019,W.P. Kuala Lumpur,Assault,Rape,122,Subcategory
+2019,W.P. Kuala Lumpur,Assault,Robbery Gang,1173,Subcategory
+2019,W.P. Kuala Lumpur,Assault,Robbery Solo,1092,Subcategory
+2019,W.P. Kuala Lumpur,Property,Break In,1087,Subcategory
+2019,W.P. Kuala Lumpur,Property,Theft Other,2731,Subcategory
+2019,W.P. Kuala Lumpur,Property,Theft Vehicle,4440,Subcategory
+2019,W.P. Labuan,Assault,Assault,20,Main
+2019,W.P. Labuan,Property,Property,232,Main
+2019,W.P. Labuan,Assault,Causing Injury,9,Subcategory
+2019,W.P. Labuan,Assault,Murder,0,Subcategory
+2019,W.P. Labuan,Assault,Rape,6,Subcategory
+2019,W.P. Labuan,Assault,Robbery Gang,3,Subcategory
+2019,W.P. Labuan,Assault,Robbery Solo,2,Subcategory
+2019,W.P. Labuan,Property,Break In,56,Subcategory
+2019,W.P. Labuan,Property,Theft Other,166,Subcategory
+2019,W.P. Labuan,Property,Theft Vehicle,10,Subcategory
+2019,W.P. Putrajaya,Assault,Assault,23,Main
+2019,W.P. Putrajaya,Property,Property,223,Main
+2019,W.P. Putrajaya,Assault,Causing Injury,6,Subcategory
+2019,W.P. Putrajaya,Assault,Murder,0,Subcategory
+2019,W.P. Putrajaya,Assault,Rape,4,Subcategory
+2019,W.P. Putrajaya,Assault,Robbery Gang,8,Subcategory
+2019,W.P. Putrajaya,Assault,Robbery Solo,5,Subcategory
+2019,W.P. Putrajaya,Property,Break In,43,Subcategory
+2019,W.P. Putrajaya,Property,Theft Other,95,Subcategory
+2019,W.P. Putrajaya,Property,Theft Vehicle,85,Subcategory
+2020,Johor,Assault,Assault,1384,Main
+2020,Johor,Property,Property,5966,Main
+2020,Johor,Assault,Causing Injury,447,Subcategory
+2020,Johor,Assault,Murder,36,Subcategory
+2020,Johor,Assault,Rape,164,Subcategory
+2020,Johor,Assault,Robbery Gang,258,Subcategory
+2020,Johor,Assault,Robbery Solo,479,Subcategory
+2020,Johor,Property,Break In,1273,Subcategory
+2020,Johor,Property,Theft Other,1403,Subcategory
+2020,Johor,Property,Theft Vehicle,3290,Subcategory
+2020,Kedah,Assault,Assault,674,Main
+2020,Kedah,Property,Property,3457,Main
+2020,Kedah,Assault,Causing Injury,272,Subcategory
+2020,Kedah,Assault,Murder,13,Subcategory
+2020,Kedah,Assault,Rape,119,Subcategory
+2020,Kedah,Assault,Robbery Gang,103,Subcategory
+2020,Kedah,Assault,Robbery Solo,167,Subcategory
+2020,Kedah,Property,Break In,980,Subcategory
+2020,Kedah,Property,Theft Other,797,Subcategory
+2020,Kedah,Property,Theft Vehicle,1680,Subcategory
+2020,Kelantan,Assault,Assault,504,Main
+2020,Kelantan,Property,Property,2027,Main
+2020,Kelantan,Assault,Causing Injury,211,Subcategory
+2020,Kelantan,Assault,Murder,13,Subcategory
+2020,Kelantan,Assault,Rape,108,Subcategory
+2020,Kelantan,Assault,Robbery Gang,81,Subcategory
+2020,Kelantan,Assault,Robbery Solo,91,Subcategory
+2020,Kelantan,Property,Break In,626,Subcategory
+2020,Kelantan,Property,Theft Other,560,Subcategory
+2020,Kelantan,Property,Theft Vehicle,841,Subcategory
+2020,Melaka,Assault,Assault,366,Main
+2020,Melaka,Property,Property,1428,Main
+2020,Melaka,Assault,Causing Injury,149,Subcategory
+2020,Melaka,Assault,Murder,6,Subcategory
+2020,Melaka,Assault,Rape,53,Subcategory
+2020,Melaka,Assault,Robbery Gang,77,Subcategory
+2020,Melaka,Assault,Robbery Solo,81,Subcategory
+2020,Melaka,Property,Break In,487,Subcategory
+2020,Melaka,Property,Theft Other,476,Subcategory
+2020,Melaka,Property,Theft Vehicle,465,Subcategory
+2020,Negeri Sembilan,Assault,Assault,525,Main
+2020,Negeri Sembilan,Property,Property,1906,Main
+2020,Negeri Sembilan,Assault,Causing Injury,213,Subcategory
+2020,Negeri Sembilan,Assault,Murder,8,Subcategory
+2020,Negeri Sembilan,Assault,Rape,75,Subcategory
+2020,Negeri Sembilan,Assault,Robbery Gang,90,Subcategory
+2020,Negeri Sembilan,Assault,Robbery Solo,139,Subcategory
+2020,Negeri Sembilan,Property,Break In,660,Subcategory
+2020,Negeri Sembilan,Property,Theft Other,697,Subcategory
+2020,Negeri Sembilan,Property,Theft Vehicle,549,Subcategory
+2020,Pahang,Assault,Assault,405,Main
+2020,Pahang,Property,Property,1926,Main
+2020,Pahang,Assault,Causing Injury,155,Subcategory
+2020,Pahang,Assault,Murder,8,Subcategory
+2020,Pahang,Assault,Rape,98,Subcategory
+2020,Pahang,Assault,Robbery Gang,58,Subcategory
+2020,Pahang,Assault,Robbery Solo,86,Subcategory
+2020,Pahang,Property,Break In,604,Subcategory
+2020,Pahang,Property,Theft Other,712,Subcategory
+2020,Pahang,Property,Theft Vehicle,610,Subcategory
+2020,Perak,Assault,Assault,789,Main
+2020,Perak,Property,Property,2599,Main
+2020,Perak,Assault,Causing Injury,322,Subcategory
+2020,Perak,Assault,Murder,22,Subcategory
+2020,Perak,Assault,Rape,74,Subcategory
+2020,Perak,Assault,Robbery Gang,126,Subcategory
+2020,Perak,Assault,Robbery Solo,245,Subcategory
+2020,Perak,Property,Break In,666,Subcategory
+2020,Perak,Property,Theft Other,788,Subcategory
+2020,Perak,Property,Theft Vehicle,1145,Subcategory
+2020,Perlis,Assault,Assault,81,Main
+2020,Perlis,Property,Property,412,Main
+2020,Perlis,Assault,Causing Injury,40,Subcategory
+2020,Perlis,Assault,Murder,2,Subcategory
+2020,Perlis,Assault,Rape,19,Subcategory
+2020,Perlis,Assault,Robbery Gang,9,Subcategory
+2020,Perlis,Assault,Robbery Solo,11,Subcategory
+2020,Perlis,Property,Break In,155,Subcategory
+2020,Perlis,Property,Theft Other,158,Subcategory
+2020,Perlis,Property,Theft Vehicle,99,Subcategory
+2020,Pulau Pinang,Assault,Assault,842,Main
+2020,Pulau Pinang,Property,Property,3011,Main
+2020,Pulau Pinang,Assault,Causing Injury,313,Subcategory
+2020,Pulau Pinang,Assault,Murder,16,Subcategory
+2020,Pulau Pinang,Assault,Rape,88,Subcategory
+2020,Pulau Pinang,Assault,Robbery Gang,168,Subcategory
+2020,Pulau Pinang,Assault,Robbery Solo,257,Subcategory
+2020,Pulau Pinang,Property,Break In,736,Subcategory
+2020,Pulau Pinang,Property,Theft Other,859,Subcategory
+2020,Pulau Pinang,Property,Theft Vehicle,1416,Subcategory
+2020,Sabah,Assault,Assault,483,Main
+2020,Sabah,Property,Property,3316,Main
+2020,Sabah,Assault,Causing Injury,176,Subcategory
+2020,Sabah,Assault,Murder,24,Subcategory
+2020,Sabah,Assault,Rape,153,Subcategory
+2020,Sabah,Assault,Robbery Gang,77,Subcategory
+2020,Sabah,Assault,Robbery Solo,53,Subcategory
+2020,Sabah,Property,Break In,1332,Subcategory
+2020,Sabah,Property,Theft Other,1553,Subcategory
+2020,Sabah,Property,Theft Vehicle,431,Subcategory
+2020,Sarawak,Assault,Assault,761,Main
+2020,Sarawak,Property,Property,5089,Main
+2020,Sarawak,Assault,Causing Injury,327,Subcategory
+2020,Sarawak,Assault,Murder,8,Subcategory
+2020,Sarawak,Assault,Rape,138,Subcategory
+2020,Sarawak,Assault,Robbery Gang,111,Subcategory
+2020,Sarawak,Assault,Robbery Solo,177,Subcategory
+2020,Sarawak,Property,Break In,1946,Subcategory
+2020,Sarawak,Property,Theft Other,2065,Subcategory
+2020,Sarawak,Property,Theft Vehicle,1078,Subcategory
+2020,Selangor,Assault,Assault,4239,Main
+2020,Selangor,Property,Property,13033,Main
+2020,Selangor,Assault,Causing Injury,997,Subcategory
+2020,Selangor,Assault,Murder,69,Subcategory
+2020,Selangor,Assault,Rape,341,Subcategory
+2020,Selangor,Assault,Robbery Gang,1127,Subcategory
+2020,Selangor,Assault,Robbery Solo,1705,Subcategory
+2020,Selangor,Property,Break In,3025,Subcategory
+2020,Selangor,Property,Theft Other,3753,Subcategory
+2020,Selangor,Property,Theft Vehicle,6255,Subcategory
+2020,Terengganu,Assault,Assault,278,Main
+2020,Terengganu,Property,Property,1821,Main
+2020,Terengganu,Assault,Causing Injury,118,Subcategory
+2020,Terengganu,Assault,Murder,3,Subcategory
+2020,Terengganu,Assault,Rape,64,Subcategory
+2020,Terengganu,Assault,Robbery Gang,41,Subcategory
+2020,Terengganu,Assault,Robbery Solo,52,Subcategory
+2020,Terengganu,Property,Break In,601,Subcategory
+2020,Terengganu,Property,Theft Other,847,Subcategory
+2020,Terengganu,Property,Theft Vehicle,373,Subcategory
+2020,W.P. Kuala Lumpur,Assault,Assault,1948,Main
+2020,W.P. Kuala Lumpur,Property,Property,6353,Main
+2020,W.P. Kuala Lumpur,Assault,Causing Injury,378,Subcategory
+2020,W.P. Kuala Lumpur,Assault,Murder,25,Subcategory
+2020,W.P. Kuala Lumpur,Assault,Rape,88,Subcategory
+2020,W.P. Kuala Lumpur,Assault,Robbery Gang,672,Subcategory
+2020,W.P. Kuala Lumpur,Assault,Robbery Solo,785,Subcategory
+2020,W.P. Kuala Lumpur,Property,Break In,949,Subcategory
+2020,W.P. Kuala Lumpur,Property,Theft Other,2057,Subcategory
+2020,W.P. Kuala Lumpur,Property,Theft Vehicle,3347,Subcategory
+2020,W.P. Labuan,Assault,Assault,22,Main
+2020,W.P. Labuan,Property,Property,163,Main
+2020,W.P. Labuan,Assault,Causing Injury,8,Subcategory
+2020,W.P. Labuan,Assault,Murder,0,Subcategory
+2020,W.P. Labuan,Assault,Rape,7,Subcategory
+2020,W.P. Labuan,Assault,Robbery Gang,5,Subcategory
+2020,W.P. Labuan,Assault,Robbery Solo,2,Subcategory
+2020,W.P. Labuan,Property,Break In,59,Subcategory
+2020,W.P. Labuan,Property,Theft Other,97,Subcategory
+2020,W.P. Labuan,Property,Theft Vehicle,7,Subcategory
+2020,W.P. Putrajaya,Assault,Assault,11,Main
+2020,W.P. Putrajaya,Property,Property,120,Main
+2020,W.P. Putrajaya,Assault,Causing Injury,5,Subcategory
+2020,W.P. Putrajaya,Assault,Murder,0,Subcategory
+2020,W.P. Putrajaya,Assault,Rape,2,Subcategory
+2020,W.P. Putrajaya,Assault,Robbery Gang,2,Subcategory
+2020,W.P. Putrajaya,Assault,Robbery Solo,2,Subcategory
+2020,W.P. Putrajaya,Property,Break In,30,Subcategory
+2020,W.P. Putrajaya,Property,Theft Other,48,Subcategory
+2020,W.P. Putrajaya,Property,Theft Vehicle,42,Subcategory
+2021,Johor,Assault,Assault,925,Main
+2021,Johor,Property,Property,3440,Main
+2021,Johor,Assault,Causing Injury,365,Subcategory
+2021,Johor,Assault,Murder,21,Subcategory
+2021,Johor,Assault,Rape,144,Subcategory
+2021,Johor,Assault,Robbery Gang,257,Subcategory
+2021,Johor,Assault,Robbery Solo,138,Subcategory
+2021,Johor,Property,Break In,883,Subcategory
+2021,Johor,Property,Theft Other,942,Subcategory
+2021,Johor,Property,Theft Vehicle,1615,Subcategory
+2021,Kedah,Assault,Assault,734,Main
+2021,Kedah,Property,Property,3067,Main
+2021,Kedah,Assault,Causing Injury,274,Subcategory
+2021,Kedah,Assault,Murder,11,Subcategory
+2021,Kedah,Assault,Rape,148,Subcategory
+2021,Kedah,Assault,Robbery Gang,191,Subcategory
+2021,Kedah,Assault,Robbery Solo,110,Subcategory
+2021,Kedah,Property,Break In,989,Subcategory
+2021,Kedah,Property,Theft Other,831,Subcategory
+2021,Kedah,Property,Theft Vehicle,1247,Subcategory
+2021,Kelantan,Assault,Assault,426,Main
+2021,Kelantan,Property,Property,1591,Main
+2021,Kelantan,Assault,Causing Injury,201,Subcategory
+2021,Kelantan,Assault,Murder,8,Subcategory
+2021,Kelantan,Assault,Rape,107,Subcategory
+2021,Kelantan,Assault,Robbery Gang,68,Subcategory
+2021,Kelantan,Assault,Robbery Solo,42,Subcategory
+2021,Kelantan,Property,Break In,483,Subcategory
+2021,Kelantan,Property,Theft Other,548,Subcategory
+2021,Kelantan,Property,Theft Vehicle,560,Subcategory
+2021,Melaka,Assault,Assault,311,Main
+2021,Melaka,Property,Property,999,Main
+2021,Melaka,Assault,Causing Injury,170,Subcategory
+2021,Melaka,Assault,Murder,4,Subcategory
+2021,Melaka,Assault,Rape,41,Subcategory
+2021,Melaka,Assault,Robbery Gang,44,Subcategory
+2021,Melaka,Assault,Robbery Solo,52,Subcategory
+2021,Melaka,Property,Break In,315,Subcategory
+2021,Melaka,Property,Theft Other,376,Subcategory
+2021,Melaka,Property,Theft Vehicle,308,Subcategory
+2021,Negeri Sembilan,Assault,Assault,434,Main
+2021,Negeri Sembilan,Property,Property,1401,Main
+2021,Negeri Sembilan,Assault,Causing Injury,221,Subcategory
+2021,Negeri Sembilan,Assault,Murder,11,Subcategory
+2021,Negeri Sembilan,Assault,Rape,54,Subcategory
+2021,Negeri Sembilan,Assault,Robbery Gang,71,Subcategory
+2021,Negeri Sembilan,Assault,Robbery Solo,77,Subcategory
+2021,Negeri Sembilan,Property,Break In,380,Subcategory
+2021,Negeri Sembilan,Property,Theft Other,627,Subcategory
+2021,Negeri Sembilan,Property,Theft Vehicle,394,Subcategory
+2021,Pahang,Assault,Assault,413,Main
+2021,Pahang,Property,Property,1643,Main
+2021,Pahang,Assault,Causing Injury,204,Subcategory
+2021,Pahang,Assault,Murder,11,Subcategory
+2021,Pahang,Assault,Rape,113,Subcategory
+2021,Pahang,Assault,Robbery Gang,40,Subcategory
+2021,Pahang,Assault,Robbery Solo,45,Subcategory
+2021,Pahang,Property,Break In,478,Subcategory
+2021,Pahang,Property,Theft Other,771,Subcategory
+2021,Pahang,Property,Theft Vehicle,394,Subcategory
+2021,Perak,Assault,Assault,747,Main
+2021,Perak,Property,Property,2178,Main
+2021,Perak,Assault,Causing Injury,335,Subcategory
+2021,Perak,Assault,Murder,27,Subcategory
+2021,Perak,Assault,Rape,96,Subcategory
+2021,Perak,Assault,Robbery Gang,179,Subcategory
+2021,Perak,Assault,Robbery Solo,110,Subcategory
+2021,Perak,Property,Break In,614,Subcategory
+2021,Perak,Property,Theft Other,811,Subcategory
+2021,Perak,Property,Theft Vehicle,753,Subcategory
+2021,Perlis,Assault,Assault,80,Main
+2021,Perlis,Property,Property,356,Main
+2021,Perlis,Assault,Causing Injury,38,Subcategory
+2021,Perlis,Assault,Murder,2,Subcategory
+2021,Perlis,Assault,Rape,28,Subcategory
+2021,Perlis,Assault,Robbery Gang,7,Subcategory
+2021,Perlis,Assault,Robbery Solo,5,Subcategory
+2021,Perlis,Property,Break In,102,Subcategory
+2021,Perlis,Property,Theft Other,195,Subcategory
+2021,Perlis,Property,Theft Vehicle,59,Subcategory
+2021,Pulau Pinang,Assault,Assault,931,Main
+2021,Pulau Pinang,Property,Property,2899,Main
+2021,Pulau Pinang,Assault,Causing Injury,379,Subcategory
+2021,Pulau Pinang,Assault,Murder,13,Subcategory
+2021,Pulau Pinang,Assault,Rape,88,Subcategory
+2021,Pulau Pinang,Assault,Robbery Gang,260,Subcategory
+2021,Pulau Pinang,Assault,Robbery Solo,191,Subcategory
+2021,Pulau Pinang,Property,Break In,785,Subcategory
+2021,Pulau Pinang,Property,Theft Other,1234,Subcategory
+2021,Pulau Pinang,Property,Theft Vehicle,880,Subcategory
+2021,Sabah,Assault,Assault,414,Main
+2021,Sabah,Property,Property,3014,Main
+2021,Sabah,Assault,Causing Injury,148,Subcategory
+2021,Sabah,Assault,Murder,15,Subcategory
+2021,Sabah,Assault,Rape,140,Subcategory
+2021,Sabah,Assault,Robbery Gang,50,Subcategory
+2021,Sabah,Assault,Robbery Solo,61,Subcategory
+2021,Sabah,Property,Break In,1122,Subcategory
+2021,Sabah,Property,Theft Other,1534,Subcategory
+2021,Sabah,Property,Theft Vehicle,358,Subcategory
+2021,Sarawak,Assault,Assault,593,Main
+2021,Sarawak,Property,Property,3701,Main
+2021,Sarawak,Assault,Causing Injury,296,Subcategory
+2021,Sarawak,Assault,Murder,25,Subcategory
+2021,Sarawak,Assault,Rape,124,Subcategory
+2021,Sarawak,Assault,Robbery Gang,90,Subcategory
+2021,Sarawak,Assault,Robbery Solo,58,Subcategory
+2021,Sarawak,Property,Break In,1163,Subcategory
+2021,Sarawak,Property,Theft Other,1876,Subcategory
+2021,Sarawak,Property,Theft Vehicle,662,Subcategory
+2021,Selangor,Assault,Assault,3805,Main
+2021,Selangor,Property,Property,11102,Main
+2021,Selangor,Assault,Causing Injury,987,Subcategory
+2021,Selangor,Assault,Murder,80,Subcategory
+2021,Selangor,Assault,Rape,320,Subcategory
+2021,Selangor,Assault,Robbery Gang,1319,Subcategory
+2021,Selangor,Assault,Robbery Solo,1099,Subcategory
+2021,Selangor,Property,Break In,2801,Subcategory
+2021,Selangor,Property,Theft Other,4420,Subcategory
+2021,Selangor,Property,Theft Vehicle,3881,Subcategory
+2021,Terengganu,Assault,Assault,224,Main
+2021,Terengganu,Property,Property,1370,Main
+2021,Terengganu,Assault,Causing Injury,101,Subcategory
+2021,Terengganu,Assault,Murder,4,Subcategory
+2021,Terengganu,Assault,Rape,68,Subcategory
+2021,Terengganu,Assault,Robbery Gang,22,Subcategory
+2021,Terengganu,Assault,Robbery Solo,29,Subcategory
+2021,Terengganu,Property,Break In,480,Subcategory
+2021,Terengganu,Property,Theft Other,596,Subcategory
+2021,Terengganu,Property,Theft Vehicle,294,Subcategory
+2021,W.P. Kuala Lumpur,Assault,Assault,1458,Main
+2021,W.P. Kuala Lumpur,Property,Property,4718,Main
+2021,W.P. Kuala Lumpur,Assault,Causing Injury,344,Subcategory
+2021,W.P. Kuala Lumpur,Assault,Murder,11,Subcategory
+2021,W.P. Kuala Lumpur,Assault,Rape,82,Subcategory
+2021,W.P. Kuala Lumpur,Assault,Robbery Gang,478,Subcategory
+2021,W.P. Kuala Lumpur,Assault,Robbery Solo,543,Subcategory
+2021,W.P. Kuala Lumpur,Property,Break In,757,Subcategory
+2021,W.P. Kuala Lumpur,Property,Theft Other,1934,Subcategory
+2021,W.P. Kuala Lumpur,Property,Theft Vehicle,2027,Subcategory
+2021,W.P. Labuan,Assault,Assault,17,Main
+2021,W.P. Labuan,Property,Property,124,Main
+2021,W.P. Labuan,Assault,Causing Injury,5,Subcategory
+2021,W.P. Labuan,Assault,Murder,0,Subcategory
+2021,W.P. Labuan,Assault,Rape,9,Subcategory
+2021,W.P. Labuan,Assault,Robbery Gang,1,Subcategory
+2021,W.P. Labuan,Assault,Robbery Solo,2,Subcategory
+2021,W.P. Labuan,Property,Break In,37,Subcategory
+2021,W.P. Labuan,Property,Theft Other,81,Subcategory
+2021,W.P. Labuan,Property,Theft Vehicle,6,Subcategory
+2021,W.P. Putrajaya,Assault,Assault,8,Main
+2021,W.P. Putrajaya,Property,Property,83,Main
+2021,W.P. Putrajaya,Assault,Causing Injury,1,Subcategory
+2021,W.P. Putrajaya,Assault,Murder,0,Subcategory
+2021,W.P. Putrajaya,Assault,Rape,6,Subcategory
+2021,W.P. Putrajaya,Assault,Robbery Gang,1,Subcategory
+2021,W.P. Putrajaya,Assault,Robbery Solo,0,Subcategory
+2021,W.P. Putrajaya,Property,Break In,21,Subcategory
+2021,W.P. Putrajaya,Property,Theft Other,42,Subcategory
+2021,W.P. Putrajaya,Property,Theft Vehicle,20,Subcategory
+2022,Johor,Assault,Assault,973,Main
+2022,Johor,Property,Property,3489,Main
+2022,Johor,Assault,Causing Injury,333,Subcategory
+2022,Johor,Assault,Murder,30,Subcategory
+2022,Johor,Assault,Rape,147,Subcategory
+2022,Johor,Assault,Robbery Gang,270,Subcategory
+2022,Johor,Assault,Robbery Solo,193,Subcategory
+2022,Johor,Property,Break In,767,Subcategory
+2022,Johor,Property,Theft Other,1041,Subcategory
+2022,Johor,Property,Theft Vehicle,1681,Subcategory
+2022,Kedah,Assault,Assault,893,Main
+2022,Kedah,Property,Property,3758,Main
+2022,Kedah,Assault,Causing Injury,302,Subcategory
+2022,Kedah,Assault,Murder,15,Subcategory
+2022,Kedah,Assault,Rape,159,Subcategory
+2022,Kedah,Assault,Robbery Gang,217,Subcategory
+2022,Kedah,Assault,Robbery Solo,200,Subcategory
+2022,Kedah,Property,Break In,1130,Subcategory
+2022,Kedah,Property,Theft Other,1360,Subcategory
+2022,Kedah,Property,Theft Vehicle,1268,Subcategory
+2022,Kelantan,Assault,Assault,448,Main
+2022,Kelantan,Property,Property,1758,Main
+2022,Kelantan,Assault,Causing Injury,215,Subcategory
+2022,Kelantan,Assault,Murder,6,Subcategory
+2022,Kelantan,Assault,Rape,98,Subcategory
+2022,Kelantan,Assault,Robbery Gang,67,Subcategory
+2022,Kelantan,Assault,Robbery Solo,62,Subcategory
+2022,Kelantan,Property,Break In,472,Subcategory
+2022,Kelantan,Property,Theft Other,545,Subcategory
+2022,Kelantan,Property,Theft Vehicle,741,Subcategory
+2022,Melaka,Assault,Assault,264,Main
+2022,Melaka,Property,Property,1033,Main
+2022,Melaka,Assault,Causing Injury,125,Subcategory
+2022,Melaka,Assault,Murder,5,Subcategory
+2022,Melaka,Assault,Rape,59,Subcategory
+2022,Melaka,Assault,Robbery Gang,41,Subcategory
+2022,Melaka,Assault,Robbery Solo,34,Subcategory
+2022,Melaka,Property,Break In,375,Subcategory
+2022,Melaka,Property,Theft Other,404,Subcategory
+2022,Melaka,Property,Theft Vehicle,254,Subcategory
+2022,Negeri Sembilan,Assault,Assault,380,Main
+2022,Negeri Sembilan,Property,Property,1404,Main
+2022,Negeri Sembilan,Assault,Causing Injury,153,Subcategory
+2022,Negeri Sembilan,Assault,Murder,9,Subcategory
+2022,Negeri Sembilan,Assault,Rape,65,Subcategory
+2022,Negeri Sembilan,Assault,Robbery Gang,69,Subcategory
+2022,Negeri Sembilan,Assault,Robbery Solo,84,Subcategory
+2022,Negeri Sembilan,Property,Break In,382,Subcategory
+2022,Negeri Sembilan,Property,Theft Other,594,Subcategory
+2022,Negeri Sembilan,Property,Theft Vehicle,428,Subcategory
+2022,Pahang,Assault,Assault,395,Main
+2022,Pahang,Property,Property,1489,Main
+2022,Pahang,Assault,Causing Injury,192,Subcategory
+2022,Pahang,Assault,Murder,11,Subcategory
+2022,Pahang,Assault,Rape,118,Subcategory
+2022,Pahang,Assault,Robbery Gang,42,Subcategory
+2022,Pahang,Assault,Robbery Solo,32,Subcategory
+2022,Pahang,Property,Break In,423,Subcategory
+2022,Pahang,Property,Theft Other,648,Subcategory
+2022,Pahang,Property,Theft Vehicle,418,Subcategory
+2022,Perak,Assault,Assault,770,Main
+2022,Perak,Property,Property,2490,Main
+2022,Perak,Assault,Causing Injury,323,Subcategory
+2022,Perak,Assault,Murder,27,Subcategory
+2022,Perak,Assault,Rape,100,Subcategory
+2022,Perak,Assault,Robbery Gang,205,Subcategory
+2022,Perak,Assault,Robbery Solo,115,Subcategory
+2022,Perak,Property,Break In,724,Subcategory
+2022,Perak,Property,Theft Other,924,Subcategory
+2022,Perak,Property,Theft Vehicle,842,Subcategory
+2022,Perlis,Assault,Assault,82,Main
+2022,Perlis,Property,Property,320,Main
+2022,Perlis,Assault,Causing Injury,33,Subcategory
+2022,Perlis,Assault,Murder,0,Subcategory
+2022,Perlis,Assault,Rape,31,Subcategory
+2022,Perlis,Assault,Robbery Gang,5,Subcategory
+2022,Perlis,Assault,Robbery Solo,13,Subcategory
+2022,Perlis,Property,Break In,101,Subcategory
+2022,Perlis,Property,Theft Other,156,Subcategory
+2022,Perlis,Property,Theft Vehicle,63,Subcategory
+2022,Pulau Pinang,Assault,Assault,947,Main
+2022,Pulau Pinang,Property,Property,2516,Main
+2022,Pulau Pinang,Assault,Causing Injury,405,Subcategory
+2022,Pulau Pinang,Assault,Murder,10,Subcategory
+2022,Pulau Pinang,Assault,Rape,124,Subcategory
+2022,Pulau Pinang,Assault,Robbery Gang,214,Subcategory
+2022,Pulau Pinang,Assault,Robbery Solo,194,Subcategory
+2022,Pulau Pinang,Property,Break In,627,Subcategory
+2022,Pulau Pinang,Property,Theft Other,1017,Subcategory
+2022,Pulau Pinang,Property,Theft Vehicle,872,Subcategory
+2022,Sabah,Assault,Assault,516,Main
+2022,Sabah,Property,Property,3585,Main
+2022,Sabah,Assault,Causing Injury,169,Subcategory
+2022,Sabah,Assault,Murder,24,Subcategory
+2022,Sabah,Assault,Rape,197,Subcategory
+2022,Sabah,Assault,Robbery Gang,55,Subcategory
+2022,Sabah,Assault,Robbery Solo,71,Subcategory
+2022,Sabah,Property,Break In,1297,Subcategory
+2022,Sabah,Property,Theft Other,1765,Subcategory
+2022,Sabah,Property,Theft Vehicle,523,Subcategory
+2022,Sarawak,Assault,Assault,588,Main
+2022,Sarawak,Property,Property,3299,Main
+2022,Sarawak,Assault,Causing Injury,306,Subcategory
+2022,Sarawak,Assault,Murder,22,Subcategory
+2022,Sarawak,Assault,Rape,119,Subcategory
+2022,Sarawak,Assault,Robbery Gang,83,Subcategory
+2022,Sarawak,Assault,Robbery Solo,58,Subcategory
+2022,Sarawak,Property,Break In,891,Subcategory
+2022,Sarawak,Property,Theft Other,1421,Subcategory
+2022,Sarawak,Property,Theft Vehicle,987,Subcategory
+2022,Selangor,Assault,Assault,2820,Main
+2022,Selangor,Property,Property,10205,Main
+2022,Selangor,Assault,Causing Injury,841,Subcategory
+2022,Selangor,Assault,Murder,60,Subcategory
+2022,Selangor,Assault,Rape,354,Subcategory
+2022,Selangor,Assault,Robbery Gang,828,Subcategory
+2022,Selangor,Assault,Robbery Solo,737,Subcategory
+2022,Selangor,Property,Break In,2415,Subcategory
+2022,Selangor,Property,Theft Other,3536,Subcategory
+2022,Selangor,Property,Theft Vehicle,4254,Subcategory
+2022,Terengganu,Assault,Assault,223,Main
+2022,Terengganu,Property,Property,1254,Main
+2022,Terengganu,Assault,Causing Injury,102,Subcategory
+2022,Terengganu,Assault,Murder,4,Subcategory
+2022,Terengganu,Assault,Rape,66,Subcategory
+2022,Terengganu,Assault,Robbery Gang,25,Subcategory
+2022,Terengganu,Assault,Robbery Solo,26,Subcategory
+2022,Terengganu,Property,Break In,439,Subcategory
+2022,Terengganu,Property,Theft Other,545,Subcategory
+2022,Terengganu,Property,Theft Vehicle,270,Subcategory
+2022,W.P. Kuala Lumpur,Assault,Assault,1049,Main
+2022,W.P. Kuala Lumpur,Property,Property,3865,Main
+2022,W.P. Kuala Lumpur,Assault,Causing Injury,308,Subcategory
+2022,W.P. Kuala Lumpur,Assault,Murder,17,Subcategory
+2022,W.P. Kuala Lumpur,Assault,Rape,75,Subcategory
+2022,W.P. Kuala Lumpur,Assault,Robbery Gang,327,Subcategory
+2022,W.P. Kuala Lumpur,Assault,Robbery Solo,322,Subcategory
+2022,W.P. Kuala Lumpur,Property,Break In,542,Subcategory
+2022,W.P. Kuala Lumpur,Property,Theft Other,1478,Subcategory
+2022,W.P. Kuala Lumpur,Property,Theft Vehicle,1845,Subcategory
+2022,W.P. Labuan,Assault,Assault,24,Main
+2022,W.P. Labuan,Property,Property,87,Main
+2022,W.P. Labuan,Assault,Causing Injury,9,Subcategory
+2022,W.P. Labuan,Assault,Murder,0,Subcategory
+2022,W.P. Labuan,Assault,Rape,14,Subcategory
+2022,W.P. Labuan,Assault,Robbery Gang,0,Subcategory
+2022,W.P. Labuan,Assault,Robbery Solo,1,Subcategory
+2022,W.P. Labuan,Property,Break In,13,Subcategory
+2022,W.P. Labuan,Property,Theft Other,67,Subcategory
+2022,W.P. Labuan,Property,Theft Vehicle,7,Subcategory
+2022,W.P. Putrajaya,Assault,Assault,15,Main
+2022,W.P. Putrajaya,Property,Property,69,Main
+2022,W.P. Putrajaya,Assault,Causing Injury,4,Subcategory
+2022,W.P. Putrajaya,Assault,Murder,1,Subcategory
+2022,W.P. Putrajaya,Assault,Rape,2,Subcategory
+2022,W.P. Putrajaya,Assault,Robbery Gang,6,Subcategory
+2022,W.P. Putrajaya,Assault,Robbery Solo,2,Subcategory
+2022,W.P. Putrajaya,Property,Break In,17,Subcategory
+2022,W.P. Putrajaya,Property,Theft Other,39,Subcategory
+2022,W.P. Putrajaya,Property,Theft Vehicle,13,Subcategory
+2023,Johor,Assault,Assault,1228,Main
+2023,Johor,Property,Property,4102,Main
+2023,Johor,Assault,Causing Injury,366,Subcategory
+2023,Johor,Assault,Murder,31,Subcategory
+2023,Johor,Assault,Rape,194,Subcategory
+2023,Johor,Assault,Robbery Gang,394,Subcategory
+2023,Johor,Assault,Robbery Solo,243,Subcategory
+2023,Johor,Property,Break In,993,Subcategory
+2023,Johor,Property,Theft Other,1335,Subcategory
+2023,Johor,Property,Theft Vehicle,1774,Subcategory
+2023,Kedah,Assault,Assault,720,Main
+2023,Kedah,Property,Property,3847,Main
+2023,Kedah,Assault,Causing Injury,260,Subcategory
+2023,Kedah,Assault,Murder,19,Subcategory
+2023,Kedah,Assault,Rape,184,Subcategory
+2023,Kedah,Assault,Robbery Gang,137,Subcategory
+2023,Kedah,Assault,Robbery Solo,120,Subcategory
+2023,Kedah,Property,Break In,1353,Subcategory
+2023,Kedah,Property,Theft Other,1295,Subcategory
+2023,Kedah,Property,Theft Vehicle,1199,Subcategory
+2023,Kelantan,Assault,Assault,390,Main
+2023,Kelantan,Property,Property,1604,Main
+2023,Kelantan,Assault,Causing Injury,147,Subcategory
+2023,Kelantan,Assault,Murder,9,Subcategory
+2023,Kelantan,Assault,Rape,130,Subcategory
+2023,Kelantan,Assault,Robbery Gang,48,Subcategory
+2023,Kelantan,Assault,Robbery Solo,56,Subcategory
+2023,Kelantan,Property,Break In,443,Subcategory
+2023,Kelantan,Property,Theft Other,485,Subcategory
+2023,Kelantan,Property,Theft Vehicle,676,Subcategory
+2023,Melaka,Assault,Assault,310,Main
+2023,Melaka,Property,Property,1147,Main
+2023,Melaka,Assault,Causing Injury,108,Subcategory
+2023,Melaka,Assault,Murder,13,Subcategory
+2023,Melaka,Assault,Rape,76,Subcategory
+2023,Melaka,Assault,Robbery Gang,74,Subcategory
+2023,Melaka,Assault,Robbery Solo,39,Subcategory
+2023,Melaka,Property,Break In,428,Subcategory
+2023,Melaka,Property,Theft Other,429,Subcategory
+2023,Melaka,Property,Theft Vehicle,290,Subcategory
+2023,Negeri Sembilan,Assault,Assault,417,Main
+2023,Negeri Sembilan,Property,Property,1478,Main
+2023,Negeri Sembilan,Assault,Causing Injury,152,Subcategory
+2023,Negeri Sembilan,Assault,Murder,8,Subcategory
+2023,Negeri Sembilan,Assault,Rape,63,Subcategory
+2023,Negeri Sembilan,Assault,Robbery Gang,130,Subcategory
+2023,Negeri Sembilan,Assault,Robbery Solo,64,Subcategory
+2023,Negeri Sembilan,Property,Break In,398,Subcategory
+2023,Negeri Sembilan,Property,Theft Other,643,Subcategory
+2023,Negeri Sembilan,Property,Theft Vehicle,437,Subcategory
+2023,Pahang,Assault,Assault,409,Main
+2023,Pahang,Property,Property,1466,Main
+2023,Pahang,Assault,Causing Injury,168,Subcategory
+2023,Pahang,Assault,Murder,5,Subcategory
+2023,Pahang,Assault,Rape,119,Subcategory
+2023,Pahang,Assault,Robbery Gang,63,Subcategory
+2023,Pahang,Assault,Robbery Solo,54,Subcategory
+2023,Pahang,Property,Break In,387,Subcategory
+2023,Pahang,Property,Theft Other,570,Subcategory
+2023,Pahang,Property,Theft Vehicle,509,Subcategory
+2023,Perak,Assault,Assault,852,Main
+2023,Perak,Property,Property,2720,Main
+2023,Perak,Assault,Causing Injury,334,Subcategory
+2023,Perak,Assault,Murder,30,Subcategory
+2023,Perak,Assault,Rape,114,Subcategory
+2023,Perak,Assault,Robbery Gang,223,Subcategory
+2023,Perak,Assault,Robbery Solo,151,Subcategory
+2023,Perak,Property,Break In,835,Subcategory
+2023,Perak,Property,Theft Other,1070,Subcategory
+2023,Perak,Property,Theft Vehicle,815,Subcategory
+2023,Perlis,Assault,Assault,75,Main
+2023,Perlis,Property,Property,264,Main
+2023,Perlis,Assault,Causing Injury,24,Subcategory
+2023,Perlis,Assault,Murder,3,Subcategory
+2023,Perlis,Assault,Rape,28,Subcategory
+2023,Perlis,Assault,Robbery Gang,10,Subcategory
+2023,Perlis,Assault,Robbery Solo,10,Subcategory
+2023,Perlis,Property,Break In,94,Subcategory
+2023,Perlis,Property,Theft Other,115,Subcategory
+2023,Perlis,Property,Theft Vehicle,55,Subcategory
+2023,Pulau Pinang,Assault,Assault,820,Main
+2023,Pulau Pinang,Property,Property,2784,Main
+2023,Pulau Pinang,Assault,Causing Injury,333,Subcategory
+2023,Pulau Pinang,Assault,Murder,12,Subcategory
+2023,Pulau Pinang,Assault,Rape,98,Subcategory
+2023,Pulau Pinang,Assault,Robbery Gang,194,Subcategory
+2023,Pulau Pinang,Assault,Robbery Solo,183,Subcategory
+2023,Pulau Pinang,Property,Break In,745,Subcategory
+2023,Pulau Pinang,Property,Theft Other,1181,Subcategory
+2023,Pulau Pinang,Property,Theft Vehicle,858,Subcategory
+2023,Sabah,Assault,Assault,534,Main
+2023,Sabah,Property,Property,3583,Main
+2023,Sabah,Assault,Causing Injury,176,Subcategory
+2023,Sabah,Assault,Murder,26,Subcategory
+2023,Sabah,Assault,Rape,225,Subcategory
+2023,Sabah,Assault,Robbery Gang,50,Subcategory
+2023,Sabah,Assault,Robbery Solo,57,Subcategory
+2023,Sabah,Property,Break In,1370,Subcategory
+2023,Sabah,Property,Theft Other,1699,Subcategory
+2023,Sabah,Property,Theft Vehicle,514,Subcategory
+2023,Sarawak,Assault,Assault,558,Main
+2023,Sarawak,Property,Property,3487,Main
+2023,Sarawak,Assault,Causing Injury,251,Subcategory
+2023,Sarawak,Assault,Murder,13,Subcategory
+2023,Sarawak,Assault,Rape,121,Subcategory
+2023,Sarawak,Assault,Robbery Gang,119,Subcategory
+2023,Sarawak,Assault,Robbery Solo,54,Subcategory
+2023,Sarawak,Property,Break In,960,Subcategory
+2023,Sarawak,Property,Theft Other,1390,Subcategory
+2023,Sarawak,Property,Theft Vehicle,1137,Subcategory
+2023,Selangor,Assault,Assault,2953,Main
+2023,Selangor,Property,Property,10786,Main
+2023,Selangor,Assault,Causing Injury,951,Subcategory
+2023,Selangor,Assault,Murder,67,Subcategory
+2023,Selangor,Assault,Rape,375,Subcategory
+2023,Selangor,Assault,Robbery Gang,876,Subcategory
+2023,Selangor,Assault,Robbery Solo,684,Subcategory
+2023,Selangor,Property,Break In,2713,Subcategory
+2023,Selangor,Property,Theft Other,3793,Subcategory
+2023,Selangor,Property,Theft Vehicle,4280,Subcategory
+2023,Terengganu,Assault,Assault,247,Main
+2023,Terengganu,Property,Property,1123,Main
+2023,Terengganu,Assault,Causing Injury,111,Subcategory
+2023,Terengganu,Assault,Murder,6,Subcategory
+2023,Terengganu,Assault,Rape,86,Subcategory
+2023,Terengganu,Assault,Robbery Gang,25,Subcategory
+2023,Terengganu,Assault,Robbery Solo,19,Subcategory
+2023,Terengganu,Property,Break In,385,Subcategory
+2023,Terengganu,Property,Theft Other,469,Subcategory
+2023,Terengganu,Property,Theft Vehicle,269,Subcategory
+2023,W.P. Kuala Lumpur,Assault,Assault,940,Main
+2023,W.P. Kuala Lumpur,Property,Property,3600,Main
+2023,W.P. Kuala Lumpur,Assault,Causing Injury,312,Subcategory
+2023,W.P. Kuala Lumpur,Assault,Murder,16,Subcategory
+2023,W.P. Kuala Lumpur,Assault,Rape,101,Subcategory
+2023,W.P. Kuala Lumpur,Assault,Robbery Gang,265,Subcategory
+2023,W.P. Kuala Lumpur,Assault,Robbery Solo,246,Subcategory
+2023,W.P. Kuala Lumpur,Property,Break In,453,Subcategory
+2023,W.P. Kuala Lumpur,Property,Theft Other,1363,Subcategory
+2023,W.P. Kuala Lumpur,Property,Theft Vehicle,1784,Subcategory
+2023,W.P. Labuan,Assault,Assault,19,Main
+2023,W.P. Labuan,Property,Property,109,Main
+2023,W.P. Labuan,Assault,Causing Injury,9,Subcategory
+2023,W.P. Labuan,Assault,Murder,0,Subcategory
+2023,W.P. Labuan,Assault,Rape,10,Subcategory
+2023,W.P. Labuan,Assault,Robbery Gang,0,Subcategory
+2023,W.P. Labuan,Assault,Robbery Solo,0,Subcategory
+2023,W.P. Labuan,Property,Break In,26,Subcategory
+2023,W.P. Labuan,Property,Theft Other,75,Subcategory
+2023,W.P. Labuan,Property,Theft Vehicle,8,Subcategory
+2023,W.P. Putrajaya,Assault,Assault,10,Main
+2023,W.P. Putrajaya,Property,Property,60,Main
+2023,W.P. Putrajaya,Assault,Causing Injury,3,Subcategory
+2023,W.P. Putrajaya,Assault,Murder,1,Subcategory
+2023,W.P. Putrajaya,Assault,Rape,4,Subcategory
+2023,W.P. Putrajaya,Assault,Robbery Gang,1,Subcategory
+2023,W.P. Putrajaya,Assault,Robbery Solo,1,Subcategory
+2023,W.P. Putrajaya,Property,Break In,11,Subcategory
+2023,W.P. Putrajaya,Property,Theft Other,24,Subcategory
+2023,W.P. Putrajaya,Property,Theft Vehicle,25,Subcategory

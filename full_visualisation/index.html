@@ -21,23 +21,31 @@
       </p>
       <div id="choropleth_map"></div>
     </section>
+    
     <section class="viz">
       <h2>Assault vs Property Crimes</h2>
-      <p class="caption" style="text-align: justify;">
-        Since 2016, <b>property crimes overwhelmingly dominate total reported cases every year</b>, consistently making up the largest share of offences nationwide. 
-        Prior to major crime reform initiatives, <b>a notable downward trend</b> in overall crime after 2016, especially <b>a sharp drop in 2020 coincides with COVID-19 movement restrictions</b>, 
-        which limited public interaction and mobility, leading a temporary but pronounced fall in both property and assault crimes.
-      </p>
-      <div id="crime_stack"></div>
+      <div class="chart-container">
+        <div class="chart-left">
+          <p class="caption" style="text-align: justify;">
+            Since 2016, <b>property crimes overwhelmingly dominate total reported cases every year</b>, consistently making up the largest share of offences nationwide. 
+            Prior to major crime reform initiatives, <b>a notable downward trend</b> in overall crime after 2016, especially <b>a sharp drop in 2020 coincides with COVID-19 movement restrictions</b>, 
+            which limited public interaction and mobility, leading a temporary but pronounced fall in both property and assault crimes.
+          </p>
+          <div id="crime_stack"></div>
+        </div>
+        
+        <div class="chart-right">
+          <p class="caption" style="text-align: justify;">
+            <b>Property crime clearly dominates</b>, suggesting that most crimes are <b>non-violent and financially motivated</b>. 
+            <b>Assault crimes exist but make up a smaller fraction</b> indicating they are less frequent compared to theft.
+            <b>Murder and rape are the smallest slices</b>, highlighting that while serious, they occur relatively rare compared to theft-based crimes.
+          </p>
+          <div id="crime_sunburst"></div>
+        </div>
+      </div>
     </section>
   </main>
-  <div class="chart-section">
-    <div id="vis1" class="visualization-container"></div>
-  </div>
   
-  <div class="chart-section">  
-    <div id="vis2" class="visualization-container"></div>
-  </div>
   <script src="js/vega_lite_vis.js"></script>
 </body>
 </html>

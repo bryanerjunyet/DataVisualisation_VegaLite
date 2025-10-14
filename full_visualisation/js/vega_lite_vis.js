@@ -8,4 +8,8 @@
   vegaEmbed('#crime_stack', 'js/malaysia_crime_stacked.vg.json', embedOptions)
     .then(() => {})
     .catch(console.error);
+
+  vegaEmbed('#crime_sunburst', 'js/malaysia_crime_sunburst.vg.json', embedOptions)
+    .then(() => {})
+    .catch(console.error);
 })();

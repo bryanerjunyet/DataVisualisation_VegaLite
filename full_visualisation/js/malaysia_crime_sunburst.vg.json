@@ -1,0 +1,234 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 320,
+  "height": 320,
+  "background": "white",
+  "title": {
+    "text": "Composition of Crime Types",
+    "fontSize": 16,
+    "anchor": "start",
+    "offset": 15
+  },
+  "data": {
+    "url": "data/sunburst_data/crime_district_cleaned.csv"
+  },
+  "params": [
+    {
+      "name": "year_selection",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
+        "name": "Year    " 
+      }
+    },
+    {
+      "name": "state_selection",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All", "Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", 
+          "Pahang", "Perak", "Perlis", "Pulau Pinang", "Sabah", "Sarawak", 
+          "Selangor", "Terengganu", "W.P. Kuala Lumpur", "W.P. Labuan", "W.P. Putrajaya"
+        ],
+        "name": "State   "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "year_selection == 'All' || datum.Year == year_selection"
+    },
+    {
+      "filter": "state_selection == 'All' || datum.State == state_selection"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "Cases",
+          "as": "total_cases"
+        }
+      ],
+      "groupby": ["Crime_Category", "Crime_Type", "Level"]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "total_cases",
+          "as": "grand_total"
+        }
+      ]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "total_cases",
+          "as": "category_total"
+        }
+      ],
+      "groupby": ["Crime_Category"]
+    },
+    {
+      "calculate": "datum.total_cases / datum.grand_total * 100",
+      "as": "percentage"
+    },
+    {
+      "calculate": "datum.total_cases / datum.category_total * 100",
+      "as": "category_percentage"
+    },
+    {
+      "calculate": "datum.Crime_Category == 'Assault' ? 1 : 2",
+      "as": "category_order"
+    },
+    {
+      "calculate": "datum.Level == 'Subcategory' ? (datum.Crime_Category == 'Assault' ? (datum.Crime_Type == 'Murder' ? 1 : datum.Crime_Type == 'Rape' ? 2 : datum.Crime_Type == 'Causing Injury' ? 3 : datum.Crime_Type == 'Robbery Gang' ? 4 : 5) : (datum.Crime_Type == 'Break In' ? 6 : datum.Crime_Type == 'Theft Other' ? 7 : 8)) : datum.category_order",
+      "as": "sort_order"
+    }
+  ],
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.Level == 'Main'"
+        }
+      ],
+      "mark": {
+        "type": "arc",
+        "innerRadius": 0,
+        "outerRadius": 100,
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "theta": {
+          "field": "total_cases",
+          "type": "quantitative"
+        },
+        "order": {
+          "field": "category_order",
+          "type": "ordinal"
+        },
+        "color": {
+          "field": "Crime_Category",
+          "type": "nominal",
+          "title": "Crime Category",
+          "scale": {
+            "domain": ["Assault", "Property"],
+            "range": ["#8b4513", "#ff8c00"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Crime_Category",
+            "title": "Category"
+          },
+          {
+            "field": "total_cases",
+            "title": "Cases",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Level == 'Subcategory'"
+        }
+      ],
+      "mark": {
+        "type": "arc",
+        "innerRadius": 100,
+        "outerRadius": 150,
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "theta": {
+          "field": "total_cases",
+          "type": "quantitative"
+        },
+        "order": {
+          "field": "sort_order",
+          "type": "ordinal"
+        },
+        "color": {
+          "field": "Crime_Type",
+          "type": "nominal",
+          "title": "Crime Type",
+          "scale": {
+            "domain": ["Murder", "Rape", "Causing Injury", "Robbery Gang", "Robbery Solo", "Break In", "Theft Other", "Theft Vehicle"],
+            "range": ["#8B0000", "#A0522D", "#CD853F", "#DEB887", "#F5DEB3", "#FF7F50", "#FFA500", "#FF4500"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Crime_Category",
+            "title": "Category"
+          },
+          {
+            "field": "Crime_Type",
+            "title": "Crime Type"
+          },
+          {
+            "field": "total_cases",
+            "title": "Cases",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Level == 'Main'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "radius": 50
+      },
+      "encoding": {
+        "theta": {
+          "field": "total_cases",
+          "type": "quantitative"
+        },
+        "order": {
+          "field": "category_order",
+          "type": "ordinal"
+        },
+        "text": {
+          "field": "total_cases",
+          "type": "quantitative",
+          "format": ","
+        },
+        "color": {
+          "value": "white"
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 11,
+      "symbolSize": 100
+    }
+  }
+}
