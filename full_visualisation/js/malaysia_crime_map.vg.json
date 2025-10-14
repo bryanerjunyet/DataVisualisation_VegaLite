@@ -1,0 +1,193 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 300,
+  "background": "white",
+  "projection": {
+    "type": "mercator",
+    "center": [
+      109.5,
+      4.0
+    ],
+    "scale": 2150
+  },
+  "view": {
+    "stroke": "transparent"
+  },
+  "title": {
+    "text": "State Crime Levels Across Malaysia",
+    "subtitle": {
+      "expr": "'Selected year: ' + selectedYear"
+    },
+    "fontSize": 18,
+    "anchor": "start",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#4a4a4a",
+    "subtitlePadding": 6
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2016,
+      "bind": {
+        "input": "range",
+        "min": 2016,
+        "max": 2023,
+        "step": 1,
+        "name": "Year "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#8fc2f2"
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            5,
+            5
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#d7e3ee",
+        "strokeWidth": 0.4
+      }
+    },
+    {
+      "data": {
+        "url": "data/map_data/gadm41_MYS_1.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "gadm41_MYS_1"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.properties.NAME_1 == 'KualaLumpur' ? 'W.P. Kuala Lumpur' : datum.properties.NAME_1 == 'NegeriSembilan' ? 'Negeri Sembilan' : datum.properties.NAME_1 == 'PulauPinang' ? 'Pulau Pinang' : datum.properties.NAME_1 == 'Trengganu' ? 'Terengganu' : datum.properties.NAME_1 == 'Labuan' ? 'W.P. Labuan' : datum.properties.NAME_1 == 'Putrajaya' ? 'W.P. Putrajaya' : datum.properties.NAME_1",
+          "as": "state"
+        },
+        {
+          "calculate": "datum.state + '-' + selectedYear",
+          "as": "state_year"
+        },
+        {
+          "lookup": "state_year",
+          "from": {
+            "data": {
+              "url": "data/map_data/crime_district_cleaned.csv"
+            },
+            "key": "state_year",
+            "fields": [
+              "crimes_per_10k_population",
+              "total_crimes",
+              "year"
+            ]
+          },
+          "default": {
+            "crimes_per_10k_population": null,
+            "total_crimes": null,
+            "year": null
+          }
+        },
+        {
+          "calculate": "datum.crimes_per_10k_population < 20 ? 'Very Low' : datum.crimes_per_10k_population < 30 ? 'Low' : datum.crimes_per_10k_population < 40 ? 'Moderate' : datum.crimes_per_10k_population < 80 ? 'High' : 'Very High'",
+          "as": "crime_band"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#264a63",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "color": {
+          "field": "crime_band",
+          "type": "nominal",
+          "title": "Crime level",
+          "scale": {
+            "domain": [
+              "Very Low",
+              "Low",
+              "Moderate",
+              "High",
+              "Very High"
+            ],
+            "range": [
+              "#fdfd96",
+              "#fed7aa",
+              "#f97316",
+              "#ef4444",
+              "#7f0000"
+            ]
+          },
+          "legend": {
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "crimes_per_10k_population",
+            "title": "Crimes per 10K",
+            "format": ".2f"
+          },
+          {
+            "field": "total_crimes",
+            "title": "Total Crimes",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/map_data/malaysia_state_labelled.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "fill": "#1a1a1a"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude"
+        },
+        "latitude": { 
+          "field": "latitude"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "padding": {"top": 0, "bottom": 5, "left": 0, "right": 0},
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 11,
+      "symbolType": "square"
+    }
+  }
+}

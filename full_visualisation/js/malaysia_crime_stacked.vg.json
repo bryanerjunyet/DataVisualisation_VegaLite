@@ -1,0 +1,315 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 360,
+  "background": "white",
+  "data": {
+    "url": "data/bar_data/crime_district_cleaned.csv"
+  },
+  "title": {
+    "text": "Reported Crimes Across Years",
+    "fontSize": 18,
+    "anchor": "start",
+    "offset": 20
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Cases",
+          "title": "Reported cases"
+        },
+        "color": {
+          "field": "Crime_Type",
+          "type": "nominal",
+          "title": "Crime category",
+          "scale": {
+            "domain": [
+              "Property",
+              "Assault"
+            ],
+            "range": [
+              "#ff8c00",
+              "#8b4513"
+            ]
+          }
+        },
+        "order": {
+          "field": "Crime_Type",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "title": "Year"
+          },
+          {
+            "field": "Crime_Type",
+            "title": "Category"
+          },
+          {
+            "field": "Cases",
+            "title": "Cases",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2016"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 40000",
+          "as": "label_y"
+        },
+        {
+          "calculate": "datum.total_cases + 100",
+          "as": "arrow_tip"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#333333",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "arrow_tip",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2016"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 43000",
+          "as": "label_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#333333"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "offset": 20
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Total reported crime peaked at 200K+ cases in 2016."
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2020"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 47000",
+          "as": "label_y"
+        },
+        {
+          "calculate": "datum.total_cases + 100",
+          "as": "arrow_tip"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#333333",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "arrow_tip",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2020"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 60000",
+          "as": "label_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#333333"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "In 2020, COVID-19 movement restrictions led to a 19% drop in assault cases "
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2020"
+        },
+        {
+          "aggregate": [
+            {
+              "op": "sum",
+              "field": "Cases",
+              "as": "total_cases"
+            }
+          ],
+          "groupby": [
+            "Year"
+          ]
+        },
+        {
+          "calculate": "datum.total_cases + 50000",
+          "as": "label_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#333333"
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "and 22% drop in property crimes compared to 2019."
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "padding": {
+      "top": 10,
+      "bottom": 0,
+      "left": 0,
+      "right": 0
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 11
+    }
+  }
+}

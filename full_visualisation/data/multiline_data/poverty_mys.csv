@@ -1,0 +1,227 @@
+Country Name,Country ISO3,Year,Indicator Name,Indicator Code,Value
+#country+name,#country+code,#date+year,#indicator+name,#indicator+code,#indicator+value+num
+Malaysia,MYS,2020,Population living in slums (% of urban population),EN.POP.SLUM.UR.ZS,0.2
+Malaysia,MYS,2021,Income share held by second 20%,SI.DST.02ND.20,10.2
+Malaysia,MYS,2018,Income share held by second 20%,SI.DST.02ND.20,10
+Malaysia,MYS,2015,Income share held by second 20%,SI.DST.02ND.20,10.1
+Malaysia,MYS,2013,Income share held by second 20%,SI.DST.02ND.20,10.1
+Malaysia,MYS,2011,Income share held by second 20%,SI.DST.02ND.20,9.3
+Malaysia,MYS,2008,Income share held by second 20%,SI.DST.02ND.20,8.9
+Malaysia,MYS,2006,Income share held by second 20%,SI.DST.02ND.20,9.1
+Malaysia,MYS,2003,Income share held by second 20%,SI.DST.02ND.20,8.7
+Malaysia,MYS,1997,Income share held by second 20%,SI.DST.02ND.20,8.1
+Malaysia,MYS,1995,Income share held by second 20%,SI.DST.02ND.20,8.3
+Malaysia,MYS,1992,Income share held by second 20%,SI.DST.02ND.20,8.4
+Malaysia,MYS,1989,Income share held by second 20%,SI.DST.02ND.20,8.9
+Malaysia,MYS,1987,Income share held by second 20%,SI.DST.02ND.20,8.7
+Malaysia,MYS,1984,Income share held by second 20%,SI.DST.02ND.20,8.4
+Malaysia,MYS,2021,Income share held by third 20%,SI.DST.03RD.20,15
+Malaysia,MYS,2018,Income share held by third 20%,SI.DST.03RD.20,14.8
+Malaysia,MYS,2015,Income share held by third 20%,SI.DST.03RD.20,14.8
+Malaysia,MYS,2013,Income share held by third 20%,SI.DST.03RD.20,14.7
+Malaysia,MYS,2011,Income share held by third 20%,SI.DST.03RD.20,14.1
+Malaysia,MYS,2008,Income share held by third 20%,SI.DST.03RD.20,13.8
+Malaysia,MYS,2006,Income share held by third 20%,SI.DST.03RD.20,13.9
+Malaysia,MYS,2003,Income share held by third 20%,SI.DST.03RD.20,13.6
+Malaysia,MYS,1997,Income share held by third 20%,SI.DST.03RD.20,12.8
+Malaysia,MYS,1995,Income share held by third 20%,SI.DST.03RD.20,13
+Malaysia,MYS,1992,Income share held by third 20%,SI.DST.03RD.20,13.1
+Malaysia,MYS,1989,Income share held by third 20%,SI.DST.03RD.20,13.5
+Malaysia,MYS,1987,Income share held by third 20%,SI.DST.03RD.20,13.3
+Malaysia,MYS,1984,Income share held by third 20%,SI.DST.03RD.20,13
+Malaysia,MYS,2021,Income share held by fourth 20%,SI.DST.04TH.20,22.1
+Malaysia,MYS,2018,Income share held by fourth 20%,SI.DST.04TH.20,22.1
+Malaysia,MYS,2015,Income share held by fourth 20%,SI.DST.04TH.20,22
+Malaysia,MYS,2013,Income share held by fourth 20%,SI.DST.04TH.20,21.7
+Malaysia,MYS,2011,Income share held by fourth 20%,SI.DST.04TH.20,21.8
+Malaysia,MYS,2008,Income share held by fourth 20%,SI.DST.04TH.20,21.8
+Malaysia,MYS,2006,Income share held by fourth 20%,SI.DST.04TH.20,21.6
+Malaysia,MYS,2003,Income share held by fourth 20%,SI.DST.04TH.20,21.4
+Malaysia,MYS,1997,Income share held by fourth 20%,SI.DST.04TH.20,20.3
+Malaysia,MYS,1995,Income share held by fourth 20%,SI.DST.04TH.20,20.4
+Malaysia,MYS,1992,Income share held by fourth 20%,SI.DST.04TH.20,20.6
+Malaysia,MYS,1989,Income share held by fourth 20%,SI.DST.04TH.20,20.5
+Malaysia,MYS,1987,Income share held by fourth 20%,SI.DST.04TH.20,20.5
+Malaysia,MYS,1984,Income share held by fourth 20%,SI.DST.04TH.20,20.2
+Malaysia,MYS,2021,Income share held by highest 20%,SI.DST.05TH.20,46.9
+Malaysia,MYS,2018,Income share held by highest 20%,SI.DST.05TH.20,47.3
+Malaysia,MYS,2015,Income share held by highest 20%,SI.DST.05TH.20,47.3
+Malaysia,MYS,2013,Income share held by highest 20%,SI.DST.05TH.20,47.7
+Malaysia,MYS,2011,Income share held by highest 20%,SI.DST.05TH.20,49.6
+Malaysia,MYS,2008,Income share held by highest 20%,SI.DST.05TH.20,50.8
+Malaysia,MYS,2006,Income share held by highest 20%,SI.DST.05TH.20,50.3
+Malaysia,MYS,2003,Income share held by highest 20%,SI.DST.05TH.20,51.7
+Malaysia,MYS,1997,Income share held by highest 20%,SI.DST.05TH.20,54.3
+Malaysia,MYS,1995,Income share held by highest 20%,SI.DST.05TH.20,53.8
+Malaysia,MYS,1992,Income share held by highest 20%,SI.DST.05TH.20,53.1
+Malaysia,MYS,1989,Income share held by highest 20%,SI.DST.05TH.20,52
+Malaysia,MYS,1987,Income share held by highest 20%,SI.DST.05TH.20,52.7
+Malaysia,MYS,1984,Income share held by highest 20%,SI.DST.05TH.20,53.8
+Malaysia,MYS,2021,Income share held by highest 10%,SI.DST.10TH.10,30.9
+Malaysia,MYS,2018,Income share held by highest 10%,SI.DST.10TH.10,31.2
+Malaysia,MYS,2015,Income share held by highest 10%,SI.DST.10TH.10,31.3
+Malaysia,MYS,2013,Income share held by highest 10%,SI.DST.10TH.10,31.8
+Malaysia,MYS,2011,Income share held by highest 10%,SI.DST.10TH.10,33.2
+Malaysia,MYS,2008,Income share held by highest 10%,SI.DST.10TH.10,34.1
+Malaysia,MYS,2006,Income share held by highest 10%,SI.DST.10TH.10,33.8
+Malaysia,MYS,2003,Income share held by highest 10%,SI.DST.10TH.10,35.1
+Malaysia,MYS,1997,Income share held by highest 10%,SI.DST.10TH.10,38.4
+Malaysia,MYS,1995,Income share held by highest 10%,SI.DST.10TH.10,37.9
+Malaysia,MYS,1992,Income share held by highest 10%,SI.DST.10TH.10,37
+Malaysia,MYS,1989,Income share held by highest 10%,SI.DST.10TH.10,36.4
+Malaysia,MYS,1987,Income share held by highest 10%,SI.DST.10TH.10,36.9
+Malaysia,MYS,1984,Income share held by highest 10%,SI.DST.10TH.10,38.3
+Malaysia,MYS,2021,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,16.5
+Malaysia,MYS,2018,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,17
+Malaysia,MYS,2015,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,16.4
+Malaysia,MYS,2013,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,15.9
+Malaysia,MYS,2011,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,18.5
+Malaysia,MYS,2008,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,20.1
+Malaysia,MYS,2006,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,19
+Malaysia,MYS,2003,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,20
+Malaysia,MYS,1997,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,21.1
+Malaysia,MYS,1995,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,20.8
+Malaysia,MYS,1992,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,20.4
+Malaysia,MYS,1989,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,18.6
+Malaysia,MYS,1987,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,19.5
+Malaysia,MYS,1984,Proportion of people living below 50 percent of median income (%),SI.DST.50MD,20.2
+Malaysia,MYS,2021,Income share held by lowest 10%,SI.DST.FRST.10,2.3
+Malaysia,MYS,2018,Income share held by lowest 10%,SI.DST.FRST.10,2.3
+Malaysia,MYS,2015,Income share held by lowest 10%,SI.DST.FRST.10,2.3
+Malaysia,MYS,2013,Income share held by lowest 10%,SI.DST.FRST.10,2.3
+Malaysia,MYS,2011,Income share held by lowest 10%,SI.DST.FRST.10,2
+Malaysia,MYS,2008,Income share held by lowest 10%,SI.DST.FRST.10,1.8
+Malaysia,MYS,2006,Income share held by lowest 10%,SI.DST.FRST.10,1.9
+Malaysia,MYS,2003,Income share held by lowest 10%,SI.DST.FRST.10,1.8
+Malaysia,MYS,1997,Income share held by lowest 10%,SI.DST.FRST.10,1.7
+Malaysia,MYS,1995,Income share held by lowest 10%,SI.DST.FRST.10,1.8
+Malaysia,MYS,1992,Income share held by lowest 10%,SI.DST.FRST.10,1.9
+Malaysia,MYS,1989,Income share held by lowest 10%,SI.DST.FRST.10,2.1
+Malaysia,MYS,1987,Income share held by lowest 10%,SI.DST.FRST.10,2
+Malaysia,MYS,1984,Income share held by lowest 10%,SI.DST.FRST.10,1.8
+Malaysia,MYS,2021,Income share held by lowest 20%,SI.DST.FRST.20,5.9
+Malaysia,MYS,2018,Income share held by lowest 20%,SI.DST.FRST.20,5.7
+Malaysia,MYS,2015,Income share held by lowest 20%,SI.DST.FRST.20,5.8
+Malaysia,MYS,2013,Income share held by lowest 20%,SI.DST.FRST.20,5.8
+Malaysia,MYS,2011,Income share held by lowest 20%,SI.DST.FRST.20,5.2
+Malaysia,MYS,2008,Income share held by lowest 20%,SI.DST.FRST.20,4.8
+Malaysia,MYS,2006,Income share held by lowest 20%,SI.DST.FRST.20,5
+Malaysia,MYS,2003,Income share held by lowest 20%,SI.DST.FRST.20,4.6
+Malaysia,MYS,1997,Income share held by lowest 20%,SI.DST.FRST.20,4.4
+Malaysia,MYS,1995,Income share held by lowest 20%,SI.DST.FRST.20,4.5
+Malaysia,MYS,1992,Income share held by lowest 20%,SI.DST.FRST.20,4.7
+Malaysia,MYS,1989,Income share held by lowest 20%,SI.DST.FRST.20,5.1
+Malaysia,MYS,1987,Income share held by lowest 20%,SI.DST.FRST.20,4.9
+Malaysia,MYS,1984,Income share held by lowest 20%,SI.DST.FRST.20,4.6
+Malaysia,MYS,2021,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,0
+Malaysia,MYS,2018,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,0
+Malaysia,MYS,2015,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,0.1
+Malaysia,MYS,2013,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,0.1
+Malaysia,MYS,2011,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,0.4
+Malaysia,MYS,2008,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,1.5
+Malaysia,MYS,2006,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,1.7
+Malaysia,MYS,2003,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,3.2
+Malaysia,MYS,1997,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,1.7
+Malaysia,MYS,1995,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,5.2
+Malaysia,MYS,1992,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,5
+Malaysia,MYS,1989,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,4.9
+Malaysia,MYS,1987,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,5.9
+Malaysia,MYS,1984,Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population),SI.POV.DDAY,6.7
+Malaysia,MYS,2021,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0
+Malaysia,MYS,2018,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0
+Malaysia,MYS,2015,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0
+Malaysia,MYS,2013,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0
+Malaysia,MYS,2011,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.1
+Malaysia,MYS,2008,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.3
+Malaysia,MYS,2006,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.4
+Malaysia,MYS,2003,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.7
+Malaysia,MYS,1997,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.1
+Malaysia,MYS,1995,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.7
+Malaysia,MYS,1992,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.6
+Malaysia,MYS,1989,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.5
+Malaysia,MYS,1987,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,0.7
+Malaysia,MYS,1984,Poverty gap at $3.00 a day (2021 PPP) (%),SI.POV.GAPS,1
+Malaysia,MYS,2021,Gini index,SI.POV.GINI,40.7
+Malaysia,MYS,2018,Gini index,SI.POV.GINI,41.2
+Malaysia,MYS,2015,Gini index,SI.POV.GINI,41.1
+Malaysia,MYS,2013,Gini index,SI.POV.GINI,41.3
+Malaysia,MYS,2011,Gini index,SI.POV.GINI,43.9
+Malaysia,MYS,2008,Gini index,SI.POV.GINI,45.5
+Malaysia,MYS,2006,Gini index,SI.POV.GINI,44.8
+Malaysia,MYS,2003,Gini index,SI.POV.GINI,46.4
+Malaysia,MYS,1997,Gini index,SI.POV.GINI,49.1
+Malaysia,MYS,1995,Gini index,SI.POV.GINI,48.5
+Malaysia,MYS,1992,Gini index,SI.POV.GINI,47.7
+Malaysia,MYS,1989,Gini index,SI.POV.GINI,46.2
+Malaysia,MYS,1987,Gini index,SI.POV.GINI,47
+Malaysia,MYS,1984,Gini index,SI.POV.GINI,48.5
+Malaysia,MYS,2021,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,0.1
+Malaysia,MYS,2018,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,0.2
+Malaysia,MYS,2015,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,0.4
+Malaysia,MYS,2013,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,0.6
+Malaysia,MYS,2011,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,1.9
+Malaysia,MYS,2008,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,5.4
+Malaysia,MYS,2006,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,5
+Malaysia,MYS,2003,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,8.4
+Malaysia,MYS,1997,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,8.5
+Malaysia,MYS,1995,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,13.5
+Malaysia,MYS,1992,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,13.7
+Malaysia,MYS,1989,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,14.2
+Malaysia,MYS,1987,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,15
+Malaysia,MYS,1984,Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),SI.POV.LMIC,15.4
+Malaysia,MYS,2021,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,0
+Malaysia,MYS,2018,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,0
+Malaysia,MYS,2015,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,0.1
+Malaysia,MYS,2013,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,0.1
+Malaysia,MYS,2011,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,0.3
+Malaysia,MYS,2008,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,1.2
+Malaysia,MYS,2006,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,1.1
+Malaysia,MYS,2003,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,2.1
+Malaysia,MYS,1997,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,1.5
+Malaysia,MYS,1995,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,3.1
+Malaysia,MYS,1992,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,3.1
+Malaysia,MYS,1989,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,3.1
+Malaysia,MYS,1987,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,3.5
+Malaysia,MYS,1984,Poverty gap at $4.20 a day (2021 PPP) (%),SI.POV.LMIC.GP,3.9
+Malaysia,MYS,2021,Poverty headcount ratio at national poverty lines (% of population),SI.POV.NAHC,6.2
+Malaysia,MYS,2019,Poverty headcount ratio at national poverty lines (% of population),SI.POV.NAHC,8.4
+Malaysia,MYS,2021,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,2.9
+Malaysia,MYS,2018,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,4.2
+Malaysia,MYS,2015,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,5.7
+Malaysia,MYS,2013,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,7.7
+Malaysia,MYS,2011,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,14.7
+Malaysia,MYS,2008,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,24.2
+Malaysia,MYS,2006,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,24.7
+Malaysia,MYS,2003,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,30.4
+Malaysia,MYS,1997,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,29.9
+Malaysia,MYS,1995,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,38.6
+Malaysia,MYS,1992,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,39.7
+Malaysia,MYS,1989,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,42.9
+Malaysia,MYS,1987,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,42.9
+Malaysia,MYS,1984,Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population),SI.POV.UMIC,42.2
+Malaysia,MYS,2021,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,0.5
+Malaysia,MYS,2018,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,0.8
+Malaysia,MYS,2015,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,1.3
+Malaysia,MYS,2013,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,1.8
+Malaysia,MYS,2011,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,3.9
+Malaysia,MYS,2008,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,7.8
+Malaysia,MYS,2006,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,7.8
+Malaysia,MYS,2003,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,10.6
+Malaysia,MYS,1997,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,10.4
+Malaysia,MYS,1995,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,14.7
+Malaysia,MYS,1992,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,15
+Malaysia,MYS,1989,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,16
+Malaysia,MYS,1987,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,16.4
+Malaysia,MYS,1984,Poverty gap at $8.30 a day (2021 PPP) (%),SI.POV.UMIC.GP,16.4
+Malaysia,MYS,2021,"Survey mean consumption or income per capita, bottom 40% of population (2021 PPP $ per day)",SI.SPR.PC40,15.94
+Malaysia,MYS,2015,"Survey mean consumption or income per capita, bottom 40% of population (2021 PPP $ per day)",SI.SPR.PC40,13.35
+Malaysia,MYS,2021,"Annualized average growth rate in per capita real survey mean consumption or income, bottom 40% of population (%)",SI.SPR.PC40.ZG,3.22
+Malaysia,MYS,2021,"Survey mean consumption or income per capita, total population (2021 PPP $ per day)",SI.SPR.PCAP,39.7
+Malaysia,MYS,2015,"Survey mean consumption or income per capita, total population (2021 PPP $ per day)",SI.SPR.PCAP,33.55
+Malaysia,MYS,2021,"Annualized average growth rate in per capita real survey mean consumption or income, total population (%)",SI.SPR.PCAP.ZG,3.06
+Malaysia,MYS,2019,"Multidimensional poverty headcount ratio, household (% of total households)",SI.POV.MDIM.HH,2.64
+Malaysia,MYS,2016,"Multidimensional poverty headcount ratio, household (% of total households)",SI.POV.MDIM.HH,3.66
+Malaysia,MYS,2014,"Multidimensional poverty headcount ratio, household (% of total households)",SI.POV.MDIM.HH,1.1
+Malaysia,MYS,2019,Multidimensional poverty index (scale 0-1),SI.POV.MDIM.XQ,0.011
+Malaysia,MYS,2016,Multidimensional poverty index (scale 0-1),SI.POV.MDIM.XQ,0.0152
+Malaysia,MYS,2014,Multidimensional poverty index (scale 0-1),SI.POV.MDIM.XQ,0.0044
