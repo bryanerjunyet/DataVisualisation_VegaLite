@@ -55,6 +55,7 @@ h2 {
 }
 
 #choropleth_map {
+  margin-left: 80px;
   margin-bottom: 20px;
 }
 

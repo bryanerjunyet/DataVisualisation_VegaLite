@@ -15,7 +15,7 @@
     "stroke": "transparent"
   },
   "title": {
-    "text": "State Crime Levels Across Malaysia",
+    "text": "Malaysia Crime Levels Across States",
     "subtitle": {
       "expr": "'Selected year: ' + selectedYear"
     },
