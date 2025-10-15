@@ -1,0 +1,148 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 300,
+  "background": "white",
+  "title": {
+    "text": "Crime Rate & Poverty Trends (2016-2023)",
+    "fontSize": 16,
+    "anchor": "start",
+    "offset": 15
+  },
+  "data": {
+    "url": "data/multiline_data/crime_district_ano_cleaned.csv"
+  },
+  "transform": [
+    {
+      "lookup": "Year",
+      "from": {
+        "data": {
+          "values": [
+            {"Year": 2015, "Value": 5.7},
+            {"Year": 2016, "Value": 5.5},
+            {"Year": 2017, "Value": 5.2},
+            {"Year": 2018, "Value": 4.2},
+            {"Year": 2019, "Value": 3.8},
+            {"Year": 2020, "Value": 3.4},
+            {"Year": 2021, "Value": 2.9},
+            {"Year": 2022, "Value": 2.7},
+            {"Year": 2023, "Value": 2.5}
+          ]
+        },
+        "key": "Year",
+        "fields": ["Value"]
+      },
+      "default": null
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "fill": "#ff6f27",
+        "stroke": "#ff5500",
+        "strokeWidth": 2,
+        "opacity": 0.7
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "crimes_per_10k_population",
+          "type": "quantitative",
+          "title": "Crime Rate per 10K Population",
+          "scale": {
+            "domain": [0, 120]
+          },
+          "axis": {
+            "orient": "left",
+            "tickCount": 7,
+            "values": [0, 20, 40, 60, 80, 100, 120]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "title": "Year"
+          },
+          {
+            "field": "Total_Cases",
+            "title": "Total Cases",
+            "format": ","
+          },
+          {
+            "field": "crimes_per_10k_population",
+            "title": "Crime Rate per 10K",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "stroke": "#dc0f00",
+        "strokeWidth": 3,
+        "point": {
+          "filled": true,
+          "fill": "#dc0f00",
+          "size": 80
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 6]
+          },
+          "axis": {
+            "orient": "right",
+            "title": "Poverty Rate (%)",
+            "tickCount": 7,
+            "values": [0, 1, 2, 3, 4, 5, 6]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "title": "Year"
+          },
+          {
+            "field": "Value",
+            "title": "Poverty Rate (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "titleFontSize": 11,
+      "labelFontSize": 10
+    }
+  }
+}
