@@ -1,83 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malaysia Crime Factors</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Factors of Crime in Malaysia</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vega / Vega-Lite -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.24.0"></script>
-  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-  <main>
-    <h1 style="text-align: center;">Malaysia's Crime Patterns with Socioeconomic Overview</h1>
-    <section class="viz">
-      <h2>Malaysia Crime Overview</h2>
-      <p class="caption" style="text-align: justify;">
-        Since <b>2016</b>, urban states such as <b>Kuala Lumpur</b>, <b>Putrajaya</b> and <b>Selangor</b> consistently record <b>higher crime levels</b> compared to rural states. 
-        These states serve as major economic and transportation hubs, attracting large populations and <b>increased social activity</b>, which tend to correlate with higher crime incidence. 
-        Throughout the years, the trend is encouraging as the <b>intensity of crime noticeably declines</b> across nearly all states, including previously high-crime states like Putrajaya and Selangor, which strongly indicates nationwide enforcement efforts and community policing initiatives have been effective in driving down crime over time.
-      </p>
-      <div id="choropleth_map"></div>
-    </section>
-    
-    <section class="viz">
-      <div class="chart-container">
-        <div class="chart-left">
-          <p class="caption" style="text-align: justify;">
-            Since 2016, <b>property crimes overwhelmingly dominate total reported cases every year</b>, consistently making up the largest share of offences nationwide. 
-            Prior to major crime reform initiatives, <b>a notable downward trend</b> in overall crime after 2016, especially <b>a sharp drop in 2020 coincides with COVID-19 movement restrictions</b>, 
-            which limited public interaction and mobility, leading a temporary but pronounced fall in both property and assault crimes.
-          </p>
-          <div id="crime_stack"></div>
-        </div>
-        
-        <div class="chart-right">
-          <p class="caption" style="text-align: justify;">
-            <b>Property crime clearly dominates</b>, suggesting that most crimes are <b>non-violent and financially motivated</b>. 
-            <b>Assault crimes exist but make up a smaller fraction</b> indicating they are less frequent compared to theft.
-            <b>Murder and rape are the smallest slices</b>, highlighting that while serious, they occur relatively rare compared to theft-based crimes.
-          </p>
-          <div id="crime_sunburst"></div>
+  <!-- Fixed Header (always visible) -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-title">Factors of Crime in Malaysia</span>
+      </div>
+      <nav class="header-actions" aria-label="Primary">
+        <a href="#map-card">Crime Map</a>
+        <a href="#stacked-card">Reported Crimes</a>
+        <a href="#sunburst-card">Crime Types</a>
+        <a href="#area-card">Poverty Trend</a>
+        <a href="#scatter-card">Unemployment Trend</a>
+        <a href="#boxplot-card">Income Trend</a>
+      </nav>
+    </div>
+  </header>
+  <!-- spacer to offset fixed header -->
+  <div class="header-spacer" aria-hidden="true"></div>
+
+  <main class="dashboard" id="dashboard">
+
+    <!-- ========= HERO MAP (full width, larger) ========= -->
+    <section class="card card--full card--center" id="map-card">
+      <div class="card-head card-head--with-controls">
+        <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
+        <h2>Malaysia Crime Levels Across States</h2>
+        <div class="control-slot" id="bindings_map">
+          <span class="inline-value">Selected Year: <strong id="map_year_value">—</strong></span>
         </div>
       </div>
-    </section>
-    
-    <section class="viz">
-      <h2 style="text-align: center;">Socioeconomic Factors & Crime Patterns</h2>
-      <div class="chart-container">
-        <div class="chart-left">
-          <p class="caption" style="text-align: justify;">
-            The relationship between <b>crime rates and poverty levels</b> shows interesting patterns from 2016-2023. While <b>poverty rates have steadily declined</b> from 5.7% to an estimated 2.5%, 
-            <b>crime rates peaked in 2016 and then significantly decreased</b>, particularly during the 2020 COVID-19 pandemic. This suggests that <b>effective poverty reduction policies</b> 
-            and targeted crime prevention strategies have contributed to safer communities nationwide. The <b>forecasted poverty trend (dashed line)</b> indicates continued improvement.
+      <div class="card-body">
+        <!-- Inline caption ABOVE the chart -->
+        <div class="caption-inline">
+          <p>
+            Since <b>2016</b>, urban states such as <b>Kuala Lumpur</b>, <b>Putrajaya</b> and <b>Selangor</b> record higher crime intensity than rural states.
+            Crime rates generally <b>decline</b> over time, reflecting enforcement and community initiatives.
           </p>
-          <div id="crime_area"></div>
         </div>
-        
-        <div class="chart-right">
-          <p class="caption" style="text-align: justify;">
-            The scatter plot reveals <b>no strong linear correlation</b> between unemployment and crime rates across Malaysian states and years. <b>Federal territories cluster in high crime, moderate unemployment regions</b>, 
-            while <b>rural states show lower crime levels with varying unemployment</b>. Notably, <b>urban states like Selangor maintain moderate crime despite economic opportunities</b>. This indicates that 
-            <b>urban density and economic activity</b> may be stronger predictors of crime than unemployment alone, highlighting the complex nature of socioeconomic crime factors.
-          </p>
-          <div id="crime_scattered"></div>
+        <div class="viz-center">
+          <div id="choropleth_map" class="chart--hero"></div>
         </div>
       </div>
     </section>
 
-    <section class="viz">
-      <p class="caption" style="text-align: justify;">
-        The box plot illustrates the distribution of crime rates across states categorized by income level. <b>High-income states exhibit a wider range of crime rates</b>, with some having the highest rates overall, suggesting that wealth concentration does not uniformly guarantee low crime. <b>Medium-income states show a more compressed distribution</b>, indicating more consistent crime levels. Interestingly, <b>low-income states have the lowest median crime rate</b>, challenging the assumption that lower income directly correlates with higher crime. This highlights that factors beyond income, such as urbanization and population density, are critical drivers of crime.
-      </p>
-      <div class="chart-container">
-        <div id="crime_box"></div>
-        <div id="bindings_boxplot"></div>
+    <!-- ========= STACKED (half) ========= -->
+    <section class="card card--half" id="stacked-card">
+      <div class="card-head card-head--with-controls">
+        <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
+        <h2>Reported Crimes Across Years</h2>
+        <div class="control-slot" id="bindings_stacked"></div>
+      </div>
+      <div class="card-body">
+        <div class="caption-inline">
+          <p>
+            <b>Property crime dominates</b> annually. A <b>sharp drop in 2020</b> coincides with COVID-19 mobility restrictions, followed by stabilisation.
+          </p>
+        </div>
+        <div id="crime_stack"></div>
       </div>
     </section>
+
+    <!-- ========= SUNBURST (half) ========= -->
+    <section class="card card--half" id="sunburst-card">
+      <div class="card-head card-head--with-controls">
+        <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
+        <h2>Composition of Crime Types</h2>
+        <!-- Year only in header -->
+        <div class="control-slot control-slot--compact" id="bindings_sunburst_year"></div>
+      </div>
+      <div class="card-body">
+        <div class="caption-inline">
+          <p>
+            Theft-related offences form the largest share. <b>Assault</b> is smaller; <b>murder/rape</b> are the smallest categories.
+          </p>
+        </div>
+        <div id="crime_sunburst"></div>
+        <!-- State selector under the legend -->
+        <div class="control-slot control-slot--below" id="bindings_sunburst_state" aria-label="State filter"></div>
+      </div>
+    </section>
+
+    <!-- ========= AREA (half) ========= -->
+    <section class="card card--half" id="area-card">
+      <div class="card-head card-head--with-controls">
+        <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
+        <h2>Crime Rate vs Poverty Across Years</h2>
+        <div class="control-slot" id="bindings_area"></div>
+      </div>
+      <div class="card-body">
+        <div class="caption-inline">
+          <p>
+            Poverty headcount ratio <b>declined</b> while crime rates <b>peaked in 2016</b> then fell (notably in 2020), indicating improving conditions and movement restrictions.
+          </p>
+        </div>
+        <div id="crime_area"></div>
+      </div>
+    </section>
+
+    <!-- ========= SCATTER (half) ========= -->
+    <section class="card card--half" id="scatter-card">
+      <div class="card-head card-head--with-controls">
+        <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
+        <h2>Crime vs Unemployment by Region</h2>
+        <div class="control-slot" id="bindings_scatter"></div>
+      </div>
+      <div class="card-body">
+        <div class="caption-inline">
+          <p>
+            No strong linear link between unemployment and crime. <b>Urban density</b> (KL, Selangor) aligns more with higher rates than unemployment alone.
+          </p>
+        </div>
+        <div id="crime_scattered"></div>
+      </div>
+    </section>
+
+    <!-- ========= BOXPLOT (full) ========= -->
+    <section class="card card--full card--center" id="boxplot-card">
+      <div class="card-head card-head--with-controls">
+        <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
+        <h2>Distribution of Crime Rates Across Income Groups</h2>
+        <div class="control-slot" id="bindings_boxplot"></div>
+      </div>
+      <div class="card-body">
+        <div class="caption-inline">
+          <p>
+            High-income group shows the <b>widest spread</b> (outliers like KL), medium-income states have the <b>highest median</b>, and low-income states show a <b>lower central tendency</b>.
+          </p>
+        </div>
+        <div class="viz-center">
+          <div id="crime_box" class="chart--wide"></div>
+        </div>
+      </div>
+    </section>
+
   </main>
-  
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        © 2025 FIT3179 Data Visualisation Assignment 2 | Monash University<br/>
+        Designed and Created by <strong>Er Jun Yet</strong>
+      </div>
+      <div class="footer-right">
+        <span>Data Sources:</span>
+        <a href="https://www.kaggle.com/datasets/akma1xz/draft-dataset?select=hh_income_state.csv" target="_blank" rel="noopener">Kaggle</a> |
+        <a href="https://open.dosm.gov.my/data-catalogue/crime_district" target="_blank" rel="noopener">OpenDOSM</a> |
+        <a href="https://archive.data.gov.my/data/ms_MY/dataset/labour-force-statistics-malaysia-1092" target="_blank" rel="noopener">Data.gov.my</a> |
+        <a href="https://data.humdata.org/dataset/world-bank-poverty-indicators-for-malaysia" target="_blank" rel="noopener">The World Bank</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="js/vega_lite_vis.js"></script>
 </body>
 </html>

@@ -3,12 +3,6 @@
   "width": 320,
   "height": 320,
   "background": "white",
-  "title": {
-    "text": "Composition of Crime Types",
-    "fontSize": 16,
-    "anchor": "start",
-    "offset": 15
-  },
   "data": {
     "url": "data/sunburst_data/crime_district_cleaned.csv"
   },
@@ -19,7 +13,8 @@
       "bind": {
         "input": "select",
         "options": ["All", 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
-        "name": "Year    "
+        "name": "Year    ",
+        "element": "#bindings_sunburst_year"
       }
     },
     {
@@ -46,7 +41,8 @@
           "W.P. Labuan",
           "W.P. Putrajaya"
         ],
-        "name": "State   "
+        "name": "State   ",
+        "element": "#bindings_sunburst_state"
       }
     }
   ],

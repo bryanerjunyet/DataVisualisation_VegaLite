@@ -1,77 +1,246 @@
+:root {
+  --bg: #f7f8fb;
+  --card-bg: #ffffff;
+  --border: #e8ebf0;
+  --shadow: 0 6px 16px rgba(0, 0, 0, .08);
+  --shadow-hover: 0 10px 24px rgba(0, 0, 0, .12);
+  --text: #141518;
+  --brand: #7a0c0c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #ffffff;
-  color: #1f1f1f;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
-main {
-  max-width: 1000px;
-  margin: 32px auto 64px;
-  padding: 0 20px;
+/* Fixed header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
 }
 
-h1 {
-  font-weight: 600;
-  font-size: 28px;
-  margin: 0 0 24px;
+.header-spacer {
+  height: 64px; /* must match header height */
 }
 
-h2 {
-  font-weight: 600;
-  font-size: 22px;
-  margin: 32px 0 16px;
-}
-
-.chart-container {
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 20px;
   display: flex;
-  gap: 50px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
+  gap: 16px;
 }
 
-.chart-left {
-  flex: 0 0 500px;
-  max-width: 500px;
+.brand-title {
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  letter-spacing: .2px;
 }
 
-.chart-right {
-  flex: 0 0 500px;
-  max-width: 500px;
+.brand-sub {
+  display: block;
+  font-size: 12px;
+  color: #ffe8e8;
 }
 
-.caption {
+.header-actions a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 16px;
+  opacity: .95;
+}
+
+.header-actions a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Grid */
+.dashboard {
+  max-width: 1280px;
+  margin: 24px auto 80px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.card.dragging {
+  opacity: .6;
+  transform: rotate(.5deg) scale(.99);
+}
+
+.card-head {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-head h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.drag-handle {
+  cursor: grab;
+  border: 1px dashed #c9cfd8;
+  background: #fff;
+  border-radius: 8px;
+  padding: 2px 6px;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.control-slot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+
+.control-slot label {
+  font-weight: 600;
+}
+
+.control-slot select,
+.control-slot input[type="range"] {
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.inline-value {
+  font-size: 13px;
+  color: #374151;
+}
+
+.control-slot--compact select {
+  max-width: 150px;
+}
+
+.control-slot--below {
+  margin-top: 10px;
+}
+
+/* Body */
+.card-body {
+  padding: 12px 12px 16px;
+}
+
+/* Inline caption above the chart */
+.caption-inline {
+  background: #f9fafb;
+  border: 1px dashed #e6e9ef;
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.caption-inline p {
+  margin: 0;
   font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 16px;
+  line-height: 1.55;
 }
 
+/* Widths */
+.card--full {
+  grid-column: 1 / -1;
+}
+
+.card--half {
+  grid-column: span 6;
+}
+
+/* Center the larger charts */
+.viz-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sizes for big charts */
+.chart--wide {
+  width: 100%;
+  max-width: 1120px;
+}
+
+.chart--hero {
+  width: 100%;
+  max-width: 1280px; /* bigger map */
+}
+
+/* Vega */
 .vega-embed .vega-actions {
   display: none;
 }
 
-#choropleth_map {
-  margin-left: 80px;
-  margin-bottom: 20px;
+/* Footer */
+.site-footer {
+  background: var(--brand);
+  color: #fff;
+  padding: 18px 20px;
 }
 
-#crime_scattered {
-}
-
-#crime_box .vega-embed {
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-#crime_box .vega-bindings {
-  margin-right: 20px;
-}
-
-#bindings_boxplot {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-right: 10px;
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
 }

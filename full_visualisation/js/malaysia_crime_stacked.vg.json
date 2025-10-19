@@ -6,12 +6,6 @@
   "data": {
     "url": "data/bar_data/crime_district_cleaned.csv"
   },
-  "title": {
-    "text": "Reported Crimes Across Years",
-    "fontSize": 16,
-    "anchor": "start",
-    "offset": 15
-  },
   "layer": [
     {
       "transform": [

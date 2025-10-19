@@ -3,12 +3,6 @@
   "width": 800,
   "height": 300,
   "background": "white",
-  "title": {
-    "text": "Distribution of Crime Rates Across Income Groups",
-    "fontSize": 16,
-    "anchor": "start",
-    "offset": 15
-  },
   "data": {
     "url": "data/boxplot_data/crime_district_cleaned.csv"
   },

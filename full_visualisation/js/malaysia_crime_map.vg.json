@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 760,
-  "height": 300,
+  "width": 900,
+  "height": 350,
   "background": "white",
   "projection": {
     "type": "mercator",
@@ -9,21 +9,10 @@
       109.5,
       4.0
     ],
-    "scale": 2150
+    "scale": 2600
   },
   "view": {
     "stroke": "transparent"
-  },
-  "title": {
-    "text": "Malaysia Crime Levels Across States",
-    "subtitle": {
-      "expr": "'Selected year: ' + selectedYear"
-    },
-    "fontSize": 18,
-    "anchor": "start",
-    "subtitleFontSize": 12,
-    "subtitleColor": "#4a4a4a",
-    "subtitlePadding": 6
   },
   "params": [
     {
@@ -34,7 +23,8 @@
         "min": 2016,
         "max": 2023,
         "step": 1,
-        "name": "Year "
+        "name": "Year ",
+        "element": "#bindings_map"
       }
     }
   ],

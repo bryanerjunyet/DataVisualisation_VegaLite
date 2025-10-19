@@ -3,12 +3,6 @@
   "width": 400,
   "height": 300,
   "background": "white",
-  "title": {
-    "text": "Crime Rate vs Unemployment by State",
-    "fontSize": 16,
-    "anchor": "start",
-    "offset": 15
-  },
   "data": {
     "url": "data/scattered_data/crime_unemployment_state.csv"
   },
