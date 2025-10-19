@@ -14,7 +14,7 @@
   },
   "transform": [
     {
-      "filter": "datum.crimes_per_10k_population != null && datum.unemployment_rate != null"
+      "filter": "datum.crimes_per_10k_population != null && datum.unemployment_rate != null && datum.category != null"
     }
   ],
   "mark": {
@@ -50,11 +50,24 @@
       }
     },
     "color": {
-      "field": "state",
+      "field": "category",
       "type": "nominal",
-      "title": "State",
+      "title": "Region",
       "scale": {
-        "scheme": "category20"
+        "domain": [
+          "East Malaysia",
+          "East Coast Malaysia",
+          "South Malaysia",
+          "Central Malaysia",
+          "North Malaysia"
+        ],
+        "range": [
+          "#1f78b4",
+          "#ff7f00",
+          "#6a3d9a",
+          "#e31a89",
+          "#b15928"
+        ]
       },
       "legend": {
         "orient": "right",
