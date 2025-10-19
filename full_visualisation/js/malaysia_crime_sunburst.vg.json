@@ -19,7 +19,7 @@
       "bind": {
         "input": "select",
         "options": ["All", 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
-        "name": "Year    " 
+        "name": "Year    "
       }
     },
     {
@@ -28,9 +28,23 @@
       "bind": {
         "input": "select",
         "options": [
-          "All", "Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", 
-          "Pahang", "Perak", "Perlis", "Pulau Pinang", "Sabah", "Sarawak", 
-          "Selangor", "Terengganu", "W.P. Kuala Lumpur", "W.P. Labuan", "W.P. Putrajaya"
+          "All",
+          "Johor",
+          "Kedah",
+          "Kelantan",
+          "Melaka",
+          "Negeri Sembilan",
+          "Pahang",
+          "Perak",
+          "Perlis",
+          "Pulau Pinang",
+          "Sabah",
+          "Sarawak",
+          "Selangor",
+          "Terengganu",
+          "W.P. Kuala Lumpur",
+          "W.P. Labuan",
+          "W.P. Putrajaya"
         ],
         "name": "State   "
       }
@@ -118,8 +132,9 @@
           "title": "Crime Category",
           "scale": {
             "domain": ["Assault", "Property"],
-            "range": ["#8b4513", "#ff8c00"]
-          }
+            "range": ["#8c1e80", "#ff8c00"]
+          },
+          "legend": null
         },
         "tooltip": [
           {
@@ -161,8 +176,26 @@
           "type": "nominal",
           "title": "Crime Type",
           "scale": {
-            "domain": ["Murder", "Rape", "Causing Injury", "Robbery Gang", "Robbery Solo", "Break In", "Theft Other", "Theft Vehicle"],
-            "range": ["#8B0000", "#A0522D", "#CD853F", "#DEB887", "#F5DEB3", "#FF7F50", "#FFA500", "#FF4500"]
+            "domain": [
+              "Murder",
+              "Rape",
+              "Causing Injury",
+              "Robbery Gang",
+              "Robbery Solo",
+              "Break In",
+              "Theft Other",
+              "Theft Vehicle"
+            ],
+            "range": [
+              "#08306b",
+              "#08519c",
+              "#2171b5",
+              "#4292c6",
+              "#6baed6",
+              "#f1b4ae",
+              "#e3665a",
+              "#cb181d"
+            ]
           }
         },
         "tooltip": [
@@ -191,10 +224,43 @@
       "mark": {
         "type": "text",
         "align": "center",
-        "baseline": "bottom",
-        "fontSize": 18,
+        "baseline": "middle",
+        "fontSize": 14,
         "fontWeight": "bold",
-        "radius": 50
+        "radius": 50,
+        "dy": -8
+      },
+      "encoding": {
+        "theta": {
+          "field": "total_cases",
+          "type": "quantitative"
+        },
+        "order": {
+          "field": "category_order",
+          "type": "ordinal"
+        },
+        "text": {
+          "field": "Crime_Category",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "white"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Level == 'Main'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "radius": 50,
+        "dy": 10
       },
       "encoding": {
         "theta": {
