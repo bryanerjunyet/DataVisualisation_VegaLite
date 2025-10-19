@@ -4,7 +4,7 @@
   "height": 300,
   "background": "white",
   "title": {
-    "text": "Crime Rate & Poverty Trends (2016-2023)",
+    "text": "Crime Rate vs Poverty Trends",
     "fontSize": 16,
     "anchor": "start",
     "offset": 15
@@ -63,7 +63,8 @@
           "axis": {
             "orient": "left",
             "tickCount": 7,
-            "values": [0, 20, 40, 60, 80, 100, 120]
+            "values": [0, 20, 40, 60, 80, 100, 120],
+            "titleColor": "#ff5500"
           }
         },
         "tooltip": [
@@ -110,7 +111,8 @@
             "orient": "right",
             "title": "Poverty Rate (%)",
             "tickCount": 7,
-            "values": [0, 1, 2, 3, 4, 5, 6]
+            "values": [0, 1, 2, 3, 4, 5, 6],
+            "titleColor": "#dc0f00"
           }
         },
         "tooltip": [
