@@ -25,23 +25,20 @@ h2 {
 
 .chart-container {
   display: flex;
-  gap: 30px;
+  gap: 50px;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
 }
 
 .chart-left {
-  flex: 0 0 450px;
-  max-width: 550px;
+  flex: 0 0 500px;
+  max-width: 500px;
 }
 
 .chart-right {
-  flex: 0 0 420px;
-  max-width: 470px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 0 0 500px;
+  max-width: 500px;
 }
 
 .caption {
@@ -60,5 +57,4 @@ h2 {
 }
 
 #crime_scattered {
-  margin-left: 60px;
 }
