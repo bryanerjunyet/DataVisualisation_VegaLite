@@ -145,7 +145,7 @@
           },
           {
             "field": "crimes_per_10k_population",
-            "title": "Crimes per 10K",
+            "title": "Crimes Level (%)",
             "format": ".2f"
           },
           {
