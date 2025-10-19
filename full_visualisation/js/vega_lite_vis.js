@@ -20,4 +20,8 @@
   vegaEmbed('#crime_scattered', 'js/malaysia_crime_scattered.vg.json', embedOptions)
     .then(() => {})
     .catch(console.error);
+
+  vegaEmbed('#crime_box', 'js/malaysia_crime_box.vg.json', embedOptions)
+    .then(() => {})
+    .catch(console.error);
 })();

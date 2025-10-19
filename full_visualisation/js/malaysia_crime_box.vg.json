@@ -1,0 +1,163 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 300,
+  "background": "white",
+  "title": {
+    "text": "Distribution of Crime Rates Across Income Groups",
+    "fontSize": 16,
+    "anchor": "start",
+    "offset": 15
+  },
+  "data": {
+    "url": "data/boxplot_data/crime_district_cleaned.csv"
+  },
+  "params": [
+    {
+      "name": "year_filter",
+      "value": 2016,
+      "bind": {
+        "input": "select",
+        "options": [2016, 2017, 2018, 2019, 2020, 2021, 2022],
+        "name": "Year ",
+        "element": "#bindings_boxplot"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.year == year_filter"
+    },
+    {
+      "lookup": "state",
+      "from": {
+        "data": {
+          "url": "data/boxplot_data/income_state.csv"
+        },
+        "key": "state",
+        "fields": ["income_mean"]
+      },
+      "as": ["income_mean"]
+    },
+    {
+      "filter": "datum.income_mean != null"
+    },
+    {
+      "calculate": "datum.income_mean > 10000 ? 'High Income' : datum.income_mean >= 5000 ? 'Medium Income' : 'Low Income'",
+      "as": "Income Group"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "boxplot",
+        "extent": "min-max",
+        "size": 70,
+        "median": {"stroke": "black", "strokeWidth": 2},
+        "ticks": {"strokeWidth": 1.5},
+        "rule": {"strokeWidth": 1.5}
+      },
+      "encoding": {
+        "x": {
+          "field": "crimes_per_10k_population",
+          "type": "quantitative",
+          "title": "Crime Index"
+        },
+        "y": {
+          "field": "Income Group",
+          "type": "ordinal",
+          "sort": ["High Income", "Medium Income", "Low Income"],
+          "title": "Income Group"
+        },
+        "color": {
+          "field": "Income Group",
+          "type": "nominal",
+          "scale": {
+            "domain": ["High Income", "Medium Income", "Low Income"],
+            "range": ["#e3665a", "#ffc400", "#4292c6"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "Income Group"},
+          {
+            "field": "max_crimes_per_10k_population",
+            "title": "Maximum Crimes",
+            "format": ".2f"
+          },
+          {
+            "field": "q3_crimes_per_10k_population",
+            "title": "Upper Quartile Crimes",
+            "format": ".2f"
+          },
+          {
+            "field": "median_crimes_per_10k_population",
+            "title": "Median Crimes",
+            "format": ".2f"
+          },
+          {
+            "field": "q1_crimes_per_10k_population",
+            "title": "Lower Quartile Crimes",
+            "format": ".2f"
+          },
+          {
+            "field": "min_crimes_per_10k_population",
+            "title": "Minimum Crimes",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 250,
+        "opacity": 0.8,
+        "stroke": "black",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "crimes_per_10k_population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Income Group",
+          "type": "ordinal",
+          "sort": ["High Income", "Medium Income", "Low Income"]
+        },
+        "color": {
+          "field": "Income Group",
+          "type": "nominal",
+          "scale": {
+            "domain": ["High Income", "Medium Income", "Low Income"],
+            "range": ["#e3665a", "#ffc400", "#4292c6"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "state", "title": "State"},
+          {
+            "field": "crimes_per_10k_population",
+            "title": "Crime Rate",
+            "format": ".2f"
+          },
+          {"field": "income_mean", "title": "Mean Income", "format": ",.0f"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "boxplot": {
+      "box": {"fillOpacity": 0.3},
+      "median": {"stroke": "black", "strokeWidth": 2}
+    }
+  }
+}

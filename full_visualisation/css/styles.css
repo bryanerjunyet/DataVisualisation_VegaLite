@@ -58,3 +58,20 @@ h2 {
 
 #crime_scattered {
 }
+
+#crime_box .vega-embed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#crime_box .vega-bindings {
+  margin-right: 20px;
+}
+
+#bindings_boxplot {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 10px;
+}
