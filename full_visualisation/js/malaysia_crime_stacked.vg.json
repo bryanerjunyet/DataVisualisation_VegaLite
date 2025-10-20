@@ -152,7 +152,7 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": "bold",
         "fill": "#333333",
         "dx": 85

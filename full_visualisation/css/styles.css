@@ -109,11 +109,14 @@ body {
 
 .card-head {
   padding: 10px 14px;
+  border-radius: 16px 16px 0 0;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  background: #4c4c4c;
+  color: #fff;
 }
 
 .card-head h2 {
@@ -178,7 +181,7 @@ body {
 
 /* Inline caption above the chart */
 .caption-inline {
-  background: #f9fafb;
+  background: #fffef5;
   border: 1px dashed #e6e9ef;
   border-radius: 10px;
   padding: 8px 10px;
@@ -187,8 +190,9 @@ body {
 
 .caption-inline p {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.55;
+  text-align: justify;
 }
 
 /* Widths */
@@ -217,6 +221,49 @@ body {
   width: 100%;
   max-width: 1280px; /* bigger map */
 }
+
+/* --- Box-plot: chart + side annotations layout --- */
+.box-row{
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+/* Chart side: flex so the plot keeps its width and centers */
+.box-row__viz{
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Annotation column: three rows = three income groups (top/middle/bottom) */
+.box-row__annots{
+  width: 300px;                 /* adjust to your preference */
+  min-width: 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;          /* vertically center each pill in its row */
+  gap: 10px;
+}
+
+/* Annotation pills (always visible) */
+.annot-pill{
+  font-weight: 700;
+  font-size: 13px;
+  text-align: justify;
+  line-height: 1.25;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  border-left: 6px solid transparent;   /* colored by modifier */
+}
+
+/* Color-coding to match your palette (darker tones for contrast) */
+.annot-pill--high{ border-left-color: #e3665a; color: #b03a30; }
+.annot-pill--med { border-left-color: #ffc400; color: #8a6b00; }
+.annot-pill--low { border-left-color: #4292c6; color: #1e5b83; }
 
 /* Vega */
 .vega-embed .vega-actions {

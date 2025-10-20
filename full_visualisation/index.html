@@ -52,7 +52,7 @@
         <div class="caption-inline">
           <p>
             Since <b>2016</b>, urban states such as <b>Kuala Lumpur</b>, <b>Putrajaya</b> and <b>Selangor</b> record higher crime intensity than rural states.
-            Crime rates generally <b>decline</b> over time, reflecting enforcement and community initiatives.
+            Crime rates generally <b>decline</b> over time, reflecting <b>nationwide enforcement efforts and community policing initiatives</b> have been effective in driving down crime over time.
           </p>
         </div>
         <div class="viz-center">
@@ -89,7 +89,7 @@
       <div class="card-body">
         <div class="caption-inline">
           <p>
-            Theft-related offences form the largest share. <b>Assault</b> is smaller; <b>murder/rape</b> are the smallest categories.
+            <b>Theft crimes</b> dominate the <b>largest share</b>. <b>Assault murder</b> and <b>rape</b> are the <b>smallest categories</b> throughout the years.
           </p>
         </div>
         <div id="crime_sunburst"></div>
@@ -102,13 +102,13 @@
     <section class="card card--half" id="area-card">
       <div class="card-head card-head--with-controls">
         <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
-        <h2>Crime Rate vs Poverty Across Years</h2>
+        <h2>Crime Rate vs Poverty Rate Across Years</h2>
         <div class="control-slot" id="bindings_area"></div>
       </div>
       <div class="card-body">
         <div class="caption-inline">
           <p>
-            Poverty headcount ratio <b>declined</b> while crime rates <b>peaked in 2016</b> then fell (notably in 2020), indicating improving conditions and movement restrictions.
+            <b>Both crime rate and poverty rate decline parallelly</b>, suggesting poverty reduction may be associated with lower crime.
           </p>
         </div>
         <div id="crime_area"></div>
@@ -119,13 +119,13 @@
     <section class="card card--half" id="scatter-card">
       <div class="card-head card-head--with-controls">
         <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
-        <h2>Crime vs Unemployment by Region</h2>
+        <h2>Crime Rate vs Unemployment Rate by Region</h2>
         <div class="control-slot" id="bindings_scatter"></div>
       </div>
       <div class="card-body">
         <div class="caption-inline">
           <p>
-            No strong linear link between unemployment and crime. <b>Urban density</b> (KL, Selangor) aligns more with higher rates than unemployment alone.
+            <b>No strong linear link between unemployment and crime.</b> Central Malaysia has the highest crimes despite moderate unemployment, while East Malaysia shows higher unemployment but only moderate crime.
           </p>
         </div>
         <div id="crime_scattered"></div>
@@ -139,17 +139,47 @@
         <h2>Distribution of Crime Rates Across Income Groups</h2>
         <div class="control-slot" id="bindings_boxplot"></div>
       </div>
+
       <div class="card-body">
         <div class="caption-inline">
           <p>
-            High-income group shows the <b>widest spread</b> (outliers like KL), medium-income states have the <b>highest median</b>, and low-income states show a <b>lower central tendency</b>.
+            <b>Crime index rises sharply with income group.</b> High-income group shows the
+            <b>widest spread</b> of crime rates, while medium-income group clusters tightly and
+            low-income group show the <b>lowest levels</b> and minimal variation.
           </p>
         </div>
-        <div class="viz-center">
-          <div id="crime_box" class="chart--wide"></div>
+
+        <!-- Chart + side annotations laid out as a two-column row -->
+        <div class="box-row">
+          <!-- Chart column -->
+          <div class="box-row__viz">
+            <div id="crime_box" class="chart--wide"></div>
+          </div>
+
+          <!-- Annotation column (always visible; aligned to income rows) -->
+          <aside class="box-row__annots" aria-label="Income group annotations">
+            <!-- Row 1: High income -->
+            <div class="annot-pill annot-pill--high">
+              High-income states like Kuala Lumpur<br/>
+              consistently drive the widest spread.
+            </div>
+
+            <!-- Row 2: Medium income -->
+            <div class="annot-pill annot-pill--med">
+              Medium-income group includes low<br/>
+              crime outliers like Sabah before 2020.
+            </div>
+
+            <!-- Row 3: Low income -->
+            <div class="annot-pill annot-pill--low">
+              Kelantan remains low income but<br/>
+              has a relatively moderate crime index.
+            </div>
+          </aside>
         </div>
       </div>
     </section>
+
 
   </main>
 

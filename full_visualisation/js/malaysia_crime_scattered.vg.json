@@ -22,7 +22,7 @@
     "x": {
       "field": "crimes_per_10k_population",
       "type": "quantitative",
-      "title": "Crime Rate per 10K Population",
+      "title": "Crime per 10K Population",
       "scale": {
         "domain": [0, 100]
       },
@@ -83,7 +83,7 @@
       },
       {
         "field": "crimes_per_10k_population",
-        "title": "Crime Rate per 10K",
+        "title": "Crime per 10K",
         "type": "quantitative",
         "format": ".2f"
       },
