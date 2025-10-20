@@ -51,7 +51,7 @@ body {
 }
 
 .brand-title {
-  font-size: 30px;
+  font-size: 32px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 700;
   letter-spacing: .2px;
@@ -65,15 +65,22 @@ body {
 
 .header-actions a {
   color: #fff;
+  font-size: 12px;
+  border-color: #ffffff;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 8px;
+  padding: 4px 12px;
   text-decoration: none;
   font-weight: 600;
-  margin-left: 16px;
+  margin-left: 8px;
   opacity: .95;
 }
 
 .header-actions a:hover {
   opacity: 1;
-  text-decoration: underline;
+  color: #7a0c0c;
+  background: #ffffff
 }
 
 /* Grid */
@@ -121,7 +128,7 @@ body {
 
 .card-head h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -182,7 +189,7 @@ body {
 /* Inline caption above the chart */
 .caption-inline {
   background: #fffef5;
-  border: 1px dashed #e6e9ef;
+  border: 3px dashed #e6e9ef;
   border-radius: 10px;
   padding: 8px 10px;
   margin-bottom: 10px;
@@ -190,10 +197,27 @@ body {
 
 .caption-inline p {
   margin: 0;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.55;
   text-align: justify;
 }
+
+/* --- Truly centered title, independent of left/right controls --- */
+.card--centerTitle .card-head { position: relative; }
+
+.card--centerTitle .card-head h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  text-align: center;
+  width: 60%;           /* prevents overlap with edges; tune if needed */
+  pointer-events: none; /* controls remain clickable */
+}
+
+.card--centerTitle .card-head .drag-handle { position: relative; z-index: 1; }
+.card--centerTitle .card-head .control-slot { position: relative; z-index: 1; margin-left: auto; }
+
 
 /* Widths */
 .card--full {
@@ -268,6 +292,10 @@ body {
 /* Vega */
 .vega-embed .vega-actions {
   display: none;
+}
+
+.vega-bind-name {
+  font-size: 18px;
 }
 
 /* Footer */

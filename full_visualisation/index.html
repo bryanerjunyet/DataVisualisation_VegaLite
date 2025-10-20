@@ -39,7 +39,7 @@
   <main class="dashboard" id="dashboard">
 
     <!-- ========= HERO MAP (full width, larger) ========= -->
-    <section class="card card--full card--center" id="map-card">
+    <section class="card card--full card--center card--centerTitle" id="map-card">
       <div class="card-head card-head--with-controls">
         <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
         <h2>Malaysia Crime Levels Across States</h2>
@@ -119,13 +119,13 @@
     <section class="card card--half" id="scatter-card">
       <div class="card-head card-head--with-controls">
         <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
-        <h2>Crime Rate vs Unemployment Rate by Region</h2>
+        <h2>Crime vs Unemployment Rates by Region</h2>
         <div class="control-slot" id="bindings_scatter"></div>
       </div>
       <div class="card-body">
         <div class="caption-inline">
           <p>
-            <b>No strong linear link between unemployment and crime.</b> Central Malaysia has the highest crimes despite moderate unemployment, while East Malaysia shows higher unemployment but only moderate crime.
+            <b>No strong relationship.</b> Central Malaysia has the highest crimes despite moderate unemployment, while East Malaysia has higher unemployment but only moderate crime.
           </p>
         </div>
         <div id="crime_scattered"></div>
@@ -133,7 +133,7 @@
     </section>
 
     <!-- ========= BOXPLOT (full) ========= -->
-    <section class="card card--full card--center" id="boxplot-card">
+    <section class="card card--full card--center  card--centerTitle" id="boxplot-card">
       <div class="card-head card-head--with-controls">
         <button class="drag-handle" draggable="true" title="Drag to move" aria-label="drag">⋮⋮</button>
         <h2>Distribution of Crime Rates Across Income Groups</h2>
@@ -160,8 +160,8 @@
           <aside class="box-row__annots" aria-label="Income group annotations">
             <!-- Row 1: High income -->
             <div class="annot-pill annot-pill--high">
-              High-income states like Kuala Lumpur<br/>
-              consistently drive the widest spread.
+              High-income states like W.P. Kuala<br/>
+              Lumpur consistently drive the widest spread.
             </div>
 
             <!-- Row 2: Medium income -->

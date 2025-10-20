@@ -152,7 +152,7 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "fontSize": 9,
+        "fontSize": 10,
         "fontWeight": "bold",
         "fill": "#333333",
         "dx": 85
@@ -243,7 +243,7 @@
         "type": "text",
         "align": "center",
         "baseline": "bottom",
-        "fontSize": 9,
+        "fontSize": 10,
         "fontWeight": "bold",
         "fill": "#333333"
       },
@@ -257,7 +257,7 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "a 19% drop in assault & 22% drop in property crimes"
+          "value": "19% drop in assault & 22% drop in property crimes"
         }
       }
     },
@@ -287,7 +287,7 @@
         "type": "text",
         "align": "center",
         "baseline": "bottom",
-        "fontSize": 9,
+        "fontSize": 10,
         "fontWeight": "bold",
         "fill": "#333333"
       },
@@ -301,7 +301,7 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "In 2020, COVID-19 movement restriction led to"
+          "value": "In 2020, COVID-19 movement restriction led to a"
         }
       }
     }
