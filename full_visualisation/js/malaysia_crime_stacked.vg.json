@@ -54,6 +54,13 @@
             ]
           }
         },
+        "opacity": {
+          "condition": {
+            "test": "datum.Year == 2016 || datum.Year == 2020",
+            "value": 1
+          },
+          "value": 0.35
+        },
         "order": {
           "field": "Crime_Type",
           "type": "nominal"

@@ -8,99 +8,191 @@
   },
   "transform": [
     {
-      "filter": "datum.crimes_per_10k_population != null && datum.unemployment_rate != null && datum.category != null"
+      "filter": "datum.crimes_per_10k_population != null && datum.unemployment_rate != null && datum.category != null && datum.crimes_per_10k_population > 0"
     }
   ],
-  "mark": {
-    "type": "circle",
-    "size": 80,
-    "opacity": 0.7,
-    "stroke": "grey",
-    "strokeWidth": 1.5
-  },
-  "encoding": {
-    "x": {
-      "field": "crimes_per_10k_population",
-      "type": "quantitative",
-      "title": "Crime per 10K Population",
-      "scale": {
-        "domain": [0, 100]
-      },
-      "axis": {
-        "values": [0, 20, 40, 60, 80, 100],
-        "grid": true
+  "layer": [
+    {
+      "mark": {"type": "rect", "fill": "#d9ead3", "opacity": 0.5},
+      "encoding": {
+        "x": {"value": 0.5},
+        "x2": {"value": 200},
+        "y": {"value": 150},
+        "y2": {"value": 300}
       }
     },
-    "y": {
-      "field": "unemployment_rate",
-      "type": "quantitative",
-      "title": "Unemployment Rate (%)",
-      "scale": {
-        "domain": [0, 10]
-      },
-      "axis": {
-        "values": [0, 2, 4, 6, 8, 10],
-        "grid": true
+    {
+      "mark": {"type": "rect", "fill": "#fff2cc", "opacity": 0.5},
+      "encoding": {
+        "x": {"value": 200},
+        "x2": {"value": 400},
+        "y": {"value": 150},
+        "y2": {"value": 300}
       }
     },
-    "color": {
-      "field": "category",
-      "type": "nominal",
-      "title": "Region",
-      "scale": {
-        "domain": [
-          "East Malaysia",
-          "East Coast Malaysia",
-          "South Malaysia",
-          "Central Malaysia",
-          "North Malaysia"
-        ],
-        "range": [
-          "#1f78b4",
-          "#ff7f00",
-          "#6a3d9a",
-          "#e31a89",
-          "#b15928"
+    {
+      "mark": {"type": "rect", "fill": "#cfe2f3", "opacity": 0.5},
+      "encoding": {
+        "x": {"value": 0.5},
+        "x2": {"value": 200},
+        "y": {"value": 1},
+        "y2": {"value": 150}
+      }
+    },
+    {
+      "mark": {"type": "rect", "fill": "#f4cccc", "opacity": 0.5},
+      "encoding": {
+        "x": {"value": 200},
+        "x2": {"value": 400},
+        "y": {"value": 1},
+        "y2": {"value": 150}
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": ["High Unemployment", "Low Crime"],
+        "x": 100,
+        "y": 10,
+        "align": "center",
+        "baseline": "top",
+        "fontWeight": "bold",
+        "color": "#0067c2"
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": ["High Unemployment", "High Crime"],
+        "x": 300,
+        "y": 10,
+        "align": "center",
+        "baseline": "top",
+        "fontWeight": "bold",
+        "color": "#da0000"
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": ["Low Unemployment", "Low Crime"],
+        "x": 100,
+        "y": 285,
+        "align": "center",
+        "baseline": "bottom",
+        "fontWeight": "bold",
+        "color": "#3c9416"
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": ["Low Unemployment", "High Crime"],
+        "x": 300,
+        "y": 285,
+        "align": "center",
+        "baseline": "bottom",
+        "fontWeight": "bold",
+        "color": "#e97900"
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 80,
+        "opacity": 0.7,
+        "stroke": "grey",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "crimes_per_10k_population",
+          "type": "quantitative",
+          "title": "Crime per 10K Population",
+          "scale": {
+            "domain": [0, 100]
+          },
+          "axis": {
+            "values": [0, 20, 40, 60, 80, 100],
+            "grid": true
+          }
+        },
+        "y": {
+          "field": "unemployment_rate",
+          "type": "quantitative",
+          "title": "Unemployment Rate (%)",
+          "scale": {
+            "domain": [0, 10]
+          },
+          "axis": {
+            "values": [0, 2, 4, 6, 8, 10],
+            "grid": true
+          }
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": "Region",
+          "scale": {
+            "domain": [
+              "East Malaysia",
+              "East Coast Malaysia",
+              "South Malaysia",
+              "Central Malaysia",
+              "North Malaysia"
+            ],
+            "range": [
+              "#1f78b4",
+              "#ff7f00",
+              "#6a3d9a",
+              "#e31a89",
+              "#b15928"
+            ]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 10,
+            "symbolSize": 80
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State",
+            "type": "nominal"
+          },
+          {
+            "field": "year",
+            "title": "Year",
+            "type": "ordinal"
+          },
+          {
+            "field": "crimes_per_10k_population",
+            "title": "Crime per 10K",
+            "type": "quantitative",
+            "format": ".2f"
+          },
+          {
+            "field": "unemployment_rate",
+            "title": "Unemployment Rate (%)",
+            "type": "quantitative",
+            "format": ".1f"
+          },
+          {
+            "field": "total_crimes",
+            "title": "Total Crimes",
+            "type": "quantitative",
+            "format": ","
+          }
         ]
-      },
-      "legend": {
-        "orient": "right",
-        "titleFontSize": 12,
-        "labelFontSize": 10,
-        "symbolSize": 80
       }
-    },
-    "tooltip": [
-      {
-        "field": "state",
-        "title": "State",
-        "type": "nominal"
-      },
-      {
-        "field": "year",
-        "title": "Year",
-        "type": "ordinal"
-      },
-      {
-        "field": "crimes_per_10k_population",
-        "title": "Crime per 10K",
-        "type": "quantitative",
-        "format": ".2f"
-      },
-      {
-        "field": "unemployment_rate",
-        "title": "Unemployment Rate (%)",
-        "type": "quantitative",
-        "format": ".1f"
-      },
-      {
-        "field": "total_crimes",
-        "title": "Total Crimes",
-        "type": "quantitative",
-        "format": ","
-      }
-    ]
-  },
+    }
+  ],
   "config": {
     "view": {
       "stroke": "transparent"

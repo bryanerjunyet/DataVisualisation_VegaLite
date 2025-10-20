@@ -1,0 +1,276 @@
+URL: https://bryanerjunyet.github.io/DataVisualisation_VegaLite/full_visualisation/
+
+Data Source:
+
+https://open.dosm.gov.my/data-catalogue/crime_district
+https://data.humdata.org/dataset/world-bank-poverty-indicators-for-malaysia
+https://archive.data.gov.my/data/ms_MY/dataset/labour-force-statistics-malaysia-1092
+https://www.kaggle.com/datasets/akma1xz/draft-dataset?select=hh_income_state.csv
+
+
+Domain:
+
+The domain of this visualisation is crime in Malaysia, specifically examining how income, unemployment, poverty and crime types relate across the entire Malaysia states. It draws connections between state-level crime intensity, socio-economic indicators and category composition to explain spatial and temporal patterns in public safety.
+
+
+Why:
+
+The purpose of this visualisation is to help users explore how crime rates vary across states and over time, and how they relate to economic conditions. By comparing across geography, income groups and labour indicators, it enables users to identify patterns, disparities and relationships that highlight the socio-economic importance that affects Malaysia's crime level.
+
+
+Who:
+
+The intended audience includes policymakers, law enforcement and researchers who require insights for planning and decision-making on nationwide enforcement efforts and community policing initiatives, as well as the general public who may benefit from understanding spatial and socio-economic drivers of crime.
+
+
+Special features
+
+Fixed header with button navigation – Quick access to each chart section.
+
+Drag-and-drop dashboard – Layout of chart cards that can be rearranged via drag-and-drop handle for custom reading order.
+
+Year/ State selectors – Uses a year range slider (for choropleth map) or a year/ state dropdown menu (for sunburst & boxplot chart) for filtering data for better presentation of data.
+
+Consistent tooltips – Hovering any mark shows concise, relevant metadata (state, year, rates, totals, summaries).
+
+Custom annotations – Compact two-line annotations improve readability without clutter.
+
+Responsive layout – Charts scale within a card grid while preserving typography and spacing.
+
+
+
+Choropleth Map:
+
+What
+
+Dataset: Spatial (Geometry)
+
+Attributes:
+
+Nominal (State)
+
+Cyclic Quantitative (Year)
+
+Quantitative(Crimes per 10K population)
+
+Source: OpenDOSM
+
+Relevance: State-level geography is key to understanding crime intensity patterns and regional disparities.
+
+Creation process: Crime per 10K population precomputed and created finalised csv data adding new column of normalised crime data with Python Pandas.
+
+How
+
+Marks:
+
+Geographic (each representing a state)
+
+Channels:
+
+Position (Geographic projection)
+
+Color hue (Crime level)
+
+A choropleth map is perfect for visualising quantitative data distributed across geographical states.
+
+The choropleth provides an intuitive geo-spatial comparison and makes hotspots and temporal shifts immediately visible.
+
+
+
+Stacked Bar Chart:
+
+What
+
+Dataset: Table
+
+Attributes:
+
+Ordinal (Year)
+
+Nominal (Crime category)
+
+Quantitative (Cases)
+
+Source: OpenDOSM
+
+Relevance: Crime category totals over time, showing overall crime burden and category dominance.
+
+Creation process: Number of cases aggregated by year and repopulate csv data with only required attributes and data with Python Pandas, for clean use of plotting chart.
+
+How
+
+Marks:
+
+Length (stacked by crime category)
+
+Channels:
+
+Position (x-axis: Year and y-axis: Reported cases '000)
+
+Color hue (encode crime category)
+
+A stacked bar is ideal to observe the overall trend of crime across the years and the breakdown by crime category in the same view, also understanding which category drives changes.
+
+It allows straightforward year-to-year comparison and highlight shifts in crime category shares (e.g. 2020’s drop mainly from property crimes) without needing multiple separate charts.
+
+
+Sunburst:
+
+What
+
+Dataset: Table
+
+Attributes:
+
+Nominal(Crime Category)
+
+Nominal (Crime Type)
+
+Quantitative (Cases)
+
+Ordinal (Year) 
+
+Nominal (State)
+
+Source: OpenDOSM
+
+Relevance: Crime composition analysis explains which crime types dominate within broader categories.
+
+Creation process: Summed cases by crime category and type, and repopulate csv data with only required attributes and data and with custom labellings with Python Pandas, for clean use of plotting chart.
+
+How
+
+Marks:
+
+Area (Inner ring: Crime category, Outer ring: Crime type)
+
+Channels:
+
+Angle (Theta: Crime cases)
+
+Color hue (Crime category & type)
+
+Ordinal (Year) 
+
+Nominal (State)
+
+The sunburst reveals crime category proportions and crime type distributions simultaneously, supporting drill-down of crime composition.
+
+Instead of employing two pie charts, custom visualisation like sunburst is used for high-level presentation of crime composition at one glance. 
+
+
+
+Line + Area Chart (Dual-Axis):
+
+What
+
+Dataset: Table
+
+Attributes:
+
+Ordinal (Year)
+
+Quantitative (Crimes per 10K population)
+
+Quantitative (Poverty rate %)
+
+Source: OpenDOSM & World Bank Group
+
+Relevance: Understanding co-movement of poverty with crime, revealing a possible socio-economic relationship between poverty and crime over time.
+
+Creation process: Poverty trend looked up with reference year and forecasted year, create dual y-axes used to align different scales for poverty and crime levels, and clean csv data with only required data with Python Pandas, for clean use of plotting chart.
+
+How
+
+Marks:
+
+Area (Crime rate), Line (Poverty rate)
+
+Channels:
+
+Position(x-axis: Year; y-left: Crime per 10K Population; y-right: Poverty %)
+
+Color hue (separate encodings for poverty and crimes)
+
+Dual axes illustrating with line and area allow both metrics to be compared over time together at one glance.
+
+By aligning social poverty and public-safety indicators, this helps policymakers assess how poverty-reduction initiatives or economic improvements may contribute to lower crime levels, supporting data-driven planning and evaluation of national development goals.
+
+
+
+
+Scatter Plot:
+
+What
+
+Dataset: Table
+
+Attributes:
+
+Quantitative (Crimes per 10K population), Quantitative (Unemployment rate %)
+
+Nominal (State), Ordinal(Year)
+
+Nominal (Region grouping)
+
+Source and author: OpenDOSM & Data.gov.my
+
+Relevance: Tests the relationship between unemployment and crime across states and years.
+
+Creation process: Cleaned state names, merged by state-year and region categories added for interpretability, repopulate in one single csv data with joining new data attributes with Python Pandas, for clean direct use of plotting chart.
+
+How
+
+Marks:
+
+Point (each point is a state-year)
+
+Channels:
+
+Position (x-axis: Crime per 10K population, y-axis: Unemployment %)
+
+Color hue (Malaysia region)
+
+A scatter plot effectively visualises how crime rate and unemployment rate vary together, making it easy to detect correlations, clusters or outliers between the two factors.
+
+By colouring points by region, it allows regional comparisons and reveals distinct patterns, offering clear insights into socio-economic differences in the data.
+
+
+
+Box Plot:
+
+What
+
+Dataset: Table
+
+Attributes:
+
+Nominal (State), Ordinal (Year)
+
+Quantitative (Crimes per 10K population)
+
+Quantitative (Income mean by state), Ordinal (Income Group)
+
+Source and author: OpenDOSM & Kaggle
+
+Relevance: Shows how crime distributions differ across income tiers, highlighting spread and central tendency.
+
+Creation process: Joined income mean by state and set income group thresholds: High(> RM10,000), Medium(RM5,000–10,000), Low(< RM5,000).
+
+How
+
+Marks:
+
+Point (overlaid states)
+
+Channels:
+
+Position (x-axis: Crimes per 10K population and y-axis: Income group)
+
+Color hue (encode income groups: high, medium, low)
+
+The boxplot summarises distribution differences across income tiers while retaining per-state detail via overlaid points.
+
+A box plot effectively visualises the median, quartiles and outliers, allowing easy comparison of how widely crime rates vary within each income group.
+
+It allows viewers to quickly compare the spread and central tendency of crime indices across low, medium and high income groups, making it ideal for identifying which groups experience the widest or most stable crime patterns.

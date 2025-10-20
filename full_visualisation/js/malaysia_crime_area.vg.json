@@ -36,7 +36,7 @@
         "fill": "#ff6f27",
         "stroke": "#ff5500",
         "strokeWidth": 2,
-        "opacity": 0.7
+        "opacity": 0.25
       },
       "encoding": {
         "x": {
@@ -80,14 +80,53 @@
       }
     },
     {
+      "transform": [
+        {"filter": "datum.Year >= 2019 && datum.Year <= 2021"}
+      ],
+      "mark": {
+        "type": "area",
+        "fill": "#ff6f27",
+        "stroke": "#ff5500",
+        "strokeWidth": 2,
+        "opacity": 0.75
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {
+          "field": "crimes_per_10k_population",
+          "type": "quantitative",
+          "scale": {"domain": [0, 120]},
+          "axis": null
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "title": "Year"
+          },
+          {
+            "field": "Total_Cases",
+            "title": "Total Cases",
+            "format": ","
+          },
+          {
+            "field": "crimes_per_10k_population",
+            "title": "Crime per 10K",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
       "mark": {
         "type": "line",
         "stroke": "#dc0f00",
         "strokeWidth": 3,
+        "opacity": 0.35,
         "point": {
           "filled": true,
           "fill": "#dc0f00",
-          "size": 80
+          "size": 80,
+          "opacity": 0.35
         }
       },
       "encoding": {
@@ -120,6 +159,108 @@
             "format": ".1f"
           }
         ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Year >= 2019 && datum.Year <= 2021"}
+      ],
+      "mark": {
+        "type": "line",
+        "stroke": "#dc0f00",
+        "strokeWidth": 3,
+        "opacity": 1,
+        "point": {
+          "filled": true,
+          "fill": "#dc0f00",
+          "size": 80
+        }
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "scale": {"domain": [0, 6]},
+          "axis": null
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "title": "Year"
+          },
+          {
+            "field": "Value",
+            "title": "Poverty Rate (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Year == 2019 || datum.Year == 2021"}
+      ],
+      "mark": {
+        "type": "rule",
+        "stroke": "#888888",
+        "strokeDash": [6, 4],
+        "size": 2
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"}
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Year == 2020"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -65,
+        "fontSize": 11,
+        "color": "#a30000",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "scale": {"domain": [0, 6]},
+          "axis": null
+        },
+        "text": {
+          "value": "COVID-19 restrictions accelerated the parallel"
+        }
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Year == 2020"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -48,
+        "fontSize": 11,
+        "color": "#a30000",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "scale": {"domain": [0, 6]},
+          "axis": null
+        },
+        "text": {
+          "value": "fall in both crime and poverty rates."
+        }
       }
     }
   ],
